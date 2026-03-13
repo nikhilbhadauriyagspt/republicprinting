@@ -97,8 +97,6 @@ export default function Footer() {
                   )}
                 </AnimatePresence>
               </form>
-
-
             </div>
           </div>
 
@@ -129,7 +127,7 @@ export default function Footer() {
                 <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#4f46e5] rounded-full"></span>
               </h4>
               <ul className="space-y-4">
-                {['About Us', 'Contact Us', 'FAQs', 'Track Order', 'Blog'].map(item => (
+                {['About Us', 'Contact Us', 'FAQs', 'Track Order'].map(item => (
                   <li key={item}>
                     <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="text-slate-500 hover:text-[#4f46e5] font-bold text-[13px] transition-all">
                       <span>{item}</span>
@@ -139,7 +137,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* LEGAL (MOVED UP) */}
+            {/* LEGAL */}
             <div>
               <h4 className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative">
                 Policy
@@ -148,10 +146,10 @@ export default function Footer() {
               <ul className="space-y-4">
                 {[
                   { name: 'Privacy Policy', path: '/privacy-policy' },
-                  { name: 'Terms of Use', path: '/terms' },
-                  { name: 'Shipping', path: '/shipping-policy' },
-                  { name: 'Returns', path: '/return-policy' },
-                  { name: 'Cookies', path: '/cookie-policy' }
+                  { name: 'Terms & Conditions', path: '/terms-and-conditions' },
+                  { name: 'Shipping Policy', path: '/shipping-policy' },
+                  { name: 'Return Policy', path: '/return-policy' },
+                  { name: 'Cookie Policy', path: '/cookie-policy' }
                 ].map(link => (
                   <li key={link.name}>
                     <Link to={link.path} className="text-slate-500 hover:text-[#4f46e5] font-bold text-[13px] transition-all">
