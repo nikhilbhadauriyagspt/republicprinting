@@ -8,15 +8,13 @@ import {
   LayoutGrid,
   List,
   Heart,
-  X,
   Loader2,
   ChevronRight,
   Plus,
-  Expand,
   CheckCircle2,
-  Filter,
   SlidersHorizontal,
-  ArrowRight
+  ArrowRight,
+  ChevronsRight,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import API_BASE_URL from '../config';
@@ -42,14 +40,17 @@ export default function Shop() {
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/categories`)
-      .then(res => res.json())
-      .then(d => {
+      .then((res) => res.json())
+      .then((d) => {
         if (d.status === 'success') {
-          const printers = d.data.find(c => c.slug === 'printers' || c.id === 46);
+          const printers = d.data.find((c) => c.slug === 'printers' || c.id === 46);
           setCategories(printers ? printers.children : []);
         }
       });
-    fetch(`${API_BASE_URL}/brands`).then(res => res.json()).then(d => setBrands(d.data));
+
+    fetch(`${API_BASE_URL}/brands`)
+      .then((res) => res.json())
+      .then((d) => setBrands(d.data || []));
   }, []);
 
   useEffect(() => {
@@ -58,12 +59,13 @@ export default function Shop() {
     params.set('limit', '1000');
 
     fetch(`${API_BASE_URL}/products?${params.toString()}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.status === 'success') {
-          const filteredProducts = data.data.filter(p =>
-            !p.name.toLowerCase().includes('laptop') &&
-            !p.name.toLowerCase().includes('macbook')
+          const filteredProducts = data.data.filter(
+            (p) =>
+              !p.name.toLowerCase().includes('laptop') &&
+              !p.name.toLowerCase().includes('macbook')
           );
           setProducts(filteredProducts);
           setTotal(filteredProducts.length);
@@ -83,187 +85,292 @@ export default function Shop() {
 
   const getImagePath = (images) => {
     try {
-      const imgs = typeof images === "string" ? JSON.parse(images) : images;
+      const imgs = typeof images === 'string' ? JSON.parse(images) : images;
       if (Array.isArray(imgs) && imgs.length > 0) {
         return `/${imgs[0].replace(/\\/g, '/')}`;
       }
-      return "/logo/fabicon.png";
-    } catch { return "/logo/fabicon.png"; }
+      return '/logo/fabicon.png';
+    } catch {
+      return '/logo/fabicon.png';
+    }
   };
 
   return (
-    <div className="bg-white min-h-screen font-['Heebo'] text-slate-900">
-      <SEO title="Hardware Catalog | Printer Mania" />
+    <div className="min-h-screen bg-[#f5f5f5] font-['Rubik'] text-[#222]">
+      <SEO title="Shop | Dash Printer shop" />
 
-      {/* --- SIMPLE PAGE HEADER --- */}
-      <div className="bg-slate-50 border-b border-slate-100 py-12 md:py-16">
-        <div className="max-w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <nav className="flex items-center gap-2 text-[11px] font-bold text-[#4F46E5] uppercase tracking-[3px] mb-4">
-              <Link to="/" className="hover:text-slate-900 transition-colors">Home</Link>
-              <ChevronRight size={14} className="text-slate-300" />
-              <span className="text-slate-400">Shop all</span>
+      {/* PAGE HEADER */}
+      <div className="bg-[#f5f5f5] border-b border-[#dddddd]">
+        <div className="w-full px-4 md:px-6 xl:px-10 py-8 md:py-10">
+          <div className="flex flex-col gap-5">
+            <nav className="flex items-center gap-2 text-[12px] font-semibold text-[#7a7a7a]">
+              <Link to="/" className="hover:text-[#ff3b30] transition-colors">
+                Home
+              </Link>
+              <ChevronRight size={14} className="text-[#bdbdbd]" />
+              <span className="text-[#ff3b30]">Shop</span>
             </nav>
-            <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight capitalize leading-none">
-              Explore catalog
-            </h1>
-          </div>
-          <div className="flex items-center gap-3 px-5 py-2.5 bg-white text-slate-400 rounded-full border border-slate-100">
-            <SlidersHorizontal size={16} className="text-[#4F46E5]" />
-            <span className="text-[11px] font-black uppercase tracking-widest">{total} Products found</span>
-          </div>
-        </div>
-      </div>
 
-      {/* --- MINIMAL FILTER HUD --- */}
-      <div className="sticky top-0 z-[100] w-full bg-white/80 backdrop-blur-xl border-b border-slate-100">
-        <div className="max-w-full mx-auto px-6 lg:px-12 py-4 flex flex-wrap items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-[#dddddd] pb-4">
+              <div className="flex items-center gap-3">
+                <ChevronsRight
+                  size={26}
+                  className="text-[#ff3b30] shrink-0"
+                  strokeWidth={3}
+                />
+                <h1 className="text-[26px] md:text-[30px] font-extrabold uppercase tracking-tight text-[#1f2937]">
+                  Shop Catalog
+                </h1>
+              </div>
 
-          <div className="flex items-center gap-3">
-            {/* Category Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setActiveDropdown(activeDropdown === 'cat' ? null : 'cat')}
-                className={`px-6 py-2.5 border text-[12px] font-bold capitalize flex items-center gap-3 transition-all rounded-full ${category ? 'border-[#4F46E5] bg-gray-200/5 text-[#4F46E5]' : 'border-slate-100 bg-gray-200 hover:border-slate-200'}`}
-              >
-                {category ? category.replace('-', ' ') : 'Categories'}
-                <ChevronDown size={14} className={activeDropdown === 'cat' ? 'rotate-180 transition-transform' : 'transition-transform'} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'cat' && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 5 }} className="absolute top-full left-0 mt-3 w-[280px] bg-white border border-slate-100 p-2 z-[110] rounded-2xl">
-                    <button onClick={() => updateFilter('category', '')} className="w-full text-left px-4 py-3 text-[10px] font-black hover:bg-slate-50 uppercase tracking-widest text-slate-400 border-b border-slate-50 mb-1">Clear Selection</button>
-                    <div className="max-h-[400px] overflow-y-auto custom-scrollbar">
-                      {categories.map(c => (
-                        <button key={c.id} onClick={() => updateFilter('category', c.slug)} className={`w-full text-left px-4 py-3 text-xs font-bold hover:bg-slate-50 hover:text-[#4F46E5] transition-colors rounded-lg ${category === c.slug ? 'bg-gray-200/5 text-[#4F46E5]' : 'text-slate-600'}`}>
-                          {c.name}
-                        </button>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Brand Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setActiveDropdown(activeDropdown === 'brand' ? null : 'brand')}
-                className={`px-6 py-2.5 border text-[12px] font-bold capitalize flex items-center gap-3 transition-all rounded-full ${brand ? 'border-[#4F46E5] bg-gray-200/5 text-[#4F46E5]' : 'border-slate-100 bg-gray-200 hover:border-slate-200'}`}
-              >
-                {brand || 'Manufacturers'}
-                <ChevronDown size={14} className={activeDropdown === 'brand' ? 'rotate-180 transition-transform' : 'transition-transform'} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'brand' && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 5 }} className="absolute top-full left-0 mt-3 w-[240px] bg-white border border-slate-100 p-2 z-[110] rounded-2xl">
-                    <button onClick={() => updateFilter('brand', '')} className="w-full text-left px-4 py-3 text-[10px] font-black hover:bg-slate-50 uppercase tracking-widest text-slate-400 border-b border-slate-50 mb-1">All Brands</button>
-                    <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
-                      {brands.map(b => (
-                        <button key={b.id} onClick={() => updateFilter('brand', b.name)} className={`w-full text-left px-4 py-3 text-xs font-bold hover:bg-slate-50 hover:text-[#4F46E5] transition-colors rounded-lg ${brand === b.name ? 'bg-gray-200/5 text-[#4F46E5]' : 'text-slate-600'}`}>
-                          {b.name}
-                        </button>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Search catalog */}
-          <div className="flex-1 max-w-md relative group">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5]" size={16} />
-            <input
-              type="text" value={search} onChange={(e) => updateFilter('search', e.target.value)}
-              placeholder="Search items..."
-              className="w-full pl-12 pr-6 py-2.5 bg-gray-200 border border-slate-100 rounded-full text-[13px] font-bold outline-none focus:bg-white focus:border-[#4F46E5] transition-all placeholder:font-medium"
-            />
-          </div>
-
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-1">
-              <button onClick={() => setViewMode('grid')} className={`p-2.5 rounded-xl transition-all ${viewMode === 'grid' ? 'bg-slate-950 text-white' : 'text-slate-400 hover:bg-gray-200'}`}><LayoutGrid size={18} /></button>
-              <button onClick={() => setViewMode('list')} className={`p-2.5 rounded-xl transition-all ${viewMode === 'list' ? 'bg-slate-950 text-white' : 'text-slate-400 hover:bg-gray-200'}`}><List size={18} /></button>
-            </div>
-
-            <div className="relative">
-              <select
-                value={sort} onChange={(e) => updateFilter('sort', e.target.value)}
-                className="appearance-none bg-gray-200 border border-slate-100 rounded-full pl-6 pr-12 py-2.5 text-[12px] font-bold capitalize outline-none cursor-pointer hover:border-slate-200 transition-colors"
-              >
-                <option value="newest">Sort: Latest</option>
-                <option value="price_low">Price: Low-High</option>
-                <option value="price_high">Price: High-Low</option>
-              </select>
-              <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400" />
+              <div className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#666]">
+                <SlidersHorizontal size={16} className="text-[#ff3b30]" />
+                <span>{total} Products Found</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* --- MAIN CATALOG CONTENT --- */}
-      <div className="max-w-full mx-auto px-6 lg:px-12 py-12">
+      {/* FILTER BAR */}
+      <div className="sticky top-0 z-[100] bg-white border-b border-[#e5e5e5]">
+        <div className="w-full px-4 md:px-6 xl:px-10 py-4">
+          <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Category Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setActiveDropdown(activeDropdown === 'cat' ? null : 'cat')}
+                  className={`h-[42px] px-5 border text-[13px] font-semibold capitalize flex items-center gap-3 transition-all rounded-sm ${category
+                    ? 'border-[#ff3b30] bg-[#fff5f5] text-[#ff3b30]'
+                    : 'border-[#dcdcdc] bg-white text-[#444] hover:border-[#cfcfcf]'
+                    }`}
+                >
+                  {category ? category.replace('-', ' ') : 'Categories'}
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform ${activeDropdown === 'cat' ? 'rotate-180' : ''}`}
+                  />
+                </button>
 
+                <AnimatePresence>
+                  {activeDropdown === 'cat' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 5 }}
+                      className="absolute top-full left-0 mt-3 w-[280px] bg-white border border-[#e5e5e5] p-2 z-[110] rounded-sm shadow-xl"
+                    >
+                      <button
+                        onClick={() => updateFilter('category', '')}
+                        className="w-full text-left px-4 py-3 text-[12px] font-semibold hover:bg-[#fafafa] text-[#777] border-b border-[#f1f1f1] mb-1"
+                      >
+                        Clear Selection
+                      </button>
+                      <div className="max-h-[400px] overflow-y-auto custom-scrollbar">
+                        {categories.map((c) => (
+                          <button
+                            key={c.id}
+                            onClick={() => updateFilter('category', c.slug)}
+                            className={`w-full text-left px-4 py-3 text-[13px] font-medium hover:bg-[#fafafa] hover:text-[#ff3b30] transition-colors rounded-sm ${category === c.slug
+                              ? 'bg-[#fff5f5] text-[#ff3b30]'
+                              : 'text-[#555]'
+                              }`}
+                          >
+                            {c.name}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Brand Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setActiveDropdown(activeDropdown === 'brand' ? null : 'brand')}
+                  className={`h-[42px] px-5 border text-[13px] font-semibold capitalize flex items-center gap-3 transition-all rounded-sm ${brand
+                    ? 'border-[#ff3b30] bg-[#fff5f5] text-[#ff3b30]'
+                    : 'border-[#dcdcdc] bg-white text-[#444] hover:border-[#cfcfcf]'
+                    }`}
+                >
+                  {brand || 'Manufacturers'}
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform ${activeDropdown === 'brand' ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {activeDropdown === 'brand' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 5 }}
+                      className="absolute top-full left-0 mt-3 w-[240px] bg-white border border-[#e5e5e5] p-2 z-[110] rounded-sm shadow-xl"
+                    >
+                      <button
+                        onClick={() => updateFilter('brand', '')}
+                        className="w-full text-left px-4 py-3 text-[12px] font-semibold hover:bg-[#fafafa] text-[#777] border-b border-[#f1f1f1] mb-1"
+                      >
+                        All Brands
+                      </button>
+                      <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
+                        {brands.map((b) => (
+                          <button
+                            key={b.id}
+                            onClick={() => updateFilter('brand', b.name)}
+                            className={`w-full text-left px-4 py-3 text-[13px] font-medium hover:bg-[#fafafa] hover:text-[#ff3b30] transition-colors rounded-sm ${brand === b.name
+                              ? 'bg-[#fff5f5] text-[#ff3b30]'
+                              : 'text-[#555]'
+                              }`}
+                          >
+                            {b.name}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Search */}
+              <div className="relative w-full sm:w-[320px] lg:w-[360px]">
+                <Search
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-[#999]"
+                  size={16}
+                />
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => updateFilter('search', e.target.value)}
+                  placeholder="Search products..."
+                  className="w-full h-[42px] pl-11 pr-4 bg-white border border-[#dcdcdc] rounded-sm text-[13px] font-medium outline-none focus:border-[#ff3b30] transition-all placeholder:text-[#999]"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 md:gap-4">
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`w-[40px] h-[40px] rounded-sm border flex items-center justify-center transition-all ${viewMode === 'grid'
+                    ? 'bg-[#111] text-white border-[#111]'
+                    : 'bg-white text-[#777] border-[#dcdcdc] hover:border-[#ff3b30] hover:text-[#ff3b30]'
+                    }`}
+                >
+                  <LayoutGrid size={18} />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`w-[40px] h-[40px] rounded-sm border flex items-center justify-center transition-all ${viewMode === 'list'
+                    ? 'bg-[#111] text-white border-[#111]'
+                    : 'bg-white text-[#777] border-[#dcdcdc] hover:border-[#ff3b30] hover:text-[#ff3b30]'
+                    }`}
+                >
+                  <List size={18} />
+                </button>
+              </div>
+
+              <div className="relative">
+                <select
+                  value={sort}
+                  onChange={(e) => updateFilter('sort', e.target.value)}
+                  className="appearance-none h-[42px] bg-white border border-[#dcdcdc] rounded-sm pl-4 pr-10 text-[13px] font-medium outline-none cursor-pointer hover:border-[#cfcfcf] focus:border-[#ff3b30]"
+                >
+                  <option value="newest">Sort: Latest</option>
+                  <option value="price_low">Price: Low-High</option>
+                  <option value="price_high">Price: High-Low</option>
+                </select>
+                <ChevronDown
+                  size={14}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#999]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* PRODUCTS */}
+      <div className="w-full px-4 md:px-6 xl:px-10 py-8 md:py-10">
         {loading ? (
-          <div className="py-48 flex flex-col items-center justify-center">
-            <Loader2 className="h-12 w-12 animate-spin text-[#4F46E5] mb-6" />
-            <p className="text-[11px] font-black uppercase tracking-[0.4em] text-slate-300">Synchronizing products</p>
+          <div className="py-28 flex flex-col items-center justify-center">
+            <Loader2 className="h-10 w-10 animate-spin text-[#ff3b30] mb-4" />
+            <p className="text-[13px] font-semibold text-[#999]">Loading products...</p>
           </div>
         ) : products.length === 0 ? (
-          <div className="py-40 text-center border border-slate-100 bg-gray-200 rounded-[3rem]">
-            <Search size={48} className="mx-auto text-slate-200 mb-8" />
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 capitalize tracking-tight">No products found</h3>
-            <p className="text-slate-500 mb-10">Try adjusting your filters or search keywords.</p>
-            <button onClick={() => navigate('/shop')} className="px-10 py-4 bg-slate-950 text-white font-bold text-sm uppercase tracking-widest hover:bg-gray-200 transition-all rounded-full active:scale-95">Reset Catalog</button>
+          <div className="py-24 text-center border border-[#e5e5e5] bg-white rounded-sm">
+            <Search size={42} className="mx-auto text-[#d0d0d0] mb-6" />
+            <h3 className="text-[26px] font-bold text-[#222] mb-3">No products found</h3>
+            <p className="text-[#777] mb-8">Try adjusting your filters or search keywords.</p>
+            <button
+              onClick={() => navigate('/shop')}
+              className="h-[44px] px-8 bg-[#111] text-white text-[13px] font-semibold uppercase rounded-sm hover:bg-[#ff3b30] transition-all"
+            >
+              Reset Catalog
+            </button>
           </div>
         ) : (
-          <div className={`grid gap-6 md:gap-8 ${viewMode === 'grid'
-            ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-            : 'grid-cols-1'
-            }`}>
+          <div
+            className={`grid gap-5 md:gap-6 ${viewMode === 'grid'
+              ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
+              : 'grid-cols-1'
+              }`}
+          >
             {products.map((p) => (
               <div
                 key={p.id}
-                className={`group relative flex flex-col h-full transition-all duration-500 ${viewMode === 'list' ? 'sm:flex-row gap-10 items-center p-8 bg-gray-200 border border-slate-100 rounded-[2.5rem]' : ''
+                className={`group ${viewMode === 'list'
+                  ? 'flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-center p-6 bg-white border border-[#e5e5e5] rounded-sm'
+                  : ''
                   }`}
               >
-                {/* Product Card Design */}
-                <div className={`${viewMode === 'grid' ? 'w-full flex flex-col h-full' : 'w-full sm:w-72 shrink-0'}`}>
-                  <div className="relative mb-4 rounded-2xl bg-gray-200 border border-slate-100 overflow-hidden flex items-center justify-center aspect-square p-6 transition-all group-hover:bg-white group-hover:border-[#4F46E5]/20">
+                <div className={`${viewMode === 'grid' ? 'w-full flex flex-col h-full' : 'w-full lg:w-[260px] shrink-0'}`}>
+                  <div className="relative mb-4 rounded-sm bg-[#f1f1f1] border border-[#dddddd] overflow-hidden flex items-center justify-center aspect-square p-5 transition-all group-hover:bg-white">
                     <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center">
                       <img
                         src={getImagePath(p.images)}
                         alt={p.name}
-                        className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
-                        onError={(e) => { e.currentTarget.src = "/logo/fabicon.png"; }}
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        onError={(e) => {
+                          e.currentTarget.src = '/logo/fabicon.png';
+                        }}
                       />
                     </Link>
 
-                    {/* Hover Wishlist */}
                     <button
                       onClick={() => toggleWishlist(p)}
-                      className={`absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md border border-slate-100 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 ${isInWishlist(p.id) ? 'text-red-500' : 'text-slate-400 hover:text-red-500'}`}
+                      className={`absolute top-3 right-3 w-9 h-9 rounded-full bg-white border border-[#e5e5e5] flex items-center justify-center transition-all ${isInWishlist(p.id)
+                        ? 'text-[#ff3b30]'
+                        : 'text-[#888] opacity-0 group-hover:opacity-100 hover:text-[#ff3b30]'
+                        }`}
                     >
-                      <Heart size={16} className={isInWishlist(p.id) ? 'fill-red-500' : ''} />
+                      <Heart size={16} className={isInWishlist(p.id) ? 'fill-[#ff3b30]' : ''} />
                     </button>
                   </div>
 
                   {viewMode === 'grid' && (
                     <div className="flex flex-col flex-1">
-                      <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">{p.brand_name || 'Premium'}</span>
+                      <span className="text-[11px] uppercase tracking-wide text-[#8c8c8c] font-medium mb-1">
+                        {p.brand_name || 'Premium'}
+                      </span>
+
                       <Link to={`/product/${p.slug}`}>
-                        <h3 className="text-[13px] font-bold text-slate-800 leading-snug line-clamp-2 mb-3 group-hover:text-[#4F46E5] transition-colors">
+                        <h3 className="text-[15px] md:text-[16px] text-[#2b2b2b] font-medium leading-snug min-h-[44px] hover:text-[#ff3b30] transition-colors">
                           {p.name}
                         </h3>
                       </Link>
-                      <div className="mt-auto flex items-center justify-between">
-                        <span className="text-base font-black text-slate-900 tracking-tighter">${Number(p.price).toFixed(2)}</span>
+
+                      <div className="mt-3 flex items-center justify-between gap-3">
+                        <span className="text-[16px] font-bold text-[#ff3b30]">
+                          ${Number(p.price).toFixed(2)}
+                        </span>
+
                         <button
                           onClick={() => addToCart(p)}
-                          className="w-8 h-8 rounded-lg bg-slate-950 text-white flex items-center justify-center hover:bg-gray-200 transition-all active:scale-90"
+                          className="w-[38px] h-[38px] rounded-sm bg-[#111] text-white flex items-center justify-center hover:bg-[#ff3b30] transition-all"
                         >
                           <Plus size={18} />
                         </button>
@@ -273,24 +380,52 @@ export default function Shop() {
                 </div>
 
                 {viewMode === 'list' && (
-                  <div className="flex flex-col flex-1 min-w-0 py-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-black text-[#4F46E5] uppercase tracking-[3px]">{p.brand_name || 'Premium Hardware'}</span>
-                      <span className="text-[10px] font-bold text-emerald-600 uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100 flex items-center gap-1"><CheckCircle2 size={12} /> Item In Stock</span>
+                  <div className="flex flex-col flex-1 min-w-0 py-1">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                      <span className="text-[11px] font-semibold text-[#ff3b30] uppercase tracking-[2px]">
+                        {p.brand_name || 'Premium Hardware'}
+                      </span>
+                      <span className="text-[12px] font-medium text-emerald-600 uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100 flex items-center gap-1">
+                        <CheckCircle2 size={12} />
+                        In Stock
+                      </span>
                     </div>
-                    <Link to={`/product/${p.slug}`}>
-                      <h3 className="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-[#4F46E5] transition-colors mb-6 capitalize leading-tight">{p.name}</h3>
-                    </Link>
-                    <p className="text-slate-500 text-lg mb-10 line-clamp-2 leading-relaxed font-medium">Experience professional-grade printing with this genuine hardware solution. Optimized for speed, clarity, and enterprise performance standards.</p>
 
-                    <div className="mt-auto flex items-center justify-between pt-8 border-t border-slate-200">
-                      <div className="space-y-1">
-                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[2px]">Market Price</p>
-                        <p className="text-3xl font-black text-slate-950 tracking-tighter">${Number(p.price).toFixed(2)}</p>
+                    <Link to={`/product/${p.slug}`}>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#222] group-hover:text-[#ff3b30] transition-colors mb-4 leading-tight">
+                        {p.name}
+                      </h3>
+                    </Link>
+
+                    <p className="text-[#666] text-[15px] md:text-[16px] mb-7 line-clamp-2 leading-relaxed">
+                      Experience professional-grade printing with this genuine hardware solution. Optimized for speed, clarity, and everyday performance.
+                    </p>
+
+                    <div className="mt-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 pt-6 border-t border-[#ededed]">
+                      <div>
+                        <p className="text-[11px] font-semibold text-[#999] uppercase tracking-[2px] mb-1">
+                          Price
+                        </p>
+                        <p className="text-[30px] font-bold text-[#ff3b30] tracking-tight">
+                          ${Number(p.price).toFixed(2)}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-4">
-                        <button onClick={() => addToCart(p)} className="px-10 py-4 bg-slate-950 text-white font-bold text-sm uppercase tracking-widest hover:bg-gray-200 transition-all rounded-full active:scale-95">Add To Cart</button>
-                        <Link to={`/product/${p.slug}`} className="group flex items-center gap-2 px-8 py-4 text-slate-950 font-bold hover:text-[#4F46E5] transition-all">Details <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></Link>
+
+                      <div className="flex flex-wrap items-center gap-3">
+                        <button
+                          onClick={() => addToCart(p)}
+                          className="h-[44px] px-7 bg-[#111] text-white text-[13px] font-semibold uppercase rounded-sm hover:bg-[#ff3b30] transition-all"
+                        >
+                          Add To Cart
+                        </button>
+
+                        <Link
+                          to={`/product/${p.slug}`}
+                          className="h-[44px] px-6 border border-[#dcdcdc] text-[#333] text-[13px] font-semibold uppercase rounded-sm hover:border-[#ff3b30] hover:text-[#ff3b30] transition-all inline-flex items-center gap-2"
+                        >
+                          Details
+                          <ArrowRight size={16} />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -301,13 +436,26 @@ export default function Shop() {
         )}
       </div>
 
-      {/* --- Footer Spacing --- */}
-      <div className="py-20 border-t border-slate-100">
-        <div className="max-w-full px-6 flex justify-center">
-          <p className="text-[11px] font-black text-slate-300 uppercase tracking-[0.5em]">End of catalog</p>
+      <div className="py-12 border-t border-[#e5e5e5]">
+        <div className="w-full px-4 md:px-6 xl:px-10 flex justify-center">
+          <p className="text-[12px] font-semibold text-[#999] uppercase tracking-[0.25em]">
+            End of Catalog
+          </p>
         </div>
       </div>
 
+      <style>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #dddddd;
+          border-radius: 999px;
+        }
+      `}</style>
     </div>
   );
 }

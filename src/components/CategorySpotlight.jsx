@@ -76,18 +76,18 @@ export default function CategorySpotlight({
   const nextClass = `next-${categorySlug}`;
 
   return (
-    <section className="w-full py-20 md:py-28 font-['Heebo'] bg-white">
+    <section className="w-full py-20 md:py-28 font-['Rubik'] bg-white">
       <div className="max-w-full mx-auto px-6 lg:px-24">
 
         {/* REFINED SECTION HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-[#4f46e5]"></div>
-              <span className="text-[11px] font-black text-[#4f46e5] uppercase tracking-[0.4em]">Expert Selection</span>
+              <div className="h-px w-8 bg-[#FF2D37]"></div>
+              <span className="text-[11px] font-black text-[#FF2D37] uppercase tracking-[0.4em]">Expert Selection</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">
-              {title} <span className="italic font-light text-[#4f46e5]">Spotlight</span>
+              {title} <span className="italic font-light text-[#FF2D37]">Spotlight</span>
             </h2>
           </div>
 
@@ -120,7 +120,7 @@ export default function CategorySpotlight({
                 </h3>
                 <Link
                   to={`/shop?category=${categorySlug}`}
-                  className="inline-flex items-center gap-3 w-fit bg-white text-slate-900 px-8 py-4 rounded-full text-[12px] font-black uppercase tracking-widest hover:bg-[#4f46e5] hover:text-white transition-all duration-500"
+                  className="inline-flex items-center gap-3 w-fit bg-white text-slate-900 px-8 py-4 rounded-full text-[12px] font-black uppercase tracking-widest hover:bg-[#FF2D37] hover:text-white transition-all duration-500"
                 >
                   Shop Now
                   <ArrowRight size={16} />
@@ -178,7 +178,7 @@ export default function CategorySpotlight({
                     {/* Content */}
                     <div className="px-2 flex flex-col flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-[9px] font-black text-[#4f46e5] uppercase tracking-widest">
+                        <span className="text-[9px] font-black text-[#FF2D37] uppercase tracking-widest">
                           {p.brand_name || 'Genuine'}
                         </span>
                         <div className="flex items-center gap-1.5">
@@ -188,7 +188,7 @@ export default function CategorySpotlight({
                       </div>
 
                       <Link to={`/product/${p.slug}`}>
-                        <h3 className="text-[15px] font-bold text-slate-800 leading-tight line-clamp-2 min-h-[40px] mb-4 group-hover:text-[#4f46e5] transition-colors">
+                        <h3 className="text-[15px] font-bold text-slate-800 leading-tight line-clamp-2 min-h-[40px] mb-4 group-hover:text-[#FF2D37] transition-colors">
                           {p.name}
                         </h3>
                       </Link>
@@ -197,7 +197,7 @@ export default function CategorySpotlight({
                       <div className="space-y-1.5 mb-6">
                         {["Industrial grade", "Genuine supplies"].map((pt, i) => (
                           <div key={i} className="flex items-center gap-2">
-                            <CheckCircle2 size={12} className="text-[#4f46e5] opacity-40" />
+                            <CheckCircle2 size={12} className="text-[#FF2D37] opacity-40" />
                             <span className="text-[11px] font-bold text-slate-500/80">{pt}</span>
                           </div>
                         ))}
@@ -209,7 +209,7 @@ export default function CategorySpotlight({
                         </span>
                         <button
                           onClick={() => addToCart(p)}
-                          className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center hover:bg-[#4f46e5] transition-all"
+                          className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center hover:bg-[#FF2D37] transition-all"
                         >
                           <ShoppingBag size={16} />
                         </button>

@@ -14,7 +14,7 @@ export default function SpecialsPromotions() {
   };
 
   return (
-    <section className="font-['Heebo'] py-24 bg-slate-50">
+    <section className="font-['Rubik'] py-24 bg-slate-50">
       <div className="w-full mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>

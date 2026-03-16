@@ -80,7 +80,7 @@ export default function SearchOverlay() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 z-[1001] w-full max-w-[500px] bg-white shadow-2xl flex flex-col font-['Heebo'] border-l border-slate-200"
+            className="fixed top-0 right-0 bottom-0 z-[1001] w-full max-w-[500px] bg-white shadow-2xl flex flex-col font-['Rubik'] border-l border-slate-200"
           >
             {/* Header Area */}
             <div className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between bg-slate-50">

@@ -31,7 +31,7 @@ const exclusiveProducts = [
 
 export default function ExclusiveShowcase() {
   return (
-    <section className="w-full py-24 bg-white font-['Heebo'] overflow-hidden">
+    <section className="w-full py-24 bg-white font-['Rubik'] overflow-hidden">
       <div className="w-full px-4 lg:px-12">
         
         {/* ARCHITECTURAL HEADER */}

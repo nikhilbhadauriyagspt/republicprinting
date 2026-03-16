@@ -28,7 +28,7 @@ export default function BrandStripSlider() {
   if (loading || brands.length === 0) return null;
 
   return (
-    <section className="font-['Heebo'] py-16 md:py-20 bg-white">
+    <section className="font-['Rubik'] py-16 md:py-20 bg-white">
       <div className="w-full mx-auto px-4 lg:px-12">
 
         {/* Heading matched with other components */}

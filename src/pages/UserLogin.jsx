@@ -41,7 +41,7 @@ export default function UserLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#fafbfc] font-['Heebo'] px-6 py-20">
+    <div className="min-h-screen flex items-center justify-center bg-[#fafbfc] font-['Rubik'] px-6 py-20">
 
       <div className="max-w-[1000px] w-full grid grid-cols-1 lg:grid-cols-2 bg-white rounded-[3rem] overflow-hidden border border-slate-100">
 
@@ -54,7 +54,7 @@ export default function UserLogin() {
             </Link>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-3 text-[#4F46E5]">
+              <div className="flex items-center gap-3 text-[#FF2D37]">
                 <Sparkles size={20} />
                 <span className="text-[11px] font-black uppercase tracking-[3px]">Member Access</span>
               </div>
@@ -68,18 +68,18 @@ export default function UserLogin() {
           </div>
 
           <div className="relative z-10 flex items-center gap-3 text-slate-500 text-xs font-bold uppercase tracking-widest">
-            <ShieldCheck size={16} className="text-[#4F46E5]" />
+            <ShieldCheck size={16} className="text-[#FF2D37]" />
             <span>End-to-end encrypted session</span>
           </div>
 
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#4F46E5] opacity-10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF2D37] opacity-10 blur-[100px] rounded-full pointer-events-none" />
         </div>
 
         {/* Right Side: Form Stage */}
         <div className="p-10 md:p-16 flex flex-col justify-center bg-white">
           <div className="mb-12">
             <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-2 capitalize">Sign In</h1>
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#4F46E5]">Access your professional account</p>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#FF2D37]">Access your professional account</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-8">
@@ -97,14 +97,14 @@ export default function UserLogin() {
               <div className="space-y-2.5">
                 <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Email address</label>
                 <div className="relative group">
-                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5] transition-colors" size={18} />
+                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF2D37] transition-colors" size={18} />
                   <input
                     required
                     type="email"
                     placeholder="name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-16 pl-14 pr-6 bg-[#4F46E5] border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all"
+                    className="w-full h-16 pl-14 pr-6 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -112,22 +112,22 @@ export default function UserLogin() {
               <div className="space-y-2.5">
                 <div className="flex justify-between items-center px-1">
                   <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest">Password</label>
-                  <Link to="#" className="text-[10px] font-bold text-[#4F46E5] hover:underline uppercase tracking-widest">Forgot?</Link>
+                  <Link to="#" className="text-[10px] font-bold text-[#FF2D37] hover:underline uppercase tracking-widest">Forgot?</Link>
                 </div>
                 <div className="relative group">
-                  <Lock className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5] transition-colors" size={18} />
+                  <Lock className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF2D37] transition-colors" size={18} />
                   <input
                     required
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full h-16 pl-14 pr-14 bg-[#4F46E5] border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all"
+                    className="w-full h-16 pl-14 pr-14 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-sm"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#4F46E5] transition-colors"
+                    className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#FF2D37] transition-colors"
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
@@ -137,7 +137,7 @@ export default function UserLogin() {
 
             <button
               disabled={loading}
-              className="w-full h-16 bg-slate-950 text-white flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#4F46E5] transition-all active:scale-95 disabled:opacity-70 group"
+              className="w-full h-16 bg-slate-950 text-white flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#FF2D37] transition-all active:scale-95 disabled:opacity-70 group"
             >
               {loading ? <Loader2 className="animate-spin" size={24} /> : <>Sign In <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></>}
             </button>
@@ -146,7 +146,7 @@ export default function UserLogin() {
           <div className="mt-12 pt-8 border-t border-slate-100 text-center">
             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
               New to our platform?{' '}
-              <Link to="/signup" className="text-[#4F46E5] hover:underline ml-1 font-black">Create account</Link>
+              <Link to="/signup" className="text-[#FF2D37] hover:underline ml-1 font-black">Create account</Link>
             </p>
           </div>
         </div>

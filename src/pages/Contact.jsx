@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SEO from '@/components/SEO';
-import { Mail, MapPin, Send, ArrowRight, Loader2, CheckCircle2, Headphones, ChevronDown, Clock, Globe, ChevronRight } from 'lucide-react';
+import {
+  Mail,
+  MapPin,
+  Send,
+  ArrowRight,
+  Loader2,
+  CheckCircle2,
+  Headphones,
+  ChevronDown,
+  Clock,
+  Globe,
+  ChevronRight,
+  ChevronsRight,
+} from 'lucide-react';
 import API_BASE_URL from '../config';
 import { Link } from 'react-router-dom';
 
@@ -11,8 +24,9 @@ export default function Contact() {
     email: '',
     phone: '',
     subject: 'General Inquiry',
-    message: ''
+    message: '',
   });
+
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
 
@@ -25,12 +39,20 @@ export default function Contact() {
       const response = await fetch(`${API_BASE_URL}/contacts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
+
       const data = await response.json();
+
       if (data.status === 'success') {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: 'General Inquiry',
+          message: '',
+        });
       } else {
         setStatus('error');
       }
@@ -42,150 +64,242 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white min-h-screen font-['Heebo'] text-slate-900 pb-20">
+    <div className="min-h-screen bg-[#f5f5f5] font-['Rubik'] text-[#222] pb-14 md:pb-20">
       <SEO
         title="Contact Us | Printer Mania Support"
         description="Connect with the Printer Mania team for support, orders, or hardware inquiries."
       />
 
-      {/* --- PAGE HEADER --- */}
-      <div className="bg-slate-50 border-b border-slate-100 py-12 md:py-16 mb-16">
-        <div className="max-w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <nav className="flex items-center gap-2 text-[11px] font-bold text-[#4F46E5] uppercase tracking-[3px] mb-4">
-              <Link to="/" className="hover:text-slate-900 transition-colors">Home</Link>
-              <ChevronRight size={14} className="text-slate-300" />
-              <span className="text-slate-400">Contact</span>
+      {/* PAGE HEADER */}
+      <div className="bg-[#f5f5f5] border-b border-[#dddddd]">
+        <div className="w-full px-4 md:px-6 xl:px-10 py-8 md:py-10">
+          <div className="flex flex-col gap-5">
+            <nav className="flex items-center gap-2 text-[12px] font-semibold text-[#7a7a7a]">
+              <Link to="/" className="hover:text-[#ff3b30] transition-colors">
+                Home
+              </Link>
+              <ChevronRight size={14} className="text-[#bdbdbd]" />
+              <span className="text-[#ff3b30]">Contact</span>
             </nav>
-            <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight capitalize leading-none">
-              Get in touch
-            </h1>
-          </div>
-          <div className="flex items-center gap-3 px-5 py-2.5 bg-white text-[#4F46E5] rounded-full border border-slate-100">
-            <Headphones size={18} />
-            <span className="text-[11px] font-black uppercase tracking-widest">Support Active</span>
+
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border-b border-[#dddddd] pb-4">
+              <div className="flex items-center gap-3">
+                <ChevronsRight
+                  size={26}
+                  className="text-[#ff3b30] shrink-0"
+                  strokeWidth={3}
+                />
+                <h1 className="text-[26px] md:text-[30px] font-extrabold uppercase tracking-tight text-[#1f2937]">
+                  Get In Touch
+                </h1>
+              </div>
+
+              <div className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#666]">
+                <Headphones size={16} className="text-[#ff3b30]" />
+                <span>Support Active</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-full mx-auto px-6 lg:px-12 mt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-          {/* Contact Info Sidebar */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] group hover:bg-white hover:border-[#4F46E5]/20 transition-all duration-500">
-              <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-10 text-[#4F46E5] border border-slate-100 group-hover:bg-[#4F46E5] group-hover:text-white transition-all">
-                <Mail size={24} />
+      <div className="w-full px-4 md:px-6 xl:px-10 py-8 md:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+          {/* LEFT INFO */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="bg-white border border-[#e5e5e5] p-6 md:p-8">
+              <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-[#fff5f5] text-[#ff3b30] mb-5">
+                <Mail size={22} />
               </div>
-              <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2">Email support</h4>
-              <p className="text-xl font-bold text-slate-900 tracking-tight">info@printermania.shop</p>
-              <div className="mt-6 flex items-center gap-2 text-[11px] font-bold text-emerald-600 uppercase tracking-wider">
+
+              <h4 className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                Email Support
+              </h4>
+
+              <p className="text-[22px] md:text-[24px] font-bold text-[#222] leading-tight break-words">
+                info@dashprintershop.com
+              </p>
+
+              <div className="mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-emerald-600 uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
                 <Clock size={12} />
                 <span>Response in 24 hours</span>
               </div>
             </div>
 
-            <div className="p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] group hover:bg-white hover:border-[#4F46E5]/20 transition-all duration-500">
-              <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-10 text-[#4F46E5] border border-slate-100 group-hover:bg-[#4F46E5] group-hover:text-white transition-all">
-                <MapPin size={24} />
+            <div className="bg-white border border-[#e5e5e5] p-6 md:p-8">
+              <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-[#fff5f5] text-[#ff3b30] mb-5">
+                <MapPin size={22} />
               </div>
-              <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2">Store location</h4>
-              <p className="text-xl font-bold text-slate-900 tracking-tight leading-snug">111 S Princess St, <br /> Shepherdstown, WV 25443, United States</p>
-              <div className="mt-6 flex items-center gap-2 text-[11px] font-bold text-[#4F46E5] uppercase tracking-wider">
+
+              <h4 className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                Store Location
+              </h4>
+
+              <p className="text-[20px] md:text-[22px] font-bold text-[#222] leading-snug">
+                78 Holland Ave,
+                <br />
+                Morgantown, WV 26501,
+                <br />
+                USA
+              </p>
+
+              <div className="mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-[#ff3b30] uppercase bg-[#fff5f5] px-3 py-1 rounded-full border border-[#ffd9dc]">
                 <Globe size={12} />
                 <span>United States Delivery</span>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* RIGHT FORM */}
           <div className="lg:col-span-8">
-            <div className="bg-white border border-slate-100 p-8 md:p-16 rounded-[3rem]">
+            <div className="bg-white border border-[#e5e5e5] p-6 md:p-8">
               {status === 'success' ? (
-                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16">
-                  <div className="h-20 w-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <CheckCircle2 size={40} />
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-10 md:py-14"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 size={36} />
                   </div>
-                  <h2 className="text-3xl font-black text-slate-900 mb-4 capitalize">Message Sent Successfully</h2>
-                  <p className="text-slate-500 text-lg mb-10 max-w-md mx-auto">Thank you for reaching out. Our team will review your request and get back to you shortly.</p>
-                  <button onClick={() => setStatus(null)} className="px-10 py-4 bg-slate-950 text-white font-bold rounded-full hover:bg-[#4F46E5] transition-all">Send Another Message</button>
+
+                  <h2 className="text-[28px] md:text-[34px] font-bold text-[#222] mb-4">
+                    Message Sent Successfully
+                  </h2>
+
+                  <p className="text-[#666] text-[15px] md:text-[17px] mb-8 max-w-[560px] mx-auto leading-relaxed">
+                    Thank you for reaching out. Our team will review your request and get back to you shortly.
+                  </p>
+
+                  <button
+                    onClick={() => setStatus(null)}
+                    className="h-[44px] px-8 bg-[#111] text-white text-[13px] font-semibold uppercase rounded-sm hover:bg-[#ff3b30] transition-all"
+                  >
+                    Send Another Message
+                  </button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-3">
-                      <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-4">Full name</label>
+                <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                        Full Name
+                      </label>
                       <input
-                        required type="text" placeholder="John Doe"
+                        required
+                        type="text"
+                        placeholder="John Doe"
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[14px] font-bold text-slate-900 transition-all placeholder:text-slate-300"
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className="w-full h-[48px] px-4 bg-white border border-[#dcdcdc] rounded-sm outline-none text-[14px] font-medium text-[#222] focus:border-[#ff3b30] transition-all placeholder:text-[#999]"
                       />
                     </div>
-                    <div className="space-y-3">
-                      <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-4">Email address</label>
+
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                        Email Address
+                      </label>
                       <input
-                        required type="email" placeholder="email@example.com"
+                        required
+                        type="email"
+                        placeholder="email@example.com"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[14px] font-bold text-slate-900 transition-all placeholder:text-slate-300"
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="w-full h-[48px] px-4 bg-white border border-[#dcdcdc] rounded-sm outline-none text-[14px] font-medium text-[#222] focus:border-[#ff3b30] transition-all placeholder:text-[#999]"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-3">
-                      <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-4">Phone number</label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                        Phone Number
+                      </label>
                       <input
-                        type="tel" placeholder="Your phone (optional)"
+                        type="tel"
+                        placeholder="Your phone number"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[14px] font-bold text-slate-900 transition-all placeholder:text-slate-300"
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className="w-full h-[48px] px-4 bg-white border border-[#dcdcdc] rounded-sm outline-none text-[14px] font-medium text-[#222] focus:border-[#ff3b30] transition-all placeholder:text-[#999]"
                       />
                     </div>
-                    <div className="space-y-3">
-                      <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-4">Subject</label>
+
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                        Subject
+                      </label>
                       <div className="relative">
                         <select
                           value={formData.subject}
-                          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[14px] font-bold text-slate-900 transition-all appearance-none cursor-pointer"
+                          onChange={(e) =>
+                            setFormData({ ...formData, subject: e.target.value })
+                          }
+                          className="w-full h-[48px] px-4 pr-10 bg-white border border-[#dcdcdc] rounded-sm outline-none text-[14px] font-medium text-[#222] focus:border-[#ff3b30] transition-all appearance-none cursor-pointer"
                         >
                           <option>General Inquiry</option>
                           <option>Technical Support</option>
                           <option>Order Tracking</option>
                           <option>Bulk Orders</option>
                         </select>
-                        <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={18} />
+                        <ChevronDown
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-[#999] pointer-events-none"
+                          size={16}
+                        />
                       </div>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-4">Message</label>
+                  <div>
+                    <label className="block text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888] mb-3">
+                      Message
+                    </label>
                     <textarea
-                      required rows="5" placeholder="How can we help you?"
+                      required
+                      rows="6"
+                      placeholder="How can we help you?"
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full p-8 bg-slate-50 border border-slate-100 rounded-[2rem] focus:bg-white focus:border-[#4F46E5] outline-none text-[14px] font-bold text-slate-900 transition-all resize-none placeholder:text-slate-300"
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
+                      className="w-full p-4 bg-white border border-[#dcdcdc] rounded-sm outline-none text-[14px] font-medium text-[#222] focus:border-[#ff3b30] transition-all resize-none placeholder:text-[#999]"
                     ></textarea>
                   </div>
 
                   <button
                     disabled={loading}
-                    className="w-full h-16 bg-slate-950 text-white flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#4F46E5] transition-all disabled:opacity-50 group"
+                    className="w-full h-[48px] bg-[#111] text-white flex items-center justify-center gap-2 text-[13px] font-semibold uppercase rounded-sm hover:bg-[#ff3b30] transition-all disabled:opacity-50 group"
                   >
-                    {loading ? <Loader2 className="animate-spin" size={24} /> : <><Send size={18} /> Send message <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></>}
+                    {loading ? (
+                      <Loader2 className="animate-spin" size={18} />
+                    ) : (
+                      <>
+                        <Send size={16} />
+                        Send Message
+                        <ArrowRight
+                          size={16}
+                          className="group-hover:translate-x-1 transition-transform"
+                        />
+                      </>
+                    )}
                   </button>
-                  {status === 'error' && <p className="text-center text-red-500 text-xs font-bold uppercase tracking-widest">Error sending message. Please try again.</p>}
+
+                  {status === 'error' && (
+                    <p className="text-center text-red-500 text-[12px] font-semibold uppercase tracking-[0.16em]">
+                      Error sending message. Please try again.
+                    </p>
+                  )}
                 </form>
               )}
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   );
 }

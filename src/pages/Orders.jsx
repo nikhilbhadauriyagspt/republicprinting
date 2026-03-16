@@ -58,7 +58,7 @@ export default function Orders() {
 
   if (showSearchForm) {
     return (
-      <div className="min-h-screen bg-slate-50 pt-40 pb-20 font-['Heebo'] px-6">
+      <div className="min-h-screen bg-slate-50 pt-40 pb-20 font-['Rubik'] px-6">
         <div className="max-w-2xl mx-auto text-center">
           <div className="h-20 w-20 bg-white border border-slate-200 flex items-center justify-center mx-auto mb-8 shadow-sm">
             <Package size={32} className="text-[#1447E6]" strokeWidth={1.5} />
@@ -92,7 +92,7 @@ export default function Orders() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-20 font-['Heebo']">
+    <div className="min-h-screen bg-slate-50 pt-24 pb-20 font-['Rubik']">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
 
         {/* --- DASHBOARD HEADER --- */}
@@ -214,7 +214,7 @@ export default function Orders() {
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white z-[1001] shadow-2xl p-12 border border-slate-200 font-['Heebo']"
+                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white z-[1001] shadow-2xl p-12 border border-slate-200 font-['Rubik']"
               >
                 <div className="flex items-center justify-between mb-12">
                   <div>
@@ -265,7 +265,7 @@ export default function Orders() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Fleet carrier</p>
-                      <p className="text-[13px] font-bold text-slate-900">Printer Mania Logistics</p>
+                      <p className="text-[13px] font-bold text-slate-900">Dash Printer shop Logistics</p>
                     </div>
                     <div className="text-right">
                       <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Expected arrival</p>

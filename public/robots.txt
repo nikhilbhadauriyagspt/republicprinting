@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://printermania.shop/sitemap.xml
+Sitemap: https://dashprintershop.com/sitemap.xml

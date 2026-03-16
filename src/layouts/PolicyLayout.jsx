@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function PolicyLayout({ title, subtitle, lastUpdated, children }) {
   return (
-    <div className="bg-slate-50 min-h-screen font-['Heebo'] text-slate-900 pb-20">
+    <div className="bg-slate-50 min-h-screen font-['Rubik'] text-slate-900 pb-20">
 
       {/* --- Breadcrumbs Header --- */}
       <div className="bg-white border-b border-slate-200 py-10 md:py-14 mb-10">

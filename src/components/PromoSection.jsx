@@ -1,39 +1,94 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PromoSection() {
+export default function PrinterPromoBanners() {
+  const banners = [
+    {
+      id: 1,
+      image: "/banner/printer-promo-1.jpg",
+      titleTop: "PREMIUM",
+      titleMain: "Laser Printer Deals",
+      subtitle: "High-speed office printers with clean output",
+      button: "Shop Now",
+      align: "right",
+      theme: "dark",
+    },
+    {
+      id: 2,
+      image: "/banner/printer-promo-2.jpg",
+      titleTop: "MEGA SALE",
+      titleMain: "Up to 30% Off",
+      subtitle: "Wireless, ink tank & all-in-one printers",
+      button: "Explore Now",
+      align: "left",
+      theme: "light",
+    },
+    {
+      id: 3,
+      image: "/banner/printer-promo-3.jpg",
+      titleTop: "LIMITED OFFER",
+      titleMain: "Printer Sale Event",
+      subtitle: "Best picks for home and business printing",
+      button: "Buy Now",
+      align: "right",
+      theme: "dark",
+    },
+  ];
+
   return (
-    <section className="w-full relative min-h-[500px] flex items-center overflow-hidden font-['Heebo']">
+    <section className="w-full py-8 md:py-16 font-['Rubik']">
+      <div className="max-w-full mx-auto px-4 md:px-6 xl:px-26">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          {banners.map((banner) => {
+            const isRight = banner.align === "right";
+            const isLight = banner.theme === "light";
 
-      {/* Background Image with Dark Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/banner/promo-top-right.jpg"
-          alt="Premium Office Setup"
-          className="w-full h-full object-cover"
-        />
-      </div>
+            return (
+              <div
+                key={banner.id}
+                className="relative min-h-[230px] md:min-h-[260px] rounded-[6px] overflow-hidden group"
+              >
+                <img
+                  src={banner.image}
+                  alt={banner.titleMain}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-      <div className="max-w-full mx-auto px-6 lg:px-12 lg:py-20 relative z-10 w-full">
-        <div className="max-w-2xl text-white">
-          <div className="flex items-center gap-2 mb-6">
-            <span className="w-10 h-[2px] bg-[#4F46E5]"></span>
-            <span className="text-[12px] font-black text-[#4F46E5] uppercase tracking-[3px]">Enterprise solutions</span>
-          </div>
+                <div
+                  className={`relative z-10 h-full p-8 md:p-10 flex flex-col justify-center ${isRight ? "items-end text-right" : "items-start text-left"
+                    }`}
+                >
+                  <span
+                    className={`text-[13px] md:text-[14px] font-semibold uppercase tracking-[0.18em] mb-3 ${isLight ? "text-[#333]" : "text-white/90"
+                      }`}
+                  >
+                    {banner.titleTop}
+                  </span>
 
-          <h2 className="text-4xl md:text-5xl font-black mb-4 capitalize leading-[1.3]">
-            Advanced printing for modern businesses
-          </h2>
+                  <h3
+                    className={`text-[30px] leading-[1.05] font-extrabold uppercase max-w-[320px] ${isLight ? "text-[#111]" : "text-white"
+                      }`}
+                  >
+                    {banner.titleMain}
+                  </h3>
 
-          <p className="text-slate-300 text-lg md:text-xl font-medium mb-10 leading-relaxed">
-            Optimizing your document workflow with state-of-the-art multi-functional devices. Designed for speed, security, and exceptional clarity in every print.
-          </p>
+                  <p
+                    className={`mt-3 text-[14px] max-w-[320px] leading-relaxed ${isLight ? "text-[#444]" : "text-white/85"
+                      }`}
+                  >
+                    {banner.subtitle}
+                  </p>
 
-
-
-          <Link to="/contact" className="group inline-flex items-center gap-4 py-3 px-10 bg-[#4F46E5] text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-[#059669] transition-all shadow-2xl shadow-[#4F46E5]/20">
-            Get professional consultation <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-          </Link>
+                  <Link
+                    to="/shop"
+                    className="mt-6 inline-flex items-center justify-center h-[42px] px-6 bg-[#ff2d37] text-white text-[13px] font-bold uppercase tracking-wide rounded-sm hover:bg-black transition-colors"
+                  >
+                    {banner.button}
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

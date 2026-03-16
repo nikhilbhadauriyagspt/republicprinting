@@ -39,7 +39,7 @@ export default function UserSignup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#fafbfc] font-['Heebo'] px-6 py-20">
+    <div className="min-h-screen flex items-center justify-center bg-[#fafbfc] font-['Rubik'] px-6 py-20">
 
       <div className="max-w-[1000px] w-full grid grid-cols-1 lg:grid-cols-2 bg-white rounded-[3rem] overflow-hidden border border-slate-100">
 
@@ -52,7 +52,7 @@ export default function UserSignup() {
             </Link>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-3 text-[#4F46E5]">
+              <div className="flex items-center gap-3 text-[#FF2D37]">
                 <Sparkles size={20} />
                 <span className="text-[11px] font-black uppercase tracking-[3px]">New Member</span>
               </div>
@@ -67,7 +67,7 @@ export default function UserSignup() {
 
           <div className="relative z-10 mt-20">
             <div className="p-6 bg-white/5 border border-white/10 rounded-3xl flex items-center gap-4">
-              <div className="h-12 w-12 bg-[#4F46E5]/20 rounded-2xl flex items-center justify-center text-[#4F46E5] border border-[#4F46E5]/20">
+              <div className="h-12 w-12 bg-[#FF2D37]/20 rounded-2xl flex items-center justify-center text-[#FF2D37] border border-[#FF2D37]/20">
                 <CheckCircle2 size={20} strokeWidth={2} />
               </div>
               <div>
@@ -77,14 +77,14 @@ export default function UserSignup() {
             </div>
           </div>
 
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#4F46E5] opacity-10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF2D37] opacity-10 blur-[100px] rounded-full pointer-events-none" />
         </div>
 
         {/* Right Side: Form Stage */}
         <div className="p-10 md:p-16 flex flex-col justify-center bg-white">
           <div className="mb-12">
             <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-2 capitalize">Create Account</h1>
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#4F46E5]">Register your professional profile</p>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#FF2D37]">Register your professional profile</p>
           </div>
 
           <form onSubmit={handleSignup} className="space-y-6">
@@ -102,14 +102,14 @@ export default function UserSignup() {
               <div className="space-y-2.5">
                 <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Full name</label>
                 <div className="relative group">
-                  <User className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5] transition-colors" size={18} />
+                  <User className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF2D37] transition-colors" size={18} />
                   <input
                     required
                     type="text"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-16 pl-14 pr-4 bg-[#4F46E5] border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all"
+                    className="w-full h-16 pl-14 pr-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -117,14 +117,14 @@ export default function UserSignup() {
               <div className="space-y-2.5">
                 <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Mobile contact</label>
                 <div className="relative group">
-                  <Phone className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5] transition-colors" size={18} />
+                  <Phone className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF2D37] transition-colors" size={18} />
                   <input
                     required
                     type="tel"
                     placeholder="+1 (000) 000-0000"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full h-16 pl-14 pr-4 bg-[#4F46E5] border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all"
+                    className="w-full h-16 pl-14 pr-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -133,14 +133,14 @@ export default function UserSignup() {
             <div className="space-y-2.5">
               <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Email address</label>
               <div className="relative group">
-                <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5] transition-colors" size={18} />
+                <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF2D37] transition-colors" size={18} />
                 <input
                   required
                   type="email"
                   placeholder="name@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full h-16 pl-14 pr-4 bg-[#4F46E5] border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all"
+                  className="w-full h-16 pl-14 pr-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-sm"
                 />
               </div>
             </div>
@@ -148,19 +148,19 @@ export default function UserSignup() {
             <div className="space-y-2.5">
               <label className="text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Password</label>
               <div className="relative group">
-                <Lock className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#4F46E5] transition-colors" size={18} />
+                <Lock className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF2D37] transition-colors" size={18} />
                 <input
                   required
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className="w-full h-16 pl-14 pr-12 bg-[#4F46E5] border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all"
+                  className="w-full h-16 pl-14 pr-12 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-sm"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#4F46E5] transition-colors"
+                  className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#FF2D37] transition-colors"
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
@@ -170,7 +170,7 @@ export default function UserSignup() {
             <div className="pt-6">
               <button
                 disabled={loading}
-                className="w-full h-16 bg-slate-950 text-white flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#4F46E5] transition-all active:scale-95 disabled:opacity-70 group"
+                className="w-full h-16 bg-slate-950 text-white flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#FF2D37] transition-all active:scale-95 disabled:opacity-70 group"
               >
                 {loading ? <Loader2 className="animate-spin" size={24} /> : <>Create account <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></>}
               </button>
@@ -180,7 +180,7 @@ export default function UserSignup() {
           <div className="mt-12 pt-8 border-t border-slate-100 text-center">
             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
               Already verified?{' '}
-              <Link to="/login" className="text-[#4F46E5] hover:underline ml-1 font-black">Sign in</Link>
+              <Link to="/login" className="text-[#FF2D37] hover:underline ml-1 font-black">Sign in</Link>
             </p>
           </div>
         </div>

@@ -114,13 +114,13 @@ export default function Profile() {
   if (!user) return null;
 
   return (
-    <div className="bg-white min-h-screen font-['Heebo'] text-slate-900 pb-20">
+    <div className="bg-white min-h-screen font-['Rubik'] text-slate-900 pb-20">
 
       {/* --- PAGE HEADER --- */}
       <div className="bg-slate-50 border-b border-slate-100 py-12 md:py-16 mb-16">
-        <div className="max-w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div className="max-w-full mx-auto px-4 md:px-6 xl:px-26 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <nav className="flex items-center gap-2 text-[12px] font-bold text-[#4F46E5] uppercase tracking-[3px] mb-4">
+            <nav className="flex items-center gap-2 text-[12px] font-bold text-[#FF2D37] uppercase tracking-[3px] mb-4">
               <Link to="/" className="hover:text-slate-950 transition-colors">Home</Link>
               <ChevronRight size={14} className="text-slate-300" />
               <span className="text-slate-400">My Profile</span>
@@ -130,14 +130,14 @@ export default function Profile() {
             </h1>
           </div>
 
-          <div className="flex items-center gap-2 px-5 py-2.5 bg-white text-[#4F46E5] rounded-2xl border border-slate-100 shadow-sm">
+          <div className="flex items-center gap-2 px-5 py-2.5 bg-white text-[#FF2D37] rounded-2xl border border-slate-100 shadow-sm">
             <ShieldCheck size={18} />
             <span className="text-[11px] font-black uppercase tracking-widest">Authenticated Session</span>
           </div>
         </div>
       </div>
 
-      <div className="max-w-full mx-auto px-6 lg:px-12 mt-10">
+      <div className="max-w-full mx-auto px-4 md:px-6 xl:px-26 mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           {/* Sidebar Modular Panel */}
@@ -161,7 +161,7 @@ export default function Profile() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center gap-4 px-6 py-4 text-[15px] font-bold transition-all rounded-2xl border ${activeTab === tab.id
-                      ? 'bg-white text-[#4F46E5] border-[#4F46E5]/20 shadow-xl shadow-slate-100'
+                      ? 'bg-white text-[#FF2D37] border-[#FF2D37]/20 shadow-xl shadow-slate-100'
                       : 'text-slate-500 bg-transparent border-transparent hover:bg-white hover:text-slate-900'
                       }`}
                   >
@@ -189,7 +189,7 @@ export default function Profile() {
                   className="bg-white p-8 md:p-16 rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-100"
                 >
                   <div className="flex items-center gap-4 mb-16 pb-8 border-b border-slate-100">
-                    <div className="h-14 w-14 bg-slate-50 text-[#4F46E5] flex items-center justify-center rounded-2xl">
+                    <div className="h-14 w-14 bg-slate-50 text-[#FF2D37] flex items-center justify-center rounded-2xl">
                       <User size={28} strokeWidth={1.5} />
                     </div>
                     <div>
@@ -205,7 +205,7 @@ export default function Profile() {
                         <input
                           required value={profileForm.name}
                           onChange={(e) => setProfileForm({ ...profileForm, name: e.target.value })}
-                          className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
+                          className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
                         />
                       </div>
                       <div className="space-y-3">
@@ -213,7 +213,7 @@ export default function Profile() {
                         <input
                           value={profileForm.phone}
                           onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
-                          className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
+                          className="w-full h-16 px-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
                         />
                       </div>
                     </div>
@@ -222,12 +222,12 @@ export default function Profile() {
                       <textarea
                         rows="4" value={profileForm.address}
                         onChange={(e) => setProfileForm({ ...profileForm, address: e.target.value })}
-                        className="w-full p-8 bg-slate-50 border border-slate-100 rounded-[2.5rem] focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all resize-none shadow-inner"
+                        className="w-full p-8 bg-slate-50 border border-slate-100 rounded-[2.5rem] focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all resize-none shadow-inner"
                       ></textarea>
                     </div>
                     <button
                       disabled={isUpdating}
-                      className="h-16 px-12 bg-slate-950 text-white font-bold text-sm uppercase tracking-widest rounded-2xl hover:bg-[#4F46E5] transition-all disabled:opacity-50 shadow-xl shadow-slate-200"
+                      className="h-16 px-12 bg-slate-950 text-white font-bold text-sm uppercase tracking-widest rounded-2xl hover:bg-[#FF2D37] transition-all disabled:opacity-50 shadow-xl shadow-slate-200"
                     >
                       {isUpdating ? "Syncing..." : "Apply Changes"}
                     </button>
@@ -242,7 +242,7 @@ export default function Profile() {
                 >
                   <div className="bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-50 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="h-14 w-14 bg-slate-50 text-[#4F46E5] flex items-center justify-center rounded-2xl">
+                      <div className="h-14 w-14 bg-slate-50 text-[#FF2D37] flex items-center justify-center rounded-2xl">
                         <ShoppingBag size={28} strokeWidth={1.5} />
                       </div>
                       <div>
@@ -250,7 +250,7 @@ export default function Profile() {
                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">{orders.length} active records</p>
                       </div>
                     </div>
-                    <Link to="/shop" className="text-xs font-black text-[#4F46E5] uppercase tracking-widest hover:underline">New Acquisition</Link>
+                    <Link to="/shop" className="text-xs font-black text-[#FF2D37] uppercase tracking-widest hover:underline">New Acquisition</Link>
                   </div>
 
                   {orders.length === 0 ? (
@@ -261,7 +261,7 @@ export default function Profile() {
                   ) : (
                     <div className="grid grid-cols-1 gap-6">
                       {orders.map((order) => (
-                        <div key={order.id} className="bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden group hover:border-[#4F46E5]/20 transition-all hover:shadow-2xl hover:shadow-slate-100">
+                        <div key={order.id} className="bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden group hover:border-[#FF2D37]/20 transition-all hover:shadow-2xl hover:shadow-slate-100">
                           <div className="p-10 flex flex-col md:flex-row md:items-center justify-between gap-8 border-b border-slate-50">
                             <div>
                               <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-3">ID #PTP-{order.id}</p>
@@ -275,7 +275,7 @@ export default function Profile() {
                             </div>
                           </div>
                           <div className="p-6 bg-slate-50 border-t border-slate-50">
-                            <Link to="/orders" className="flex items-center justify-center gap-3 text-xs font-black text-slate-950 uppercase tracking-widest hover:text-[#4F46E5] transition-all group">
+                            <Link to="/orders" className="flex items-center justify-center gap-3 text-xs font-black text-slate-950 uppercase tracking-widest hover:text-[#FF2D37] transition-all group">
                               <span>Track Shipment</span> <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
                           </div>
@@ -308,9 +308,9 @@ export default function Profile() {
                         <input
                           type={showPass ? "text" : "password"} required
                           value={securityForm.password} onChange={(e) => setSecurityForm({ ...securityForm, password: e.target.value })}
-                          className="w-full h-16 pl-8 pr-16 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
+                          className="w-full h-16 pl-8 pr-16 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
                         />
-                        <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#4F46E5]">
+                        <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#FF2D37]">
                           {showPass ? <EyeOff size={22} /> : <Eye size={22} />}
                         </button>
                       </div>
@@ -320,12 +320,12 @@ export default function Profile() {
                       <input
                         type={showPass ? "text" : "password"} required
                         value={securityForm.confirmPassword} onChange={(e) => setSecurityForm({ ...securityForm, confirmPassword: e.target.value })}
-                        className="w-full h-16 pl-8 pr-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#4F46E5] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
+                        className="w-full h-16 pl-8 pr-8 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:border-[#FF2D37] outline-none text-[15px] font-bold text-slate-900 transition-all shadow-inner"
                       />
                     </div>
                     <button
                       disabled={isUpdating}
-                      className="h-16 px-12 bg-slate-950 text-white font-bold text-sm uppercase tracking-widest rounded-2xl hover:bg-[#4F46E5] transition-all disabled:opacity-50 shadow-xl shadow-slate-200"
+                      className="h-16 px-12 bg-slate-950 text-white font-bold text-sm uppercase tracking-widest rounded-2xl hover:bg-[#FF2D37] transition-all disabled:opacity-50 shadow-xl shadow-slate-200"
                     >
                       {isUpdating ? "Processing..." : "Update Credentials"}
                     </button>

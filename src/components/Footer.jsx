@@ -54,7 +54,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#fafbfc] font-['Heebo'] border-t border-slate-100">
+    <footer className="w-full bg-[#fafbfc] font-['Rubik'] border-t border-slate-100">
 
       {/* MAIN FOOTER ENGINE */}
       <div className="max-w-full mx-auto px-6 lg:px-24 py-20 md:py-28">
@@ -63,7 +63,7 @@ export default function Footer() {
           {/* BRAND & NEWSLETTER SIDE */}
           <div className="lg:col-span-4">
             <Link to="/" className="inline-block mb-8">
-              <img src="/logo/logo.png" alt="Printer Mania" className="h-9 object-contain" />
+              <img src="/logo/logo.png" alt="Dash Printer shop" className="h-9 object-contain" />
             </Link>
             <p className="text-slate-500 text-base font-medium leading-relaxed max-w-sm mb-10">
               Redefining professional printing with precision-engineered hardware and global logistics expertise.
@@ -79,12 +79,12 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Professional email"
-                    className="w-full h-12 bg-white border border-slate-200 rounded-xl px-5 text-slate-900 text-sm outline-none focus:border-[#4f46e5] transition-all pr-12"
+                    className="w-full h-12 bg-white border border-slate-200 rounded-xl px-5 text-slate-900 text-sm outline-none focus:border-[#FF2D37] transition-all pr-12"
                   />
                   <button
                     disabled={loading}
                     type="submit"
-                    className="absolute right-1.5 top-1.5 h-9 w-9 bg-[#222] text-white rounded-lg flex items-center justify-center hover:bg-[#4f46e5] transition-all disabled:opacity-50"
+                    className="absolute right-1.5 top-1.5 h-9 w-9 bg-[#222] text-white rounded-lg flex items-center justify-center hover:bg-[#FF2D37] transition-all disabled:opacity-50"
                   >
                     <Send size={16} />
                   </button>
@@ -107,12 +107,12 @@ export default function Footer() {
             <div>
               <h4 className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative">
                 Department
-                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#4f46e5] rounded-full"></span>
+                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#FF2D37] rounded-full"></span>
               </h4>
               <ul className="space-y-4">
                 {categories.map(cat => (
                   <li key={cat.id}>
-                    <Link to={`/shop?category=${cat.slug}`} className="text-slate-500 hover:text-[#4f46e5] font-bold text-[13px] transition-all">
+                    <Link to={`/shop?category=${cat.slug}`} className="text-slate-500 hover:text-[#FF2D37] font-bold text-[13px] transition-all">
                       <span className="capitalize">{cat.name}</span>
                     </Link>
                   </li>
@@ -124,12 +124,12 @@ export default function Footer() {
             <div>
               <h4 className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative">
                 Corporate
-                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#4f46e5] rounded-full"></span>
+                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#FF2D37] rounded-full"></span>
               </h4>
               <ul className="space-y-4">
                 {['About Us', 'Contact Us', 'FAQs', 'Track Order'].map(item => (
                   <li key={item}>
-                    <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="text-slate-500 hover:text-[#4f46e5] font-bold text-[13px] transition-all">
+                    <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="text-slate-500 hover:text-[#FF2D37] font-bold text-[13px] transition-all">
                       <span>{item}</span>
                     </Link>
                   </li>
@@ -141,7 +141,7 @@ export default function Footer() {
             <div>
               <h4 className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative">
                 Policy
-                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#4f46e5] rounded-full"></span>
+                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#FF2D37] rounded-full"></span>
               </h4>
               <ul className="space-y-4">
                 {[
@@ -152,7 +152,7 @@ export default function Footer() {
                   { name: 'Cookie Policy', path: '/cookie-policy' }
                 ].map(link => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-slate-500 hover:text-[#4f46e5] font-bold text-[13px] transition-all">
+                    <Link to={link.path} className="text-slate-500 hover:text-[#FF2D37] font-bold text-[13px] transition-all">
                       <span>{link.name}</span>
                     </Link>
                   </li>
@@ -164,16 +164,16 @@ export default function Footer() {
             <div>
               <h4 className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative">
                 Support
-                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#4f46e5] rounded-full"></span>
+                <span className="absolute -bottom-3 left-0 w-5 h-[2px] bg-[#FF2D37] rounded-full"></span>
               </h4>
               <div className="space-y-5">
                 <div className="flex flex-col">
                   <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Direct Line</span>
-                  <a href="mailto:info@printermania.shop" className="text-slate-900 font-bold text-[13px] hover:text-[#4f46e5] transition-colors break-all">info@printermania.shop</a>
+                  <a href="mailto:info@dashprintershop.com" className="text-slate-900 font-bold text-[13px] hover:text-[#FF2D37] transition-colors break-all">info@dashprintershop.com</a>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">USA HQ</span>
-                  <span className="text-slate-900 font-bold text-[13px] leading-tight">Shepherdstown, WV 25443</span>
+                  <span className="text-slate-900 font-bold text-[13px] leading-tight">Morgantown, WV 26501</span>
                 </div>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <p className="text-slate-400 text-[11px] font-bold tracking-wide">
-              &copy; {new Date().getFullYear()} <span className="text-slate-900">Printer Mania Inc.</span> All rights reserved.
+              &copy; {new Date().getFullYear()} <span className="text-slate-900">Dash Printer shop Inc.</span> All rights reserved.
             </p>
           </div>
 

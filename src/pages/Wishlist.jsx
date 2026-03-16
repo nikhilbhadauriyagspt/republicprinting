@@ -17,7 +17,7 @@ export default function Wishlist() {
 
   if (wishlistCount === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 bg-slate-50 font-['Heebo'] text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center px-6 bg-slate-50 font-['Rubik'] text-center">
         <div className="h-32 w-32 bg-white flex items-center justify-center mb-8 border border-slate-100 rounded-3xl">
           <Heart size={48} className="text-slate-300" strokeWidth={1.5} />
         </div>
@@ -31,7 +31,7 @@ export default function Wishlist() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fafbfc] font-['Heebo'] text-slate-900 pb-20">
+    <div className="min-h-screen bg-[#fafbfc] font-['Rubik'] text-slate-900 pb-20">
 
       {/* --- Breadcrumbs Header --- */}
       <div className="bg-white border-b border-slate-100 py-10 md:py-14 mb-10">
@@ -45,7 +45,7 @@ export default function Wishlist() {
               Your favorites
             </h1>
           </div>
-          <p className="text-[13px] font-bold text-slate-500 bg-[#4F46E5] px-5 py-2.5 border border-slate-100 rounded-full">
+          <p className="text-[13px] font-bold text-slate-500 bg-[#FF2D37] px-5 py-2.5 border border-slate-100 rounded-full">
             <span className="text-slate-900 font-black">{wishlistCount}</span> reserved units
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function Wishlist() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 className="group flex flex-col bg-white border border-slate-100 p-5 rounded-3xl hover:border-[#1447E6]/20 transition-all duration-300 relative"
               >
-                <div className="relative aspect-square flex items-center justify-center mb-5 overflow-hidden bg-[#4F46E5] rounded-2xl">
+                <div className="relative aspect-square flex items-center justify-center mb-5 overflow-hidden bg-[#FF2D37] rounded-2xl">
                   <button
                     onClick={() => toggleWishlist(p)}
                     className="absolute top-3 right-3 h-8 w-8 bg-white/80 backdrop-blur-md text-slate-300 border border-slate-100 rounded-full flex items-center justify-center z-10 hover:text-red-500 hover:border-red-100 transition-all"

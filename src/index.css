@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --font-sans: "Heebo", sans-serif;
-  --primary: #0f172a;
-  --primary-hover: #1e293b;
-  --secondary: #4F46E5;
+  --font-sans: "Rubik", sans-serif;
+  --primary: #FF2D37;
+  --primary-hover: #e62932;
+  --secondary: #FF2D37;
   --accent: #34d399;
   --background: #ffffff;
   --foreground: #0f172a;
@@ -14,19 +14,19 @@
 }
 
 @theme {
-  --font-sans: "Heebo", sans-serif;
-  --font-urbanist: "Heebo", sans-serif;
-  --font-snpro: "Heebo", sans-serif;
-  --color-primary: #0f172a;
-  --color-primary-hover: #1e293b;
-  --color-secondary: #4F46E5;
+  --font-sans: "Rubik", sans-serif;
+  --font-urbanist: "Rubik", sans-serif;
+  --font-snpro: "Rubik", sans-serif;
+  --color-primary: #FF2D37;
+  --color-primary-hover: #e62932;
+  --color-secondary: #FF2D37;
   --color-accent: #34d399;
-  --color-brand: #0f172a;
+  --color-brand: #FF2D37;
 }
 
 body {
   margin: 0;
-  font-family: "Heebo", sans-serif;
+  font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
@@ -43,7 +43,7 @@ body {
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-cyan-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-rose-600;
   }
 
   .shadow-premium {

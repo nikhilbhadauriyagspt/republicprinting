@@ -1,75 +1,74 @@
-import { Truck, Headset, ShieldCheck, Award } from "lucide-react";
-import { motion } from "framer-motion";
+import React from "react";
+import {
+  Truck,
+  BadgeDollarSign,
+  ShieldCheck,
+  Headphones,
+  CreditCard,
+} from "lucide-react";
 
 export default function ServiceHighlights() {
   const items = [
     {
-      title: "Express Delivery",
-      desc: "Worldwide shipping in 7 days",
+      id: 1,
       icon: Truck,
-      num: "01"
+      title: "FREE SHIPPING",
+      subtitle: "On all orders over $99.00",
     },
     {
-      title: "Premium Quality",
-      desc: "Top-tier products guaranteed",
-      icon: Award,
-      num: "02"
+      id: 2,
+      icon: BadgeDollarSign,
+      title: "MONEY GUARANTEE",
+      subtitle: "7 days money back guarantee",
     },
     {
-      title: "Expert Support",
-      desc: "24/7 technical assistance",
-      icon: Headset,
-      num: "03"
-    },
-    {
-      title: "Secure Payment",
-      desc: "Enterprise grade protection",
+      id: 3,
       icon: ShieldCheck,
-      num: "04"
+      title: "SAFE SHOPPING",
+      subtitle: "Safe shopping guarantee",
+    },
+    {
+      id: 4,
+      icon: Headphones,
+      title: "ONLINE SUPPORT",
+      subtitle: "We support 24/24h on day",
+    },
+    {
+      id: 5,
+      icon: CreditCard,
+      title: "PAYMENT METHOD",
+      subtitle: "Pay in many different ways",
     },
   ];
 
   return (
-    <section className="w-full bg-slate-900 font-['Heebo'] py-12 lg:py-0 border-y border-slate-800 overflow-hidden">
-      <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch">
-          {items.map((item, idx) => {
+    <section className="w-full bg-white mt-8 ">
+      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+          {items.map((item) => {
             const Icon = item.icon;
+
             return (
               <div
-                key={item.title}
-                className={`group relative flex items-center gap-6 p-10 lg:py-14 lg:px-12 transition-all duration-500 hover:bg-slate-800/50 cursor-default border-slate-800 ${
-                  idx !== items.length - 1 ? "lg:border-r" : ""
-                } ${idx < 2 ? "border-b md:border-b" : ""} ${idx === 1 ? "md:border-r-0 lg:border-r" : ""} ${idx >= 2 ? "border-t md:border-t-0" : ""}`}
+                key={item.id}
+                className="group flex items-center gap-5 px-6 py-3 border-r border-[#e5e5e5] last:border-r-0 hover:bg-white transition-all duration-300"
               >
-                {/* Background Number Watermark */}
-                <span className="absolute top-4 right-6 text-4xl font-black text-slate-800 select-none opacity-40 group-hover:text-[#1447E6] group-hover:opacity-100 transition-all duration-500">
-                  {item.num}
-                </span>
-
-                {/* ICON CONTAINER */}
-                <div className="relative">
-                  <div className="w-12 h-12 flex items-center justify-center bg-slate-800 group-hover:bg-[#1447E6] transition-colors duration-500">
-                    <Icon
-                      size={22}
-                      strokeWidth={1.5}
-                      className="text-slate-400 group-hover:text-white transition-colors"
-                    />
-                  </div>
+                <div className="w-[70px] h-[70px] rounded-full border-2 border-[#dddddd] flex items-center justify-center shrink-0 bg-white">
+                  <Icon
+                    size={30}
+                    strokeWidth={1.8}
+                    className="text-[#ff2d37] transition-colors duration-300"
+                  />
                 </div>
 
-                {/* Content */}
-                <div className="flex flex-col">
-                  <h3 className="text-[13px] font-black text-white uppercase tracking-[0.2em] mb-1">
+                <div className="min-w-0">
+                  <h3 className="text-[14px] font-semibold uppercase  text-[#2b2b2b] group-hover:text-[#ff2d37] transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-slate-500 font-medium tracking-wide">
-                    {item.desc}
+                  <p className="mt-1 text-[12px] text-[#8b8b8b] leading-snug">
+                    {item.subtitle}
                   </p>
                 </div>
-
-                {/* Hover Accent Line */}
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#1447E6] group-hover:w-full transition-all duration-500"></div>
               </div>
             );
           })}

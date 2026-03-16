@@ -11,7 +11,7 @@ export default function BrandShowcase({ brands = [] }) {
   if (brands.length === 0) return null;
 
   return (
-    <section className="w-full py-16 md:py-24 font-['Heebo'] bg-white border-t border-slate-100">
+    <section className="w-full py-16 md:py-24 font-['Rubik'] bg-white border-t border-slate-100">
       <div className="w-full px-4 lg:px-12">
 
         {/* Heading matched with other components */}
