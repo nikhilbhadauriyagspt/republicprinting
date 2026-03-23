@@ -10,6 +10,7 @@ import {
   Heart,
   Loader2,
   ChevronRight,
+  ShoppingCart,
   Plus,
   CheckCircle2,
   X
@@ -49,7 +50,7 @@ export default function Shop() {
     setLoading(true);
     const params = new URLSearchParams(searchParams);
     params.set('limit', '1000');
-    params.delete('brand'); 
+    params.delete('brand');
 
     fetch(`${API_BASE_URL}/products?${params.toString()}`)
       .then((res) => res.json())
@@ -90,48 +91,68 @@ export default function Shop() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-['Rubik'] text-[#37474F]">
-      <SEO title="Shop | Harry's Printer Store" />
+    <div className="min-h-screen bg-white font-['Rubik'] text-foreground">
+      <SEO title="Shop | Vital Print" />
 
-      {/* --- STANDARD HEADER --- */}
-      <div className="border-b border-[#E0E7E7] py-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <nav className="flex items-center gap-2 text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest mb-2">
-            <Link to="/" className="hover:text-[#7EA1A1]">Home</Link>
-            <ChevronRight size={12} />
-            <span className="text-[#7EA1A1]">Shop</span>
+      {/* --- PAGE HEADER --- */}
+      <div className="bg-background py-10 md:py-14 border-b border-border">
+        <div className="max-w-[1800px] mx-auto px-4 md:px-10">
+          <nav className="flex items-center gap-2 text-[11px] font-bold text-secondary uppercase tracking-[0.2em] mb-4">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <ChevronRight size={12} className="opacity-50" />
+            <span className="text-primary">Shop Catalog</span>
           </nav>
-          <h1 className="text-2xl font-bold text-[#37474F]">All Products</h1>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">Professional Hardware</h1>
+              <p className="text-secondary text-sm md:text-base font-medium mt-3 max-w-2xl">
+                Browse our complete collection of high-performance printers, genuine ink, and premium office supplies.
+              </p>
+            </div>
+            <div className="text-secondary text-sm font-bold uppercase tracking-widest bg-white px-5 py-2 border border-border rounded-full shadow-sm">
+              Showing {products.length} Results
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* --- SIMPLE FILTER BAR --- */}
-      <div className="bg-white border-b border-[#E0E7E7] sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-          
+      {/* --- FILTER & SEARCH BAR --- */}
+      <div className="bg-white border-b border-border sticky top-0 z-40 shadow-sm">
+        <div className="max-w-[1800px] mx-auto px-4 md:px-10 h-20 flex items-center justify-between gap-6">
+
           <div className="flex items-center gap-4 flex-1">
+            {/* Category Dropdown */}
             <div className="relative">
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'cat' ? null : 'cat')}
-                className="flex items-center gap-2 px-4 py-2 bg-[#F8FAFA] border border-[#E0E7E7] rounded-lg text-xs font-bold text-[#37474F] hover:border-[#7EA1A1] transition-all"
+                className={`flex items-center gap-3 px-6 py-2.5 rounded-full text-[13px] font-bold transition-all border ${category ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20' : 'bg-background border-border text-foreground hover:border-primary'
+                  }`}
               >
-                {category ? category.replace('-', ' ') : 'All Categories'}
-                <ChevronDown size={14} className={activeDropdown === 'cat' ? 'rotate-180' : ''} />
+                {category ? category.replace('-', ' ') : 'Select Category'}
+                <ChevronDown size={16} className={`transition-transform duration-300 ${activeDropdown === 'cat' ? 'rotate-180' : ''}`} />
               </button>
-              
+
               <AnimatePresence>
                 {activeDropdown === 'cat' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 5 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 mt-2 w-56 bg-white border border-[#E0E7E7] rounded-xl shadow-lg p-2 z-50"
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-3 w-64 bg-white border border-border rounded-2xl shadow-2xl p-2 z-50 overflow-hidden"
                   >
-                    <button onClick={() => updateFilter('category', '')} className="w-full text-left px-4 py-2 text-xs font-bold text-[#94A3B8] hover:bg-slate-50 rounded-lg">All Products</button>
+                    <button
+                      onClick={() => updateFilter('category', '')}
+                      className="w-full text-left px-5 py-3 text-[13px] font-bold text-secondary hover:bg-primary/5 hover:text-primary rounded-xl transition-all"
+                    >
+                      Show All Collections
+                    </button>
+                    <div className="h-px bg-background mx-2 my-1" />
                     {categories.map((c) => (
                       <button
                         key={c.id}
                         onClick={() => updateFilter('category', c.slug)}
-                        className={`w-full text-left px-4 py-2 text-xs font-medium rounded-lg ${category === c.slug ? 'bg-[#7EA1A1]/10 text-[#7EA1A1]' : 'hover:bg-slate-50 text-[#37474F]'}`}
+                        className={`w-full text-left px-5 py-3 text-[13px] font-bold rounded-xl transition-all capitalize ${category === c.slug ? 'bg-primary text-white' : 'text-foreground hover:bg-primary/5 hover:text-primary'
+                          }`}
                       >
                         {c.name}
                       </button>
@@ -141,30 +162,33 @@ export default function Shop() {
               </AnimatePresence>
             </div>
 
-            <div className="relative hidden md:block max-w-xs w-full">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]" size={14} />
+            {/* Search Input */}
+            <div className="relative hidden lg:block max-w-md w-full">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary" size={18} />
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Search products..."
                 value={search}
                 onChange={(e) => updateFilter('search', e.target.value)}
-                className="w-full h-9 pl-9 pr-4 bg-[#F8FAFA] border border-[#E0E7E7] rounded-lg text-xs focus:bg-white focus:border-[#7EA1A1] outline-none"
+                className="w-full h-11 pl-12 pr-6 bg-background border border-border rounded-full text-[14px] font-medium focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all"
               />
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* Sort Dropdown */}
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="hidden sm:block text-[11px] font-bold text-secondary uppercase tracking-widest">Sort By:</span>
             <div className="relative">
               <select
                 value={sort}
                 onChange={(e) => updateFilter('sort', e.target.value)}
-                className="appearance-none h-9 bg-white border border-[#E0E7E7] rounded-lg pl-3 pr-8 text-xs font-bold text-[#37474F] outline-none cursor-pointer"
+                className="appearance-none h-11 bg-background border border-border rounded-full pl-5 pr-10 text-[13px] font-bold text-foreground outline-none cursor-pointer hover:border-primary focus:border-primary transition-all"
               >
-                <option value="newest">Latest</option>
-                <option value="price_low">Price Low</option>
-                <option value="price_high">Price High</option>
+                <option value="newest">Latest Release</option>
+                <option value="price_low">Price: Low to High</option>
+                <option value="price_high">Price: High to Low</option>
               </select>
-              <ChevronDown size={12} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#94A3B8] pointer-events-none" />
+              <ChevronDown size={14} className="absolute right-4 top-1/2 -translate-y-1/2 text-secondary pointer-events-none" />
             </div>
           </div>
 
@@ -172,39 +196,80 @@ export default function Shop() {
       </div>
 
       {/* --- PRODUCTS GRID --- */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-10 py-12">
         {loading ? (
-          <div className="py-24 text-center">
-            <Loader2 className="animate-spin text-[#7EA1A1] mx-auto mb-4" size={32} />
-            <p className="text-xs font-bold text-[#94A3B8] uppercase">Loading Products...</p>
+          <div className="py-32 text-center">
+            <Loader2 className="animate-spin text-primary mx-auto mb-6" size={48} />
+            <p className="text-[13px] font-bold text-secondary uppercase tracking-[0.3em]">Updating Catalog...</p>
           </div>
         ) : products.length === 0 ? (
-          <div className="py-20 text-center">
-            <h2 className="text-xl font-bold text-[#37474F] mb-2">No results.</h2>
-            <button onClick={() => navigate('/shop')} className="text-xs font-bold text-[#7EA1A1] underline">Clear all filters</button>
+          <div className="py-32 text-center bg-background rounded-[32px] border border-dashed border-border">
+            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm border border-border">
+              <Search size={32} className="text-secondary" />
+            </div>
+            <h2 className="text-2xl font-bold text-foreground mb-3">No matching hardware found</h2>
+            <p className="text-secondary font-medium mb-8">Try adjusting your filters or search terms to find what you're looking for.</p>
+            <button
+              onClick={() => {
+                setSearchParams(new URLSearchParams());
+                navigate('/shop');
+              }}
+              className="px-8 py-3 bg-primary text-white rounded-full text-[13px] font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all"
+            >
+              Clear All Filters
+            </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 md:gap-10">
             {products.map((p) => (
-              <div key={p.id} className="group flex flex-col">
-                <div className="relative aspect-square rounded-xl bg-[#F8FAFA] border border-[#E0E7E7] overflow-hidden flex items-center justify-center p-4 transition-all hover:bg-white hover:border-[#7EA1A1]/30">
-                  <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center">
-                    <img src={getImagePath(p.images)} alt={p.name} className="max-w-full max-h-full object-contain mix-blend-multiply" />
+              <div key={p.id} className="group">
+                {/* Image Container */}
+                <div className="relative aspect-square bg-[#F5F5F5] rounded-[24px] flex items-center justify-center overflow-hidden mb-5 border border-transparent transition-all group-hover:border-border group-hover:shadow-xl group-hover:shadow-black/5">
+                  <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center p-8">
+                    <img
+                      src={getImagePath(p.images)}
+                      alt={p.name}
+                      className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110"
+                    />
                   </Link>
-                  <button onClick={() => toggleWishlist(p)} className="absolute top-2 right-2 p-1.5 rounded-full bg-white shadow-sm transition-all">
-                    <Heart size={14} className={isInWishlist(p.id) ? 'text-red-500 fill-red-500' : 'text-slate-300'} />
+
+                  {/* Floating Action Buttons */}
+                  <button
+                    onClick={() => toggleWishlist(p)}
+                    className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center transition-all translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 ${isInWishlist(p.id) ? 'text-primary' : 'text-secondary hover:text-primary'
+                      }`}
+                  >
+                    <Heart size={18} fill={isInWishlist(p.id) ? 'currentColor' : 'none'} />
                   </button>
                 </div>
 
-                <div className="mt-3 flex flex-col flex-1">
-                  <span className="text-[9px] font-bold text-[#94A3B8] uppercase tracking-widest mb-1">Hardware</span>
+                {/* Content */}
+                <div className="px-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] bg-primary/5 px-2.5 py-1 rounded-full">Hardware</span>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => <div key={i} className="w-1 h-1 rounded-full bg-amber-400" />)}
+                    </div>
+                  </div>
+
                   <Link to={`/product/${p.slug}`}>
-                    <h3 className="text-xs font-bold text-[#37474F] leading-tight hover:text-[#7EA1A1] line-clamp-2 h-8 mb-2">{p.name}</h3>
+                    <h3 className="text-[16px] font-bold text-foreground leading-tight hover:text-primary transition-colors line-clamp-2 min-h-[40px] mb-4">
+                      {p.name}
+                    </h3>
                   </Link>
-                  <div className="mt-auto flex items-center justify-between">
-                    <span className="text-sm font-bold text-[#37474F]">${Number(p.price).toLocaleString()}</span>
-                    <button onClick={() => addToCart(p)} className="text-[10px] font-bold text-[#7EA1A1] uppercase hover:underline">
-                      Add to Cart
+
+                  <div className="flex items-center justify-between gap-4 pt-2">
+                    <div className="flex flex-col">
+                      <span className="text-[18px] font-bold text-foreground">${Number(p.price).toLocaleString()}</span>
+                      <span className="text-[11px] font-bold text-secondary uppercase tracking-widest">In Stock</span>
+                    </div>
+
+                    <button
+                      onClick={() => addToCart(p)}
+                      className="flex-1 h-11 bg-foreground text-white rounded-full flex items-center justify-center gap-2 text-[12px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95"
+                    >
+                      <ShoppingCart size={16} />
+                      Add To Cart
                     </button>
                   </div>
                 </div>
@@ -216,3 +281,4 @@ export default function Shop() {
     </div>
   );
 }
+

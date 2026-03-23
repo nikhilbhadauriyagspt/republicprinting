@@ -41,18 +41,18 @@ export default function TrendingProducts() {
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-3 text-[#7EA1A1]">
+            <div className="flex items-center gap-3 text-primary">
               <TrendingUp size={20} />
               <span className="text-[11px] font-bold uppercase tracking-[0.2em]">High Demand</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#37474F] tracking-tight">
-              Trending <span className="text-[#7EA1A1]">Now.</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+              Trending <span className="text-primary">Now.</span>
             </h2>
           </div>
 
           <Link 
             to="/shop" 
-            className="group flex items-center gap-2 text-[13px] font-bold text-[#94A3B8] hover:text-[#7EA1A1] transition-all uppercase tracking-wider"
+            className="group flex items-center gap-2 text-[13px] font-bold text-[#94A3B8] hover:text-primary transition-all uppercase tracking-wider"
           >
             Explore All Products
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -71,7 +71,7 @@ export default function TrendingProducts() {
               className="group"
             >
               {/* IMAGE CONTAINER */}
-              <div className="relative aspect-square rounded-[32px] bg-[#F8FAFA] border border-[#E0E7E7]/50 flex items-center justify-center p-8 overflow-hidden transition-all duration-500 group-hover:bg-white group-hover:shadow-[0_20px_50px_rgba(126,161,161,0.12)] group-hover:border-[#7EA1A1]/20">
+              <div className="relative aspect-square rounded-[32px] bg-background border border-border/50 flex items-center justify-center p-8 overflow-hidden transition-all duration-500 group-hover:bg-white group-hover:shadow-[0_20px_50px_rgba(126,161,161,0.12)] group-hover:border-primary/20">
                 <img
                   src={p.image}
                   className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-md"
@@ -79,12 +79,12 @@ export default function TrendingProducts() {
                 />
                 
                 {/* FLOATING TAG */}
-                <span className="absolute top-5 left-5 text-[9px] font-black uppercase tracking-widest bg-white text-[#37474F] px-3.5 py-1.5 rounded-full shadow-sm border border-[#E0E7E7]/50 group-hover:border-[#7EA1A1]/30 transition-colors">
+                <span className="absolute top-5 left-5 text-[9px] font-black uppercase tracking-widest bg-white text-foreground px-3.5 py-1.5 rounded-full shadow-sm border border-border/50 group-hover:border-primary/30 transition-colors">
                   {p.tag}
                 </span>
 
                 {/* QUICK ADD BUTTON */}
-                <button className="absolute bottom-5 right-5 w-11 h-11 rounded-full bg-white text-[#37474F] flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-[#7EA1A1] hover:text-white transition-all duration-300">
+                <button className="absolute bottom-5 right-5 w-11 h-11 rounded-full bg-white text-foreground flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary hover:text-white transition-all duration-300">
                   <ShoppingCart size={18} strokeWidth={2} />
                 </button>
               </div>
@@ -98,13 +98,13 @@ export default function TrendingProducts() {
                   <span className="text-[12px] font-bold text-[#94A3B8]">{p.rating}</span>
                 </div>
                 
-                <h4 className="text-[16px] font-bold text-[#37474F] group-hover:text-[#7EA1A1] transition-colors line-clamp-1 mb-2">
+                <h4 className="text-[16px] font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1 mb-2">
                   {p.name}
                 </h4>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-[18px] font-black text-[#37474F]">{p.price}</span>
-                  <span className="text-[11px] font-bold text-[#7EA1A1] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[18px] font-black text-foreground">{p.price}</span>
+                  <span className="text-[11px] font-bold text-primary uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
                     In Stock
                   </span>
                 </div>
@@ -116,3 +116,4 @@ export default function TrendingProducts() {
     </section>
   );
 }
+

@@ -16,11 +16,11 @@ export default function PromoSection() {
 
           <div className="relative z-10 w-full px-8 md:px-16">
             <div className="max-w-xl">
-              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#7EA1A1] mb-3 block">
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary mb-3 block">
                 Exclusive Deals
               </span>
 
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-[#37474F] mb-5">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground mb-5">
                 Precision Printing <br />
                 For Modern Workspaces.
               </h2>
@@ -32,7 +32,7 @@ export default function PromoSection() {
               <div className="flex items-center gap-4">
                 <Link
                   to="/shop"
-                  className="px-8 py-3.5 bg-[#37474F] text-white text-[13px] font-bold uppercase tracking-widest hover:bg-[#7EA1A1] transition-all flex items-center gap-2"
+                  className="px-8 py-3.5 bg-foreground text-white text-[13px] font-bold uppercase tracking-widest hover:bg-primary transition-all flex items-center gap-2"
                 >
                   Shop Now
                   <ArrowRight size={16} />
@@ -40,7 +40,7 @@ export default function PromoSection() {
 
                 <Link
                   to="/contact"
-                  className="px-8 py-3.5 border border-[#37474F] text-[#37474F] text-[13px] font-bold uppercase tracking-widest hover:bg-[#37474F] hover:text-white transition-all"
+                  className="px-8 py-3.5 border border-foreground text-foreground text-[13px] font-bold uppercase tracking-widest hover:bg-foreground hover:text-white transition-all"
                 >
                   Get Support
                 </Link>
@@ -52,3 +52,4 @@ export default function PromoSection() {
     </section>
   );
 }
+

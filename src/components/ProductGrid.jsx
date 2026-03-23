@@ -23,7 +23,7 @@ export default function ProductGrid({ products = [] }) {
         return `/${imgs[0]}`;
       }
     } catch (e) { }
-    return "https://via.placeholder.com/400x400?text=Harry's Printer Store";
+    return "https://via.placeholder.com/400x400?text=Vital Print";
   };
 
   return (

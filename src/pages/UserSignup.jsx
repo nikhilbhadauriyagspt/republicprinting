@@ -56,46 +56,46 @@ export default function UserSignup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8FAFA] font-['Rubik'] px-6 py-20">
-      <SEO title="Create Account | Identity Management" />
+    <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] font-['Rubik'] px-4 md:px-6 py-12 md:py-20">
+      <SEO title="Create Your Account | Vital Print" />
 
-      <div className="max-w-[1000px] w-full grid grid-cols-1 lg:grid-cols-2 bg-white rounded-[3rem] overflow-hidden border border-[#E0E7E7] shadow-2xl shadow-blue-900/5">
+      <div className="max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-2 bg-white rounded-[32px] overflow-hidden border border-border shadow-2xl shadow-black/5">
 
         {/* --- LEFT: BRAND STAGE --- */}
-        <div className="hidden lg:flex flex-col justify-between p-16 bg-[#37474F] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#7EA1A1] opacity-10 blur-[100px] rounded-full pointer-events-none" />
-          
+        <div className="hidden lg:flex flex-col justify-between p-12 md:p-16 bg-foreground relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-primary opacity-10 blur-[120px] rounded-full pointer-events-none" />
+
           <div className="relative z-10">
-            <Link to="/" className="inline-flex items-center gap-3 text-white/50 hover:text-white transition-all mb-20 group">
+            <Link to="/" className="inline-flex items-center gap-2.5 text-white/60 hover:text-white transition-all mb-16 group">
               <ChevronLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-              <span className="text-[11px] font-bold uppercase tracking-widest">Return to catalog</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest">Back to Homepage</span>
             </Link>
 
             <div className="space-y-8">
-              <div className="flex items-center gap-3 text-[#7EA1A1]">
-                <Sparkles size={20} />
-                <span className="text-[11px] font-bold uppercase tracking-[0.4em]">Member Registration</span>
+              <div className="flex items-center gap-3 text-primary">
+                <Sparkles size={20} fill="currentColor" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.3em]">Join Our Community</span>
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
-                Establish <br /> your <span className="text-[#7EA1A1] italic font-light text-3xl">Profile.</span>
+                Unlock exclusive <br /> <span className="text-primary">benefits.</span>
               </h2>
-              <p className="text-white/50 text-lg font-medium leading-relaxed max-w-xs">
-                Create a centralized identity to manage your hardware deployments and technical preferences.
+              <p className="text-white/60 text-lg font-medium leading-relaxed max-w-sm">
+                Register today to track your orders, manage hardware subscriptions, and access premium technical support.
               </p>
             </div>
           </div>
 
-          <div className="relative z-10 flex items-center gap-3 text-white/30 text-[10px] font-bold uppercase tracking-[0.2em]">
-            <ShieldCheck size={16} className="text-[#7EA1A1]" />
-            <span>Secure Protocol Handshake</span>
+          <div className="relative z-10 flex items-center gap-3 text-white/40 text-[11px] font-bold uppercase tracking-[0.2em]">
+            <ShieldCheck size={18} className="text-primary" />
+            <span>Secure & Private Connection</span>
           </div>
         </div>
 
         {/* --- RIGHT: FORM STAGE --- */}
-        <div className="p-10 md:p-16 flex flex-col justify-center bg-white">
+        <div className="p-8 md:p-16 flex flex-col justify-center bg-white">
           <div className="mb-10">
-            <h1 className="text-3xl font-bold text-[#37474F] tracking-tight mb-2">Register.</h1>
-            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#7EA1A1]">System Enrollment</p>
+            <h1 className="text-3xl font-bold text-foreground tracking-tight mb-2">Create Account</h1>
+            <p className="text-[13px] font-semibold text-secondary">Join Vital Print for a better experience</p>
           </div>
 
           <form onSubmit={handleSignup} className="space-y-6">
@@ -103,7 +103,7 @@ export default function UserSignup() {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-red-50 text-red-600 text-[11px] font-bold uppercase tracking-widest rounded-xl border border-red-100 text-center"
+                className="p-4 bg-primary/5 text-primary text-[12px] font-bold uppercase tracking-widest rounded-xl border border-primary/10 text-center"
               >
                 {error}
               </motion.div>
@@ -111,80 +111,90 @@ export default function UserSignup() {
 
             <div className="space-y-5">
               <div className="space-y-2">
-                <label className="text-[11px] font-black text-[#94A3B8] uppercase tracking-[0.2em] ml-1">Full Identifier</label>
+                <label className="text-[11px] font-bold text-secondary uppercase tracking-widest ml-1">Full Name</label>
                 <div className="relative group">
-                  <User className="absolute left-5 top-1/2 -translate-y-1/2 text-[#E0E7E7] group-focus-within:text-[#7EA1A1] transition-colors" size={18} />
+                  <User className="absolute left-5 top-1/2 -translate-y-1/2 text-secondary group-focus-within:text-primary transition-colors" size={18} />
                   <input
                     required
                     type="text"
-                    placeholder="e.g. Alex Sterling"
+                    placeholder="e.g. John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-14 pl-14 pr-6 bg-[#F8FAFA] border border-[#E0E7E7] rounded-2xl focus:bg-white focus:border-[#7EA1A1] outline-none text-[15px] font-medium text-[#37474F] transition-all"
+                    className="w-full h-14 pl-14 pr-6 bg-[#F5F5F5] border border-transparent focus:border-primary/20 focus:bg-white focus:ring-4 focus:ring-primary/5 rounded-2xl outline-none text-[15px] font-medium text-foreground transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-[11px] font-black text-[#94A3B8] uppercase tracking-[0.2em] ml-1">Connectivity ID</label>
+                <label className="text-[11px] font-bold text-secondary uppercase tracking-widest ml-1">Email Address</label>
                 <div className="relative group">
-                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-[#E0E7E7] group-focus-within:text-[#7EA1A1] transition-colors" size={18} />
+                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-secondary group-focus-within:text-primary transition-colors" size={18} />
                   <input
                     required
                     type="email"
-                    placeholder="name@company.com"
+                    placeholder="name@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-14 pl-14 pr-6 bg-[#F8FAFA] border border-[#E0E7E7] rounded-2xl focus:bg-white focus:border-[#7EA1A1] outline-none text-[15px] font-medium text-[#37474F] transition-all"
+                    className="w-full h-14 pl-14 pr-6 bg-[#F5F5F5] border border-transparent focus:border-primary/20 focus:bg-white focus:ring-4 focus:ring-primary/5 rounded-2xl outline-none text-[15px] font-medium text-foreground transition-all"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="text-[11px] font-black text-[#94A3B8] uppercase tracking-[0.2em] ml-1">Security Key</label>
+                  <label className="text-[11px] font-bold text-secondary uppercase tracking-widest ml-1">Password</label>
                   <div className="relative group">
-                    <Lock className="absolute left-5 top-1/2 -translate-y-1/2 text-[#E0E7E7] group-focus-within:text-[#7EA1A1] transition-colors" size={18} />
+                    <Lock className="absolute left-5 top-1/2 -translate-y-1/2 text-secondary group-focus-within:text-primary transition-colors" size={18} />
                     <input
                       required
                       type={showPassword ? "text" : "password"}
                       placeholder="••••••••"
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                      className="w-full h-14 pl-14 pr-6 bg-[#F8FAFA] border border-[#E0E7E7] rounded-2xl focus:bg-white focus:border-[#7EA1A1] outline-none text-[15px] font-medium text-[#37474F] transition-all"
+                      className="w-full h-14 pl-14 pr-6 bg-[#F5F5F5] border border-transparent focus:border-primary/20 focus:bg-white focus:ring-4 focus:ring-primary/5 rounded-2xl outline-none text-[15px] font-medium text-foreground transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[11px] font-black text-[#94A3B8] uppercase tracking-[0.2em] ml-1">Verify Key</label>
+                  <label className="text-[11px] font-bold text-secondary uppercase tracking-widest ml-1">Confirm Password</label>
                   <div className="relative group">
-                    <ShieldCheck className="absolute left-5 top-1/2 -translate-y-1/2 text-[#E0E7E7] group-focus-within:text-[#7EA1A1] transition-colors" size={18} />
+                    <ShieldCheck className="absolute left-5 top-1/2 -translate-y-1/2 text-secondary group-focus-within:text-primary transition-colors" size={18} />
                     <input
                       required
                       type={showPassword ? "text" : "password"}
                       placeholder="••••••••"
                       value={formData.confirmPassword}
                       onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                      className="w-full h-14 pl-14 pr-6 bg-[#F8FAFA] border border-[#E0E7E7] rounded-2xl focus:bg-white focus:border-[#7EA1A1] outline-none text-[15px] font-medium text-[#37474F] transition-all"
+                      className="w-full h-14 pl-14 pr-6 bg-[#F5F5F5] border border-transparent focus:border-primary/20 focus:bg-white focus:ring-4 focus:ring-primary/5 rounded-2xl outline-none text-[15px] font-medium text-foreground transition-all"
                     />
                   </div>
                 </div>
               </div>
             </div>
 
+            <div className="flex items-center gap-2 px-1">
+              <input
+                type="checkbox"
+                id="showPass"
+                onChange={(e) => setShowPassword(e.target.checked)}
+                className="w-4 h-4 accent-primary"
+              />
+              <label htmlFor="showPass" className="text-[12px] font-bold text-secondary uppercase tracking-wider cursor-pointer">Show Passwords</label>
+            </div>
+
             <button
               disabled={loading}
-              className="w-full h-16 bg-[#37474F] text-white flex items-center justify-center gap-4 text-[13px] font-bold uppercase tracking-widest rounded-2xl hover:bg-[#7EA1A1] transition-all active:scale-[0.98] disabled:opacity-70 group shadow-xl shadow-[#37474F]/10 mt-4"
+              className="w-full h-16 bg-foreground text-white flex items-center justify-center gap-4 text-[14px] font-bold uppercase tracking-[0.15em] rounded-full hover:bg-primary transition-all active:scale-[0.98] disabled:opacity-70 group shadow-xl shadow-foreground/10 mt-4"
             >
-              {loading ? <Loader2 className="animate-spin" size={24} /> : <>Initialize Account <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></>}
+              {loading ? <Loader2 className="animate-spin" size={24} /> : <>Create Account <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></>}
             </button>
           </form>
 
-          <div className="mt-10 pt-8 border-t border-[#F1F5F5] text-center">
-            <p className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-widest">
-              Already registered?{' '}
-              <Link to="/login" className="text-[#7EA1A1] hover:underline ml-2 font-black">Authentication Stream</Link>
+          <div className="mt-10 pt-8 border-t border-border text-center">
+            <p className="text-[13px] font-semibold text-secondary">
+              Already have an account?{' '}
+              <Link to="/login" className="text-primary hover:text-primary-hover ml-1 font-bold transition-colors underline decoration-2 underline-offset-4">Sign In Here</Link>
             </p>
           </div>
         </div>
@@ -192,3 +202,4 @@ export default function UserSignup() {
     </div>
   );
 }
+

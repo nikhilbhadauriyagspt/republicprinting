@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Heart, ShoppingCart, Eye, ArrowRight, LayoutGrid } from "lucide-react";
+import { Heart, ShoppingCart, ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -36,7 +36,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
   const filteredProducts = useMemo(() => {
     const currentTab = tabs.find(t => t.name === activeTab);
     if (!currentTab || currentTab.slug === "all") {
-      return products.slice(0, 18);
+      return products.slice(0, 12);
     }
 
     const filtered = products.filter(p => {
@@ -45,48 +45,38 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
       return categoryMatch || nameMatch;
     });
 
-    return filtered.length > 0 ? filtered.slice(0, 18) : products.slice(0, 18);
+    return filtered.length > 0 ? filtered.slice(0, 12) : products.slice(0, 12);
   }, [products, activeTab]);
 
-  const getSalePercent = (product) => {
-    const price = parseFloat(product.price || 0);
-    const oldPrice = parseFloat(product.compare_price || product.old_price || 0);
-    if (oldPrice > price && oldPrice > 0) {
-      return `-${Math.round(((oldPrice - price) / oldPrice) * 100)}%`;
-    }
-    return null;
-  };
-
   return (
-    <section className="w-full bg-white py-16 md:py-24 font-['Rubik']">
-      <div className="max-w-[1800px] mx-auto px-6">
+    <section className="w-full bg-white py-12 md:py-16 font-['Rubik']">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-10">
         
-        {/* CENTERED HEADER */}
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
-          <div className="flex items-center gap-3 mb-4 text-[#7EA1A1]">
-            <LayoutGrid size={18} />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.3em]">Our Collection</span>
-          </div>
-          <h2 className="text-2xl md:text-4xl font-semibold text-[#37474F] tracking-tight">
+        {/* HEADER SECTION */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
             Featured Products
           </h2>
-        </div>
 
-        {/* MODERN TABS */}
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-12">
-          {tabs.map((tab) => (
-            <button
-              key={tab.name}
-              onClick={() => setActiveTab(tab.name)}
-              className={`px-6 py-2 text-[13px] md:text-[14px] font-medium rounded-full transition-all duration-300 border ${
-                activeTab === tab.name
-                  ? "bg-[#7EA1A1] text-white border-[#7EA1A1]"
-                  : "bg-white text-[#64748B] border-[#E0E7E7] hover:border-[#7EA1A1] hover:text-[#7EA1A1]"
-              }`}
-            >
-              {tab.name}
-            </button>
-          ))}
+          {/* SIMPLIFIED TABS */}
+          <div className="flex items-center gap-6 overflow-x-auto no-scrollbar max-w-full border-b border-border pb-1">
+            {tabs.map((tab) => (
+              <button
+                key={tab.name}
+                onClick={() => setActiveTab(tab.name)}
+                className={`text-[14px] font-bold whitespace-nowrap transition-all duration-300 relative pb-3 ${
+                  activeTab === tab.name
+                    ? "text-primary"
+                    : "text-secondary hover:text-foreground"
+                }`}
+              >
+                {tab.name}
+                {activeTab === tab.name && (
+                  <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 w-full h-[2px] bg-primary" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* PRODUCTS GRID */}
@@ -94,102 +84,80 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
           <AnimatePresence mode="wait">
             {loading
               ? [...Array(12)].map((_, i) => (
-                  <div key={i} className="animate-pulse bg-[#F8FAFA] rounded-md aspect-[1/1.4]" />
+                  <div key={i} className="animate-pulse bg-slate-50 rounded-[16px] aspect-[1/1.2]" />
                 ))
-              : filteredProducts.map((p) => {
-                  const salePercent = getSalePercent(p);
-                  return (
+              : filteredProducts.map((p) => (
                     <motion.div
                       layout
                       key={p.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.98 }}
-                      transition={{ duration: 0.4 }}
-                      className="group flex flex-col h-full"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="group"
                     >
-                      {/* IMAGE BOX - INCREASED HEIGHT & THEME TINTED BG */}
-                      <div className="relative aspect-[1/1.25] bg-[#F1F5F5] rounded-md overflow-hidden border border-[#E0E7E7]/50 flex items-center justify-center p-4 transition-all duration-500 group-hover:bg-white group-hover:border-[#7EA1A1]/40">
-                        <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center">
+                      {/* IMAGE CONTAINER */}
+                      <div className="relative aspect-square bg-[#F5F5F5] rounded-[16px] flex items-center justify-center overflow-hidden mb-4 border border-transparent transition-all group-hover:border-border group-hover:shadow-sm">
+                        <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center p-6">
                           <img
                             src={getImagePath(p.images)}
                             alt={p.name}
-                            className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-110"
+                            className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
                             onError={(e) => { e.currentTarget.src = "/logo/fabicon.png"; }}
                           />
                         </Link>
 
-                        {salePercent && (
-                          <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-[#E67E22] text-white text-[10px] font-bold uppercase z-10">
-                            {salePercent}
-                          </div>
-                        )}
-
-                        {/* SIMPLE ACTIONS OVERLAY */}
-                        <div className="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
-                          <button
-                            onClick={() => addToCart(p)}
-                            className="w-10 h-10 rounded-full bg-[#37474F] text-white flex items-center justify-center hover:bg-[#7EA1A1] transition-all"
-                          >
-                            <ShoppingCart size={16} />
-                          </button>
-                          <Link
-                            to={`/product/${p.slug}`}
-                            className="w-10 h-10 rounded-full bg-white border border-[#E0E7E7] text-[#37474F] flex items-center justify-center hover:text-[#7EA1A1] transition-all"
-                          >
-                            <Eye size={16} />
-                          </Link>
-                        </div>
+                        {/* WISHLIST BUTTON */}
+                        <button 
+                          onClick={() => toggleWishlist(p)}
+                          className={`absolute top-3 right-3 w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-all ${isInWishlist(p.id) ? "text-primary" : "text-secondary hover:text-primary"}`}
+                        >
+                          <Heart size={16} fill={isInWishlist(p.id) ? "currentColor" : "none"} />
+                        </button>
                       </div>
 
                       {/* CONTENT */}
-                      <div className="pt-4 flex flex-col flex-1">
-                        <div className="flex items-center justify-between mb-1.5">
-                          <span className="text-[10px] font-semibold uppercase tracking-wider text-[#94A3B8]">
-                            Hardware
-                          </span>
-                          <button 
-                            onClick={() => toggleWishlist(p)}
-                            className={`transition-colors ${isInWishlist(p.id) ? "text-[#E74C3C]" : "text-[#94A3B8] hover:text-[#E74C3C]"}`}
-                          >
-                            <Heart size={15} fill={isInWishlist(p.id) ? "currentColor" : "none"} />
-                          </button>
-                        </div>
-
+                      <div className="px-1">
                         <Link to={`/product/${p.slug}`}>
-                          <h3 className="text-[14px] font-medium text-[#37474F] leading-tight line-clamp-2 hover:text-[#7EA1A1] transition-colors mb-2 min-h-[36px]">
+                          <h3 className="text-[15px] font-semibold text-foreground leading-tight line-clamp-1 hover:text-primary transition-colors mb-2">
                             {p.name}
                           </h3>
                         </Link>
 
-                        <div className="flex items-center gap-2 mt-auto pt-1">
-                          <span className="text-[15px] font-bold text-[#37474F]">
-                            ${p.price}
-                          </span>
-                          {(p.compare_price || p.old_price) && (
-                            <span className="text-[12px] text-[#94A3B8] line-through decoration-1">
-                              ${p.compare_price || p.old_price}
+                        <div className="flex items-center justify-between mt-3">
+                          <div className="flex flex-col">
+                            <span className="text-[17px] font-bold text-primary">
+                              ${p.price}
                             </span>
-                          )}
+                            {(p.compare_price || p.old_price) && (
+                              <span className="text-[12px] text-secondary line-through leading-none mt-0.5">
+                                ${p.compare_price || p.old_price}
+                              </span>
+                            )}
+                          </div>
+
+                          <button
+                            onClick={() => addToCart(p)}
+                            className="flex items-center justify-center gap-2 px-5 py-2 bg-foreground text-white rounded-full text-[12px] font-bold uppercase tracking-wider hover:bg-primary transition-all active:scale-95"
+                          >
+                            <ShoppingCart size={14} />
+                            Add
+                          </button>
                         </div>
                       </div>
                     </motion.div>
-                  );
-                })}
+                  ))}
           </AnimatePresence>
         </div>
 
-        {/* VIEW ALL BUTTON */}
-        <div className="mt-16 flex justify-center">
-          <Link
-            to="/shop"
-            className="group px-10 py-3 bg-white border border-[#E0E7E7] text-[#37474F] text-[13px] font-semibold uppercase tracking-wider hover:border-[#7EA1A1] hover:text-[#7EA1A1] transition-all rounded-md flex items-center gap-3"
-          >
-            View Entire Catalog
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+        {/* FOOTER ACTION */}
+        <div className="mt-14 flex items-center justify-center pt-8 border-t border-border">
+           <Link to="/shop" className="flex items-center gap-2 text-foreground font-bold uppercase text-[12px] tracking-[0.2em] hover:text-primary transition-all group">
+              Browse Complete Catalog <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+           </Link>
         </div>
       </div>
     </section>
   );
 }
+

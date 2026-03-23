@@ -1,7 +1,9 @@
 import Hero from "@/components/Hero";
+import FlashSalesSlider from "@/components/FlashSalesSlider";
 import SEO from "@/components/SEO";
 import SpotlightSection from "@/components/SpotlightSection";
 import ShopByCategory from "@/components/ShopByCategory";
+import CategoryShowcase from "@/components/CategoryShowcase";
 import FeaturedTabs from "@/components/FeaturedTabs";
 import CategorySpotlight from "@/components/CategorySpotlight";
 import BrandMarquee from "@/components/BrandMarquee";
@@ -10,6 +12,7 @@ import Techprint from "@/components/TechBlueprints"
 import SaleBanners from "@/components/SaleBanners";
 import PromoSection from "@/components/PromoSection";
 import Middlebaner from "@/components/middlebaner"
+import BottomWideBanner from "@/components/BottomWideBanner"
 
 import Showcase from "@/components/ShowcaseStrip";
 import { useState, useEffect } from "react";
@@ -93,21 +96,21 @@ export default function Home() {
   return (
     <div className="bg-white font-sans overflow-x-hidden text-slate-900">
       <SEO
-        title="Harry's Printer Store | High-Performance Printing Solutions"
-        description="Shop printers, ink, and toner in Des Moines, IA. Professional business printing solutions with nationwide shipping."
-        keywords="Buy Printers Online, Ink and Toner, LaserJet, OfficeJet, Printer Accessories, Business Printing Solutions, Des Moines Tech Store"
+        title="Vital Print | High-Performance Printing Solutions"
+        description="Shop printers, ink, and toner in Sacramento, CA. Professional business printing solutions with nationwide shipping."
+        keywords="Buy Printers Online, Ink and Toner, LaserJet, OfficeJet, Printer Accessories, Business Printing Solutions, Sacramento Tech Store"
       />
       {/* 1. FULL WIDTH HERO */}
       <div className="w-full">
         <Hero products={data.all} />
       </div>
 
-      <Showcase />
+      <FlashSalesSlider />
+      <Middlebaner />
+
 
       {/* 2. CATEGORY SECTION */}
       <ShopByCategory categories={data.categories} loading={data.loading} />
-      <Middlebaner />
-
       {/* 3. FEATURED PRODUCTS (TABS) */}
       <FeaturedTabs
         printers={data.printers}
@@ -115,13 +118,17 @@ export default function Home() {
         loading={data.loading}
       />
 
+      <BottomWideBanner />
 
 
-      {/* 4. PROMO BANNER */}
-      <PromoSection />
-
-
-
+      <CategoryShowcase
+        title="Professional Business Printers"
+        subtitle="Hardware Series"
+        products={data.printers}
+        adImage="/category/all-in-one-printers.png"
+        adBg="bg-blue-50"
+        link="/shop?category=all-in-one-printers"
+      />
       {/* 4. NEW ARRIVALS */}
       <SpotlightSection
         newArrivals={data.all}
@@ -130,6 +137,26 @@ export default function Home() {
         loading={data.loading}
       />
 
+      <CategoryShowcase
+        title="Ink & Toner "
+        subtitle="Printing Solutions"
+        products={data.accessories}
+        adImage="/category/printer-accessories.png"
+        adBg="bg-rose-50"
+        link="/shop?category=printer-accessories"
+      />
+
+
+
+
+
+
+
+
+
+
+
+      <Showcase />
     </div>
   );
 }

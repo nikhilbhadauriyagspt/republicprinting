@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://harryprinterstore.shop/sitemap.xml
+Sitemap: https://vitalprint.shop/sitemap.xml

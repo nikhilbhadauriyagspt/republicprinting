@@ -10,13 +10,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "../context/CartContext";
 
 const SkeletonSpotlightItem = () => (
-  <div className="block py-6 border-b border-[#F1F5F5] animate-pulse last:border-0">
+  <div className="block py-5 animate-pulse last:border-0">
     <div className="flex items-center gap-4">
-      <div className="w-[90px] h-[80px] bg-[#F8FAFA] rounded-md shrink-0"></div>
+      <div className="w-[85px] h-[85px] bg-slate-50 rounded-xl shrink-0"></div>
       <div className="min-w-0 flex-1">
-        <div className="h-3 w-16 bg-[#F8FAFA] mb-2 rounded"></div>
-        <div className="h-4 w-full bg-[#F8FAFA] mb-2 rounded"></div>
-        <div className="h-4 w-24 bg-[#F8FAFA] rounded"></div>
+        <div className="h-3 w-3/4 bg-slate-50 mb-2 rounded"></div>
+        <div className="h-4 w-1/4 bg-slate-50 mb-2 rounded"></div>
+        <div className="h-3 w-1/2 bg-slate-50 rounded"></div>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
 
   const variants = {
     enter: (direction) => ({
-      x: direction > 0 ? 15 : -15,
+      x: direction > 0 ? 10 : -10,
       opacity: 0,
     }),
     center: {
@@ -51,7 +51,7 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
       opacity: 1,
     },
     exit: (direction) => ({
-      x: direction < 0 ? 15 : -15,
+      x: direction < 0 ? 10 : -10,
       opacity: 0,
     }),
   };
@@ -71,32 +71,32 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
   const pageItems = (data || []).slice(page * perPage, page * perPage + perPage);
 
   return (
-    <div className={`bg-white p-6 md:p-8 ${colIndex < 2 ? "lg:border-r border-[#F1F5F5]" : ""}`}>
+    <div className={`p-6 md:p-8 ${colIndex < 2 ? "lg:border-r border-border" : ""}`}>
       {/* Block Header */}
-      <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#F1F5F5]">
-        <h3 className="text-[16px] font-bold text-[#37474F] tracking-tight">
+      <div className="flex items-center justify-between mb-8">
+        <h3 className="text-[18px] font-bold text-foreground tracking-tight">
           {title}
         </h3>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           <button
             onClick={goPrev}
             disabled={page === 0}
-            className="w-8 h-8 rounded-full border border-[#E0E7E7] bg-white text-[#94A3B8] hover:text-[#7EA1A1] hover:border-[#7EA1A1] transition-all flex items-center justify-center disabled:opacity-30"
+            className="w-8 h-8 rounded-full border border-border bg-white text-secondary hover:text-primary hover:border-primary transition-all flex items-center justify-center disabled:opacity-20"
           >
             <ChevronLeft size={16} />
           </button>
           <button
             onClick={goNext}
             disabled={page === maxPage}
-            className="w-8 h-8 rounded-full border border-[#E0E7E7] bg-white text-[#94A3B8] hover:text-[#7EA1A1] hover:border-[#7EA1A1] transition-all flex items-center justify-center disabled:opacity-30"
+            className="w-8 h-8 rounded-full border border-border bg-white text-secondary hover:text-primary hover:border-primary transition-all flex items-center justify-center disabled:opacity-20"
           >
             <ChevronRight size={16} />
           </button>
         </div>
       </div>
 
-      <div className="overflow-hidden min-h-[380px]">
+      <div className="overflow-hidden min-h-[340px]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={page}
@@ -106,6 +106,7 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.3 }}
+            className="space-y-2"
           >
             {loading ? (
               [...Array(3)].map((_, i) => <SkeletonSpotlightItem key={`skel-${i}`} />)
@@ -113,13 +114,13 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
               pageItems.map((p) => (
                 <div
                   key={p.id}
-                  className="block py-5 border-b border-[#F1F5F5] last:border-0 group"
+                  className="block p-3 rounded-2xl transition-all duration-300 hover:bg-background group"
                 >
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-center gap-4">
                     {/* Thumbnail with Tinted BG */}
                     <Link
                       to={`/product/${p.slug}`}
-                      className="w-[100px] h-[85px] flex items-center justify-center shrink-0 bg-[#F8FAFA] rounded-md border border-[#F1F5F5] p-3 overflow-hidden transition-all group-hover:border-[#7EA1A1]/30 group-hover:bg-white"
+                      className="w-[85px] h-[85px] flex items-center justify-center shrink-0 bg-[#F5F5F5] rounded-xl overflow-hidden p-2 transition-all group-hover:scale-95"
                     >
                       <img
                         src={getImagePath(p.images)}
@@ -134,17 +135,17 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
                     <div className="min-w-0 flex-1">
                       <Link
                         to={`/product/${p.slug}`}
-                        className="block text-[14px] font-semibold text-[#37474F] line-clamp-1 group-hover:text-[#7EA1A1] transition-colors leading-tight mb-1.5"
+                        className="block text-[14px] font-bold text-foreground line-clamp-1 group-hover:text-primary transition-colors leading-tight mb-1"
                       >
                         {p.name}
                       </Link>
 
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-[15px] font-bold text-[#7EA1A1]">
+                        <span className="text-[16px] font-bold text-primary">
                           ${Number(p?.price || 0).toFixed(2)}
                         </span>
                         {p.old_price && (
-                          <span className="text-[12px] text-[#94A3B8] line-through decoration-1">
+                          <span className="text-[12px] text-secondary line-through">
                             ${p.old_price}
                           </span>
                         )}
@@ -156,19 +157,19 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
                             e.preventDefault();
                             addToCart(p);
                           }}
-                          className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-[#64748B] hover:text-[#7EA1A1] transition-colors"
+                          className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-primary hover:underline"
                         >
                           <ShoppingCart size={12} />
-                          Add
+                          Quick Add
                         </button>
                         <button
                           onClick={(e) => {
                             e.preventDefault();
                             navigate(`/product/${p.slug}`);
                           }}
-                          className="text-[10px] font-black uppercase tracking-wider text-[#64748B] hover:text-[#7EA1A1] transition-colors"
+                          className="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-foreground"
                         >
-                          Details
+                          View Info
                         </button>
                       </div>
                     </div>
@@ -176,8 +177,8 @@ const SpotlightBlock = ({ title, data, colIndex, loading = false }) => {
                 </div>
               ))
             ) : (
-              <div className="py-20 text-[#94A3B8] text-[12px] font-medium text-center">
-                No items currently trending.
+              <div className="py-20 text-secondary text-[13px] font-medium text-center">
+                No items currently available.
               </div>
             )}
           </motion.div>
@@ -200,20 +201,22 @@ export default function SpotlightSection({
   };
 
   return (
-    <section className="w-full font-['Rubik'] py-16 md:py-20 bg-white">
-      <div className="max-w-[1800px] mx-auto px-6">
+    <section className="w-full font-['Rubik'] py-12 md:py-16 bg-white">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-10">
         {/* Section Heading */}
-        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-          <div className="flex items-center gap-3 mb-4 text-[#7EA1A1]">
-            <Sparkles size={20} />
-            <span className="text-[11px] font-black uppercase tracking-[0.3em]">Trending Now</span>
+        <div className="flex flex-col md:flex-row items-end justify-between mb-10 px-2 gap-4">
+          <div>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground tracking-tight">
+              Spotlight Collections
+            </h2>
+            <p className="text-secondary text-sm md:text-base font-medium mt-2">Explore our most curated printer and hardware series</p>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#37474F] tracking-tight">
-            Spotlight Collections
-          </h2>
+          <div className="hidden md:flex items-center gap-2 text-primary font-bold uppercase text-[12px] tracking-widest pb-1">
+             <Sparkles size={16} /> Trending Series
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 border border-[#F1F5F5] rounded-[32px] overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border border-border rounded-[24px] overflow-hidden bg-white shadow-sm">
           <SpotlightBlock
             title="New Arrivals"
             data={normalizeList(newArrivals)}
@@ -237,3 +240,4 @@ export default function SpotlightSection({
     </section>
   );
 }
+

@@ -49,7 +49,7 @@ export default function ProductAccordion({
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group relative bg-white p-8 transition-all duration-500 hover:bg-[#F8FAFC]"
+              className="group relative bg-white p-8 transition-all duration-500 hover:bg-background"
             >
               {/* Product Visual */}
               <div className="aspect-square w-full mb-8 relative">

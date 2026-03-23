@@ -9,18 +9,18 @@ export default function PrivacyPolicy() {
       lastUpdated="March 21, 2026"
     >
       <p className="lead">
-        This Privacy Notice for Harry's Printer Store LLC ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
+        This Privacy Notice for Vital Print LLC ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
       </p>
       <ul>
-        <li>Visit our website at <a href="http://harryprinterstore.shop/">http://harryprinterstore.shop/</a> or any website of ours that links to this Privacy Notice</li>
-        <li>Use Printers, Consumables & Accessories. Harry's Printer Store Solutions provides a wide range of high-performance printers and printing accessories from leading technology brands.</li>
+        <li>Visit our website at <a href="http://vitalprint.shop/">http://vitalprint.shop/</a> or any website of ours that links to this Privacy Notice</li>
+        <li>Use Printers, Consumables & Accessories. Vital Print Solutions provides a wide range of high-performance printers and printing accessories from leading technology brands.</li>
         <li>Engage with us in other related ways, including any marketing or events</li>
       </ul>
       <p>
-        Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:info@harryprinterstore.shop">info@harryprinterstore.shop</a>.
+        Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:info@vitalprint.shop">info@vitalprint.shop</a>.
       </p>
 
-      <div className="bg-gray-50 p-8 rounded-sm border border-[#e9e9e9] my-12 not-prose">
+      <div className="bg-gray-50 p-8 rounded-sm border border-border my-12 not-prose">
         <h2 className="text-xl font-extrabold text-black uppercase tracking-tight mb-6 ">Summary Of Key Points</h2>
         <p className="text-sm text-gray-500 font-medium leading-relaxed mb-6">
           This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for.
@@ -116,7 +116,7 @@ export default function PrivacyPolicy() {
       <p>We may use cookies and similar tracking technologies (like web beacons and pixels) to gather information when you interact with our Services. Some online tracking technologies help us maintain the security of our Services and your account, prevent crashes, fix bugs, save your preferences, and assist with basic site functions.</p>
       <p>We also permit third parties and service providers to use online tracking technologies on our Services for analytics and advertising, including to help manage and display advertisements, to tailor advertisements to your interests, or to send abandoned shopping cart reminders. The third parties and service providers use their technology to provide advertising about products and services tailored to your interests which may appear either on our Services or on other websites.</p>
       <p>To the extent these online tracking technologies are deemed to be a "sale"/"sharing" (which includes targeted advertising, as defined under the applicable laws) under applicable US state laws, you can opt out of these online tracking technologies by submitting a request as described below under section "DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?"</p>
-      <p>Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice: <a href="http://harryprinterstore.shop/cookie-policy">http://harryprinterstore.shop/cookie-policy</a>.</p>
+      <p>Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice: <a href="http://vitalprint.shop/cookie-policy">http://vitalprint.shop/cookie-policy</a>.</p>
       <h3>Google Analytics</h3>
       <p>We may share your information with Google Analytics to track and analyze the use of the Services. The Google Analytics Advertising Features that we may use include: Google Display Network Impressions Reporting and Google Analytics Demographics and Interests Reporting. To opt out of being tracked by Google Analytics across the Services, visit <a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a>. You can opt out of Google Analytics Advertising Features through Ads Settings and Ad Settings for mobile apps. Other opt out means include <a href="http://optout.networkadvertising.org/">http://optout.networkadvertising.org/</a>. For more information on the privacy practices of Google, please visit the Google Privacy & Terms page.</p>
 
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
 
       <h2>8. Do We Collect Information From Minors?</h2>
       <p><strong>In Short:</strong> We do not knowingly collect data from or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction.</p>
-      <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or the equivalent age as specified by law in your jurisdiction or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services. If we learn that personal information from users less than 18 years of age or the equivalent age as specified by law in your jurisdiction has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18 or the equivalent age as specified by law in your jurisdiction, please contact us at <a href="mailto:info@harryprinterstore.shop">info@harryprinterstore.shop</a>.</p>
+      <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or the equivalent age as specified by law in your jurisdiction or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services. If we learn that personal information from users less than 18 years of age or the equivalent age as specified by law in your jurisdiction has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18 or the equivalent age as specified by law in your jurisdiction, please contact us at <a href="mailto:info@vitalprint.shop">info@vitalprint.shop</a>.</p>
 
       <h2>9. What Are Your Privacy Rights?</h2>
       <p><strong>In Short:</strong> Depending on your state of residence in the US or in some regions, such as Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time, depending on your country, province, or state of residence.</p>
@@ -145,8 +145,8 @@ export default function PrivacyPolicy() {
         <li>Contact us using the contact information provided.</li>
       </ul>
       <p>Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.</p>
-      <p><strong>Cookies and similar technologies:</strong> Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services. For further information, please see our Cookie Notice: <a href="http://harryprinterstore.shop/cookie-policy">http://harryprinterstore.shop/cookie-policy</a>.</p>
-      <p>If you have questions or comments about your privacy rights, you may email us at <a href="mailto:info@harryprinterstore.shop">info@harryprinterstore.shop</a>.</p>
+      <p><strong>Cookies and similar technologies:</strong> Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services. For further information, please see our Cookie Notice: <a href="http://vitalprint.shop/cookie-policy">http://vitalprint.shop/cookie-policy</a>.</p>
+      <p>If you have questions or comments about your privacy rights, you may email us at <a href="mailto:info@vitalprint.shop">info@vitalprint.shop</a>.</p>
 
       <h2>10. Controls For Do-Not-Track Features</h2>
       <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</p>
@@ -158,73 +158,73 @@ export default function PrivacyPolicy() {
       <p>The table below shows the categories of personal information we have collected in the past twelve (12) months. The table includes illustrative examples of each category and does not reflect the personal information we collect from you. For a comprehensive inventory of all personal information we process, please refer to the section "WHAT INFORMATION DO WE COLLECT?"</p>
 
       <div className="overflow-x-auto my-8 not-prose">
-        <table className="w-full text-sm text-left text-gray-500 border border-[#e9e9e9]">
-          <thead className="text-[11px] font-bold text-black uppercase tracking-widest bg-gray-50 border-b border-[#e9e9e9]">
+        <table className="w-full text-sm text-left text-gray-500 border border-border">
+          <thead className="text-[11px] font-bold text-black uppercase tracking-widest bg-gray-50 border-b border-border">
             <tr>
-              <th className="px-6 py-3 border-r border-[#e9e9e9]">Category</th>
-              <th className="px-6 py-3 border-r border-[#e9e9e9]">Examples</th>
+              <th className="px-6 py-3 border-r border-border">Category</th>
+              <th className="px-6 py-3 border-r border-border">Examples</th>
               <th className="px-6 py-3">Collected</th>
             </tr>
           </thead>
           <tbody className="text-gray-500 font-medium">
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">A. Identifiers</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">A. Identifiers</td>
+              <td className="px-6 py-4 border-r border-border">Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">B. Personal information as defined in the California Customer Records statute</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Name, contact information, education, employment, employment history, and financial information</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">B. Personal information as defined in the California Customer Records statute</td>
+              <td className="px-6 py-4 border-r border-border">Name, contact information, education, employment, employment history, and financial information</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">C. Protected classification characteristics under state or federal law</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Gender, age, date of birth, race and ethnicity, national origin, marital status, and other demographic data</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">C. Protected classification characteristics under state or federal law</td>
+              <td className="px-6 py-4 border-r border-border">Gender, age, date of birth, race and ethnicity, national origin, marital status, and other demographic data</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">D. Commercial information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Transaction information, purchase history, financial details, and payment information</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">D. Commercial information</td>
+              <td className="px-6 py-4 border-r border-border">Transaction information, purchase history, financial details, and payment information</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">E. Biometric information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Fingerprints and voiceprints</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">E. Biometric information</td>
+              <td className="px-6 py-4 border-r border-border">Fingerprints and voiceprints</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">F. Internet or other similar network activity</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">F. Internet or other similar network activity</td>
+              <td className="px-6 py-4 border-r border-border">Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">G. Geolocation data</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Device location</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">G. Geolocation data</td>
+              <td className="px-6 py-4 border-r border-border">Device location</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">H. Audio, electronic, sensory, or similar information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Images and audio, video or call recordings created in connection with our business activities</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">H. Audio, electronic, sensory, or similar information</td>
+              <td className="px-6 py-4 border-r border-border">Images and audio, video or call recordings created in connection with our business activities</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">I. Professional or employment-related information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Business contact details in order to provide you our Services at a business level or job title, work history, and professional qualifications if you apply for a job with us</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">I. Professional or employment-related information</td>
+              <td className="px-6 py-4 border-r border-border">Business contact details in order to provide you our Services at a business level or job title, work history, and professional qualifications if you apply for a job with us</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">J. Education Information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Student records and directory information</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">J. Education Information</td>
+              <td className="px-6 py-4 border-r border-border">Student records and directory information</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
-            <tr className="border-b border-[#e9e9e9]">
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">K. Inferences drawn from collected personal information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual’s preferences and characteristics</td>
+            <tr className="border-b border-border">
+              <td className="px-6 py-4 font-bold text-black border-r border-border">K. Inferences drawn from collected personal information</td>
+              <td className="px-6 py-4 border-r border-border">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual’s preferences and characteristics</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 font-bold text-black border-r border-[#e9e9e9]">L. Sensitive personal Information</td>
-              <td className="px-6 py-4 border-r border-[#e9e9e9]">None</td>
+              <td className="px-6 py-4 font-bold text-black border-r border-border">L. Sensitive personal Information</td>
+              <td className="px-6 py-4 border-r border-border">None</td>
               <td className="px-6 py-4 text-black font-bold">NO</td>
             </tr>
           </tbody>
@@ -267,13 +267,13 @@ export default function PrivacyPolicy() {
         <li>Right to opt out of the collection of sensitive data and personal data collected through the operation of a voice or facial recognition feature (as permitted by applicable law, including the privacy law in Florida)</li>
       </ul>
       <h3>How to Exercise Your Rights</h3>
-      <p>To exercise these rights, you can contact us by submitting a data subject access request, by emailing us at info@harryprinterstore.shop, by visiting <a href="http://harryprinterstore.shop/contact">http://harryprinterstore.shop/contact</a>, or by referring to the contact details at the bottom of this document.</p>
+      <p>To exercise these rights, you can contact us by submitting a data subject access request, by emailing us at info@vitalprint.shop, by visiting <a href="http://vitalprint.shop/contact">http://vitalprint.shop/contact</a>, or by referring to the contact details at the bottom of this document.</p>
       <p>Under certain US state data protection laws, you can designate an authorized agent to make a request on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with applicable laws.</p>
       <h3>Request Verification</h3>
       <p>Upon receiving your request, we will need to verify your identity to determine you are the same person about whom we have the information in our system. We will only use personal information provided in your request to verify your identity or authority to make the request. However, if we cannot verify your identity from the information already maintained by us, we may request that you provide additional information for the purposes of verifying your identity and for security or fraud-prevention purposes.</p>
       <p>If you submit the request through an authorized agent, we may need to collect additional information to verify your identity before processing your request and the agent will need to provide a written and signed permission from you to submit such request on your behalf.</p>
       <h3>Appeals</h3>
-      <p>Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at <a href="mailto:info@harryprinterstore.shop">info@harryprinterstore.shop</a>. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.</p>
+      <p>Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at <a href="mailto:info@vitalprint.shop">info@vitalprint.shop</a>. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.</p>
       <h3>California "Shine The Light" Law</h3>
       <p>California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"</p>
 
@@ -282,12 +282,12 @@ export default function PrivacyPolicy() {
       <p>We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</p>
 
       <h2>13. How Can You Contact Us About This Notice?</h2>
-      <p>If you have questions or comments about this notice, you may email us at <a href="mailto:info@harryprinterstore.shop">info@harryprinterstore.shop</a> or contact us by post at:</p>
-      <div className="bg-gray-50 p-8 rounded-sm border border-[#e9e9e9] my-8 not-prose">
+      <p>If you have questions or comments about this notice, you may email us at <a href="mailto:info@vitalprint.shop">info@vitalprint.shop</a> or contact us by post at:</p>
+      <div className="bg-gray-50 p-8 rounded-sm border border-border my-8 not-prose">
         <address className="not-italic text-gray-700 font-bold leading-relaxed">
-          Harry's Printer Store LLC<br />
-          2700 Bell Ave, <br />
-          Des Moines, IA 50321, USA
+          Vital Print LLC<br />
+          3100 Folsom Blvd<br />
+          Sacramento, CA 95816, USA
         </address>
       </div>
 
