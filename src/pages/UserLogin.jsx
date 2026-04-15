@@ -41,7 +41,7 @@ export default function UserLogin() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] font-['Rubik'] px-4 py-12">
-            <SEO title="Sign In | Printingmania" />
+            <SEO title="Sign In | Republic Printing" />
 
             <div className="w-full max-w-[450px] bg-white rounded-3xl border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
                 {/* Top Accent Bar */}
@@ -106,7 +106,7 @@ export default function UserLogin() {
 
                         <button
                             disabled={loading}
-                            className="w-full h-14 bg-[#1D4ED8] text-white rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-[#4f46e5] transition-all disabled:opacity-70 shadow-xl shadow-[#1D4ED8]/10 cursor-pointer flex items-center justify-center gap-3 active:scale-[0.98]"
+                            className="w-full h-14 bg-[#013E24] text-white rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-[#4f46e5] transition-all disabled:opacity-70 shadow-xl shadow-[#1D4ED8]/10 cursor-pointer flex items-center justify-center gap-3 active:scale-[0.98]"
                         >
                             {loading ? <Loader2 className="animate-spin" size={20} /> : (
                                 <>

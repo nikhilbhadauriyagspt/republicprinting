@@ -125,7 +125,7 @@ export default function Profile() {
 
   return (
     <div className="bg-[#F8FAFC] min-h-screen font-['Rubik'] text-[#1D4ED8] pb-20">
-      <SEO title="Your Account | Printingmania" />
+      <SEO title="Your Account | Republic Printing" />
 
       {/* --- PAGE HEADER --- */}
       <div className="bg-white border-b border-gray-200 py-8 md:py-12 mb-12 shadow-sm">
@@ -166,7 +166,7 @@ export default function Profile() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center gap-3 px-5 py-3.5 text-[14px] font-bold transition-all rounded-xl border cursor-pointer ${activeTab === tab.id
-                      ? 'bg-[#1D4ED8] text-white border-[#1D4ED8] shadow-lg shadow-[#1D4ED8]/10'
+                      ? 'bg-[#013E24] text-white border-[#1D4ED8] shadow-lg shadow-[#1D4ED8]/10'
                       : 'text-gray-600 border-transparent hover:bg-gray-50 hover:text-[#1D4ED8]'
                       }`}
                   >
@@ -187,7 +187,7 @@ export default function Profile() {
               </div>
             </div>
 
-            <div className="bg-[#1D4ED8] text-white p-8 rounded-3xl relative overflow-hidden group">
+            <div className="bg-[#013E24] text-white p-8 rounded-3xl relative overflow-hidden group">
               <div className="relative z-10">
                 <div className="bg-[#f59e0b] text-[#1D4ED8] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-widest mb-4 inline-block">Support</div>
                 <h4 className="text-lg font-bold mb-2 leading-snug">Need help with your printer?</h4>
@@ -270,7 +270,7 @@ export default function Profile() {
 
                     <button
                       disabled={isUpdating}
-                      className="h-12 px-10 bg-[#1D4ED8] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-[#4f46e5] transition-all disabled:opacity-50 shadow-lg shadow-[#1D4ED8]/10 flex items-center gap-3 cursor-pointer active:scale-95"
+                      className="h-12 px-10 bg-[#013E24] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-[#4f46e5] transition-all disabled:opacity-50 shadow-lg shadow-[#1D4ED8]/10 flex items-center gap-3 cursor-pointer active:scale-95"
                     >
                       {isUpdating ? <Loader2 className="animate-spin" size={18} /> : "Save Changes"}
                     </button>
@@ -308,7 +308,7 @@ export default function Profile() {
                       {orders.slice(0, 5).map((order) => (
                         <div key={order.id} className="bg-white border border-gray-100 rounded-[1.5rem] p-6 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-lg transition-all group">
                           <div className="flex items-center gap-5 w-full md:w-auto">
-                            <div className="h-14 w-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-[#1D4ED8] group-hover:bg-[#1D4ED8] group-hover:text-white transition-all duration-500">
+                            <div className="h-14 w-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-[#1D4ED8] group-hover:bg-[#013E24]group-hover:text-white transition-all duration-500">
                               <Clock size={24} />
                             </div>
                             <div>
@@ -325,7 +325,7 @@ export default function Profile() {
                               <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1">{new Date(order.created_at).toLocaleDateString()}</p>
                               <p className="text-lg font-black tracking-tight">${Number(order.total_amount).toLocaleString()}</p>
                             </div>
-                            <Link to="/orders" className="h-10 w-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-[#1D4ED8] hover:text-white hover:border-[#1D4ED8] transition-all">
+                            <Link to="/orders" className="h-10 w-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-[#013E24]hover:text-white hover:border-[#1D4ED8] transition-all">
                               <ExternalLink size={18} />
                             </Link>
                           </div>
@@ -381,7 +381,7 @@ export default function Profile() {
                     </div>
                     <button
                       disabled={isUpdating}
-                      className="h-12 px-10 bg-[#1D4ED8] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-red-600 transition-all disabled:opacity-50 shadow-lg shadow-[#1D4ED8]/10 flex items-center gap-3 cursor-pointer active:scale-95"
+                      className="h-12 px-10 bg-[#013E24] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-red-600 transition-all disabled:opacity-50 shadow-lg shadow-[#1D4ED8]/10 flex items-center gap-3 cursor-pointer active:scale-95"
                     >
                       {isUpdating ? <Loader2 className="animate-spin" size={18} /> : "Update Security"}
                     </button>

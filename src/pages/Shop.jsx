@@ -116,13 +116,13 @@ export default function Shop() {
       {/* Categories */}
       <div>
         <h3 className="text-[14px] font-bold text-foreground mb-4 flex items-center gap-2">
-          <LayoutGrid size={16} className="text-blue-600" />
+          <LayoutGrid size={16} className="text-[#013E24]" />
           Categories
         </h3>
         <div className="space-y-1">
           <button
             onClick={() => updateFilter('category', '')}
-            className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${!category ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${!category ? 'bg-blue-50 text-[#013E24]' : 'text-gray-600 hover:bg-gray-100'}`}
           >
             All Categories
           </button>
@@ -130,7 +130,7 @@ export default function Shop() {
             <button
               key={c.id}
               onClick={() => updateFilter('category', c.slug)}
-              className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all capitalize ${category === c.slug ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100'}`}
+              className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all capitalize ${category === c.slug ? 'bg-blue-50 text-[#013E24]' : 'text-gray-600 hover:bg-gray-100'}`}
             >
               {c.name}
             </button>
@@ -141,7 +141,7 @@ export default function Shop() {
       {/* Brands */}
       <div>
         <h3 className="text-[14px] font-bold text-foreground mb-4 flex items-center gap-2">
-          <Star size={16} className="text-blue-600" />
+          <Star size={16} className="text-[#013E24]" />
           Brands
         </h3>
         <div className="grid grid-cols-2 gap-2">
@@ -149,7 +149,7 @@ export default function Shop() {
             <button
               key={brand}
               onClick={() => updateFilter('brand', activeBrand === brand ? '' : brand)}
-              className={`px-2 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${activeBrand === brand ? 'bg-blue-600 border-blue-600 text-white' : 'border-gray-200 text-gray-600 hover:border-blue-600'}`}
+              className={`px-2 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${activeBrand === brand ? 'bg-[#013E24] border-blue-600 text-white' : 'border-gray-200 text-gray-600 hover:border-blue-600'}`}
             >
               {brand}
             </button>
@@ -160,7 +160,7 @@ export default function Shop() {
       {/* Price Range */}
       <div>
         <h3 className="text-[14px] font-bold text-foreground mb-4 flex items-center gap-2">
-          <SlidersHorizontal size={16} className="text-blue-600" />
+          <SlidersHorizontal size={16} className="text-[#013E24]" />
           Price Range
         </h3>
         <div className="space-y-4 px-2">
@@ -175,14 +175,14 @@ export default function Shop() {
           />
           <div className="flex items-center justify-between text-[12px] font-bold text-gray-600">
             <span>$0</span>
-            <span className="text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">${maxPrice}</span>
+            <span className="text-[#013E24] bg-blue-50 px-2 py-0.5 rounded-full">${maxPrice}</span>
           </div>
         </div>
       </div>
 
       <button
         onClick={clearFilters}
-        className="w-full py-2.5 border border-dashed border-gray-300 rounded-xl text-[11px] font-bold text-gray-500 hover:border-blue-600 hover:text-blue-600 transition-all uppercase tracking-widest"
+        className="w-full py-2.5 border border-dashed border-gray-300 rounded-xl text-[11px] font-bold text-gray-500 hover:border-blue-600 hover:text-[#013E24] transition-all uppercase tracking-widest"
       >
         Clear All Filters
       </button>
@@ -190,131 +190,135 @@ export default function Shop() {
   );
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] font-['Rubik'] text-foreground">
-      <SEO title="Shop | Printingmania" />
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
+      <SEO title="Shop | Printing Mania" />
 
-      {/* --- Breadcrumbs --- */}
-      <div className="bg-white border-b border-gray-200">
+      {/* --- BREADCRUMBS --- */}
+      <div className="bg-white border-b border-slate-200">
         <div className="max-w-[1800px] mx-auto px-4 md:px-10 py-3">
-          <nav className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-            <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
-            <ChevronRight size={10} />
-            <span className="text-gray-900">Shop</span>
+          <nav className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <Link to="/" className="hover:text-[#013E24] transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <span className="text-slate-900">Shop</span>
             {category && (
               <>
-                <ChevronRight size={10} />
-                <span className="text-blue-600 capitalize">{category.replace('-', ' ')}</span>
+                <ChevronRight size={12} />
+                <span className="capitalize" style={{ color: '#013E24' }}>{category.replace('-', ' ')}</span>
               </>
             )}
           </nav>
         </div>
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-4 md:px-10 py-6">
-        <div className="flex flex-col lg:flex-row gap-6">
-          
+      <div className="max-w-[1800px] mx-auto px-4 md:px-10 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+
           {/* --- LEFT SIDEBAR (Desktop) --- */}
-          <aside className="hidden lg:block w-64 shrink-0">
-            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-hide">
+          <aside className="hidden lg:block w-72 shrink-0">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-hide">
               <FilterSidebar />
             </div>
           </aside>
 
           {/* --- MAIN CONTENT --- */}
           <main className="flex-1">
-            
+
             {/* Toolbar */}
-            <div className="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="bg-white rounded-2xl p-4 border border-slate-200 mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="relative w-full md:w-80">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input
                   type="text"
-                  placeholder="Search in catalog..."
+                  placeholder="Search products..."
                   value={search}
                   onChange={(e) => updateFilter('search', e.target.value)}
-                  className="w-full h-10 pl-11 pr-4 bg-gray-50 border border-gray-200 rounded-xl text-[13px] focus:bg-white focus:border-blue-600 outline-none transition-all"
+                  className="w-full h-11 pl-12 pr-4 bg-slate-100 border-transparent rounded-xl text-sm focus:bg-white focus:border-[#013E24] focus:ring-1 focus:ring-[#013E24] outline-none transition-all"
                 />
               </div>
 
-              <div className="flex items-center gap-3 w-full md:w-auto">
-                <button 
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <button
                   onClick={() => setShowMobileFilters(true)}
-                  className="lg:hidden flex-1 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center gap-2 text-[13px] font-bold text-gray-700"
+                  className="lg:hidden flex-1 h-11 bg-white border border-slate-300 rounded-xl flex items-center justify-center gap-2 text-sm font-bold text-slate-700"
                 >
                   <Filter size={16} /> Filters
                 </button>
-                
-                <div className="relative flex-1 md:w-40">
+
+                <div className="relative flex-1 md:w-48">
                   <select
                     value={sort}
                     onChange={(e) => updateFilter('sort', e.target.value)}
-                    className="w-full h-10 appearance-none bg-white border border-gray-200 rounded-xl px-4 text-[13px] font-bold text-gray-700 outline-none cursor-pointer focus:border-blue-600"
+                    className="w-full h-11 appearance-none bg-white border border-slate-300 rounded-xl px-4 text-sm font-bold text-slate-700 outline-none cursor-pointer focus:border-[#013E24] focus:ring-1 focus:ring-[#013E24]"
                   >
                     <option value="newest">Newest</option>
-                    <option value="price_low">Price: Low</option>
-                    <option value="price_high">Price: High</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="price_high">Price: High to Low</option>
                   </select>
-                  <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
                 </div>
               </div>
             </div>
 
             {/* Results Info */}
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-bold text-gray-900">
-                {category ? category.replace('-', ' ') : 'All Products'} 
-                <span className="text-gray-400 text-[13px] font-medium ml-2">({products.length} items)</span>
+            <div className="flex items-center justify-between mb-4 px-2">
+              <h2 className="text-xl font-bold text-slate-900">
+                {category ? category.replace('-', ' ') : 'All Products'}
+                <span className="text-slate-500 text-sm font-medium ml-3">({products.length} results)</span>
               </h2>
             </div>
 
-            {/* Grid - Denser for more products */}
+            {/* Grid */}
             {loading ? (
-              <div className="py-20 text-center">
-                <Loader2 className="animate-spin text-blue-600 mx-auto mb-4" size={32} />
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Loading...</p>
+              <div className="py-24 text-center">
+                <Loader2 className="animate-spin text-[#013E24] mx-auto mb-4" size={36} />
+                <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">Loading Products...</p>
               </div>
             ) : products.length === 0 ? (
-              <div className="py-20 text-center bg-white rounded-3xl border border-dashed border-gray-200">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">No products found</h3>
-                <button onClick={clearFilters} className="text-blue-600 font-bold text-sm hover:underline">Reset All Filters</button>
+              <div className="py-24 text-center bg-white rounded-3xl border-2 border-dashed border-slate-200">
+                <h3 className="text-xl font-bold text-slate-800 mb-2">No Products Found</h3>
+                <p className="text-slate-500 mb-4">Try adjusting your filters or clearing them.</p>
+                <button onClick={clearFilters} className="font-bold text-sm" style={{ color: '#013E24' }}>
+                  Reset All Filters
+                </button>
               </div>
             ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {currentProducts.map((p) => (
-                  <div key={p.id} className="group bg-white rounded-xl p-2 md:p-3 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                  <div key={p.id} className="group bg-white rounded-2xl p-4 border border-slate-200 hover:shadow-xl hover:border-[#013E24] transition-all duration-300 flex flex-col">
                     {/* Image */}
-                    <div className="relative aspect-square bg-gray-50 rounded-lg overflow-hidden mb-2">
+                    <div className="relative aspect-square bg-slate-100 rounded-xl overflow-hidden mb-4">
                       <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center p-2">
                         <img
                           src={getImagePath(p.images)}
                           alt={p.name}
-                          className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
                         />
                       </Link>
                       <button
                         onClick={() => toggleWishlist(p)}
-                        className={`absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-white/80 shadow flex items-center justify-center transition-all ${isInWishlist(p.id) ? 'text-blue-600' : 'text-gray-400 hover:text-blue-600'}`}
+                        className={`absolute top-2 right-2 w-7 h-7 rounded-full bg-white/70 backdrop-blur-sm shadow flex items-center justify-center transition-all ${isInWishlist(p.id) ? 'text-red-500' : 'text-slate-400 hover:text-red-500'}`}
                       >
-                        <Heart size={12} fill={isInWishlist(p.id) ? 'currentColor' : 'none'} />
+                        <Heart size={14} fill={isInWishlist(p.id) ? 'currentColor' : 'none'} />
                       </button>
                     </div>
 
                     {/* Content */}
-                    <div className="space-y-1">
-                      <Link to={`/product/${p.slug}`}>
-                        <h3 className="text-[11px] font-bold text-gray-900 leading-tight line-clamp-2 min-h-[28px] group-hover:text-blue-600 transition-colors">
+                    <div className="flex-1 flex flex-col">
+                      <Link to={`/product/${p.slug}`} className="flex-1">
+                        <h3 className="text-sm font-bold text-slate-800 leading-snug line-clamp-2 min-h-[40px] group-hover:text-[#013E24] transition-colors">
                           {p.name}
                         </h3>
                       </Link>
-                      
-                      <div className="pt-1 space-y-2">
-                        <span className="text-[14px] font-bold text-gray-900 block">${Number(p.price).toLocaleString()}</span>
+
+                      <div className="pt-2 mt-auto">
+                        <span className="text-lg font-extrabold text-slate-900 block">${Number(p.price).toLocaleString()}</span>
                         <button
                           onClick={() => addToCart(p)}
-                          className="w-full h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-wider hover:bg-blue-700 transition-all active:scale-95"
+                          className="w-full mt-2 h-10 rounded-lg flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider transition-all active:scale-95"
+                          style={{ backgroundColor: '#013E24', color: 'white' }}
                         >
-                          <ShoppingCart size={12} />
-                          Add To Cart
+                          <ShoppingCart size={14} />
+                          Add to Cart
                         </button>
                       </div>
                     </div>
@@ -329,26 +333,27 @@ export default function Shop() {
                 <button
                   onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center hover:bg-white hover:border-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-10 h-10 rounded-xl border border-slate-300 bg-white flex items-center justify-center hover:border-[#013E24] hover:text-[#013E24] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   <ChevronLeft size={18} />
                 </button>
-                
-                <div className="flex items-center gap-1">
+
+                <div className="flex items-center gap-2">
                   {[...Array(totalPages)].map((_, i) => {
                     const page = i + 1;
-                    if (page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)) {
+                    if (page === 1 || page === totalPages || (page >= currentPage - 2 && page <= currentPage + 2)) {
+                      if (page === currentPage - 2 && currentPage > 3) return <span key={page} className="px-1 text-slate-500">...</span>;
+                      if (page === currentPage + 2 && currentPage < totalPages - 2) return <span key={page} className="px-1 text-slate-500">...</span>;
                       return (
                         <button
                           key={page}
                           onClick={() => setCurrentPage(page)}
-                          className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${currentPage === page ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'bg-white border border-gray-200 text-gray-600 hover:border-blue-600'}`}
+                          className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${currentPage === page ? 'text-white shadow-lg' : 'bg-white border border-slate-300 text-slate-600 hover:border-[#013E24] hover:text-[#013E24]'}`}
+                          style={currentPage === page ? { backgroundColor: '#013E24', boxShadow: '0 4px 14px 0 rgba(1, 62, 36, 0.3)' } : {}}
                         >
                           {page}
                         </button>
                       );
-                    } else if (page === currentPage - 2 || page === currentPage + 2) {
-                      return <span key={page} className="px-1 text-gray-400">...</span>;
                     }
                     return null;
                   })}
@@ -357,7 +362,7 @@ export default function Shop() {
                 <button
                   onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center hover:bg-white hover:border-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-10 h-10 rounded-xl border border-slate-300 bg-white flex items-center justify-center hover:border-[#013E24] hover:text-[#013E24] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   <ChevronRight size={18} />
                 </button>
@@ -376,27 +381,28 @@ export default function Shop() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setShowMobileFilters(false)}
-              className="fixed inset-0 bg-black/60 z-[60] backdrop-blur-sm"
+              className="fixed inset-0 bg-black/50 z-[60] backdrop-blur-sm"
             />
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[280px] bg-white z-[70] p-6 overflow-y-auto"
+              transition={{ type: 'spring', damping: 30, stiffness: 250 }}
+              className="fixed top-0 right-0 bottom-0 w-[300px] bg-white z-[70] p-6 overflow-y-auto"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold">Filters</h2>
-                <button onClick={() => setShowMobileFilters(false)} className="p-2">
-                  <X size={20} />
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-xl font-bold text-slate-900">Filters</h2>
+                <button onClick={() => setShowMobileFilters(false)} className="p-2 -mr-2">
+                  <X size={22} />
                 </button>
               </div>
               <FilterSidebar />
               <button
                 onClick={() => setShowMobileFilters(false)}
-                className="w-full mt-4 py-3 bg-blue-600 text-white rounded-xl font-bold"
+                className="w-full mt-6 py-3 text-white rounded-xl font-bold"
+                style={{backgroundColor: '#013E24'}}
               >
-                Show Results
+                Apply Filters
               </button>
             </motion.div>
           </>

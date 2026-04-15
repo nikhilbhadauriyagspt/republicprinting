@@ -26,7 +26,7 @@ export default function BestSellers({ products = [] }) {
       const imgs = typeof images === 'string' ? JSON.parse(images) : images;
       if (Array.isArray(imgs) && imgs.length > 0) return `/${imgs[0]}`;
     } catch (e) { }
-    return "https://via.placeholder.com/400x400?text=Printingmania";
+    return "https://via.placeholder.com/400x400?text=Republic Printing";
   };
 
   return (
@@ -40,7 +40,7 @@ export default function BestSellers({ products = [] }) {
             <span className="text-[10px] font-bold text-slate-400 capitalize tracking-[0.4em]">Most Wanted</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-950 capitalize  leading-none">
-            Best <span className="text-blue-600 italic">Sellers.</span>
+            Best <span className="text-[#013E24] italic">Sellers.</span>
           </h2>
         </div>
 
@@ -108,7 +108,7 @@ export default function BestSellers({ products = [] }) {
                     handleAddToCart(p);
                   }}
                   disabled={addedItems[p.id]}
-                  className={`absolute bottom-5 right-5 h-10 w-10 rounded-2xl flex items-center justify-center transition-all shadow-xl z-10 ${addedItems[p.id] ? 'bg-emerald-500 text-white' : 'bg-slate-950 text-white hover:bg-blue-600 scale-0 translate-y-4 group-hover:scale-100 group-hover:translate-y-0'}`}
+                  className={`absolute bottom-5 right-5 h-10 w-10 rounded-2xl flex items-center justify-center transition-all shadow-xl z-10 ${addedItems[p.id] ? 'bg-emerald-500 text-white' : 'bg-slate-950 text-white hover:bg-[#013E24] scale-0 translate-y-4 group-hover:scale-100 group-hover:translate-y-0'}`}
                 >
                   {addedItems[p.id] ? <Check size={18} /> : <Plus size={20} />}
                 </button>
@@ -116,7 +116,7 @@ export default function BestSellers({ products = [] }) {
 
               <div className="mt-5 px-1">
                 <Link to={`/product/${p.slug}`}>
-                  <h3 className="font-bold text-slate-900 text-sm mb-1 capitalize  line-clamp-1 group-hover:text-blue-600 transition-colors">{p.name}</h3>
+                  <h3 className="font-bold text-slate-900 text-sm mb-1 capitalize  line-clamp-1 group-hover:text-[#013E24] transition-colors">{p.name}</h3>
                 </Link>
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-bold text-slate-950">${p.price}</span>

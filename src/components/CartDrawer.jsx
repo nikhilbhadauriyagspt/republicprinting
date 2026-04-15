@@ -43,14 +43,14 @@ export default function CartDrawer() {
             className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-white z-[1501] shadow-2xl flex flex-col font-['Rubik']"
           >
             {/* Header - Fresh Blue */}
-            <div className="bg-[#1d4ed8] text-white px-6 py-6 flex items-center justify-between shadow-lg shadow-blue-600/10">
+            <div className="bg-[#013E24] text-white px-6 py-6 flex items-center justify-between shadow-lg shadow-blue-600/10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center border border-white/20">
-                    <ShoppingBag size={20} className="text-white" />
+                  <ShoppingBag size={20} className="text-white" />
                 </div>
                 <div className="flex flex-col">
-                    <h2 className="text-[17px] font-semibold leading-none">Your Cart</h2>
-                    <p className="text-[11px] font-medium text-blue-100 uppercase tracking-widest mt-1">{cartCount} items selected</p>
+                  <h2 className="text-[17px] font-semibold leading-none">Your Cart</h2>
+                  <p className="text-[11px] font-medium text-blue-100 uppercase tracking-widest mt-1">{cartCount} items selected</p>
                 </div>
               </div>
               <button
@@ -63,12 +63,12 @@ export default function CartDrawer() {
 
             {/* Sub-header Message */}
             {cart.length > 0 && (
-                <div className="bg-blue-50 px-6 py-3 border-b border-blue-100 flex items-center gap-3">
-                    <div className="w-5 h-5 bg-[#1d4ed8] rounded-full flex items-center justify-center text-white">
-                        <ShieldCheck size={12} strokeWidth={3} />
-                    </div>
-                    <p className="text-[12px] font-medium text-blue-800">Your order qualifies for FREE Express Shipping</p>
+              <div className="bg-blue-50 px-6 py-3 border-b border-blue-100 flex items-center gap-3">
+                <div className="w-5 h-5 bg-[#013E24]rounded-full flex items-center justify-center text-white">
+                  <ShieldCheck size={12} strokeWidth={3} />
                 </div>
+                <p className="text-[12px] font-medium text-blue-800">Your order qualifies for FREE Express Shipping</p>
+              </div>
             )}
 
             {/* Content */}
@@ -86,41 +86,41 @@ export default function CartDrawer() {
                         />
                       </div>
                       <div className="flex-1 min-w-0 flex flex-col">
-                        <Link 
-                            to={`/product/${item.slug}`} 
-                            onClick={closeCartDrawer}
-                            className="text-[14px] font-semibold text-slate-800 hover:text-[#1d4ed8] transition-colors line-clamp-2 leading-tight mb-2"
+                        <Link
+                          to={`/product/${item.slug}`}
+                          onClick={closeCartDrawer}
+                          className="text-[14px] font-semibold text-slate-800 hover:text-[#1d4ed8] transition-colors line-clamp-2 leading-tight mb-2"
                         >
-                            {item.name}
+                          {item.name}
                         </Link>
-                        
+
                         <div className="mt-auto flex items-end justify-between">
-                            <div className="flex items-center bg-slate-50 rounded-full p-1 border border-slate-100 h-9">
-                                <button
-                                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                    className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm text-slate-500 transition-all disabled:opacity-30"
-                                    disabled={item.quantity <= 1}
-                                >
-                                    <Minus size={12} strokeWidth={3} />
-                                </button>
-                                <span className="px-3 text-[13px] font-semibold text-slate-800">{item.quantity}</span>
-                                <button
-                                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                    className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm text-slate-500 transition-all"
-                                >
-                                    <Plus size={12} strokeWidth={3} />
-                                </button>
-                            </div>
-                            
-                            <div className="flex flex-col items-end">
-                                <span className="text-[16px] font-semibold text-[#1d4ed8]">${(Number(item.price || 0) * item.quantity).toLocaleString()}</span>
-                                <button
-                                    onClick={() => removeFromCart(item.id)}
-                                    className="text-[11px] font-medium text-red-400 hover:text-red-500 transition-colors uppercase tracking-wider mt-1"
-                                >
-                                    Remove
-                                </button>
-                            </div>
+                          <div className="flex items-center bg-slate-50 rounded-full p-1 border border-slate-100 h-9">
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm text-slate-500 transition-all disabled:opacity-30"
+                              disabled={item.quantity <= 1}
+                            >
+                              <Minus size={12} strokeWidth={3} />
+                            </button>
+                            <span className="px-3 text-[13px] font-semibold text-slate-800">{item.quantity}</span>
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm text-slate-500 transition-all"
+                            >
+                              <Plus size={12} strokeWidth={3} />
+                            </button>
+                          </div>
+
+                          <div className="flex flex-col items-end">
+                            <span className="text-[16px] font-semibold text-[#1d4ed8]">${(Number(item.price || 0) * item.quantity).toLocaleString()}</span>
+                            <button
+                              onClick={() => removeFromCart(item.id)}
+                              className="text-[11px] font-medium text-red-400 hover:text-red-500 transition-colors uppercase tracking-wider mt-1"
+                            >
+                              Remove
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -135,7 +135,7 @@ export default function CartDrawer() {
                   <p className="text-[14px] text-slate-400 mb-8 font-medium">Add some world-class printers to your cart to see them here.</p>
                   <button
                     onClick={closeCartDrawer}
-                    className="bg-[#1d4ed8] hover:bg-blue-700 text-white px-10 py-4 text-[14px] font-semibold rounded-2xl shadow-xl shadow-blue-100 transition-all transform hover:-translate-y-1 active:scale-95 cursor-pointer"
+                    className="bg-[#013E24]hover:bg-blue-700 text-white px-10 py-4 text-[14px] font-semibold rounded-2xl shadow-xl shadow-blue-100 transition-all transform hover:-translate-y-1 active:scale-95 cursor-pointer"
                   >
                     CONTINUE SHOPPING
                   </button>
@@ -147,42 +147,42 @@ export default function CartDrawer() {
             {cart.length > 0 && (
               <div className="bg-white border-t border-slate-100 p-8 space-y-6 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[40px]">
                 <div className="space-y-2">
-                    <div className="flex items-center justify-between text-slate-400 text-[13px] font-medium">
-                        <span>Subtotal</span>
-                        <span>${total.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[#1d4ed8] text-[24px] font-semibold">
-                        <span>Total</span>
-                        <span>${total.toLocaleString()}</span>
-                    </div>
+                  <div className="flex items-center justify-between text-slate-400 text-[13px] font-medium">
+                    <span>Subtotal</span>
+                    <span>${total.toLocaleString()}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[#1d4ed8] text-[24px] font-semibold">
+                    <span>Total</span>
+                    <span>${total.toLocaleString()}</span>
+                  </div>
                 </div>
-                
+
                 <div className="space-y-3">
-                    <Link
-                        to="/checkout"
-                        onClick={closeCartDrawer}
-                        className="w-full h-14 bg-[#1d4ed8] hover:bg-blue-700 text-white flex items-center justify-center gap-3 font-semibold text-[15px] rounded-2xl shadow-xl shadow-blue-100 transition-all hover:-translate-y-1 active:scale-95"
-                    >
-                        CHECKOUT NOW <ArrowRight size={18} />
-                    </Link>
-                    <Link
-                        to="/cart"
-                        onClick={closeCartDrawer}
-                        className="w-full h-14 bg-slate-50 hover:bg-slate-100 text-slate-700 flex items-center justify-center font-semibold text-[15px] rounded-2xl transition-all"
-                    >
-                        View Full Cart
-                    </Link>
+                  <Link
+                    to="/checkout"
+                    onClick={closeCartDrawer}
+                    className="w-full h-14 bg-[#013E24]hover:bg-blue-700 text-white flex items-center justify-center gap-3 font-semibold text-[15px] rounded-2xl shadow-xl shadow-blue-100 transition-all hover:-translate-y-1 active:scale-95"
+                  >
+                    CHECKOUT NOW <ArrowRight size={18} />
+                  </Link>
+                  <Link
+                    to="/cart"
+                    onClick={closeCartDrawer}
+                    className="w-full h-14 bg-slate-50 hover:bg-slate-100 text-slate-700 flex items-center justify-center font-semibold text-[15px] rounded-2xl transition-all"
+                  >
+                    View Full Cart
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
-                    <div className="flex items-center gap-2 text-[10px] text-slate-400 font-medium uppercase tracking-wider">
-                        <Truck size={14} className="text-blue-400" />
-                        <span>Fast Delivery</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[10px] text-slate-400 font-medium uppercase tracking-wider">
-                        <ShieldCheck size={14} className="text-blue-400" />
-                        <span>Secure SSL</span>
-                    </div>
+                  <div className="flex items-center gap-2 text-[10px] text-slate-400 font-medium uppercase tracking-wider">
+                    <Truck size={14} className="text-blue-400" />
+                    <span>Fast Delivery</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-slate-400 font-medium uppercase tracking-wider">
+                    <ShieldCheck size={14} className="text-blue-400" />
+                    <span>Secure SSL</span>
+                  </div>
                 </div>
               </div>
             )}

@@ -16,7 +16,7 @@ export default function QuickPicks({ products = [] }) {
       const imgs = typeof images === 'string' ? JSON.parse(images) : images;
       if (Array.isArray(imgs) && imgs.length > 0) return `/${imgs[0]}`;
     } catch (e) { }
-    return "https://via.placeholder.com/400x400?text=Printingmania";
+    return "https://via.placeholder.com/400x400?text=Republic Printing";
   };
 
   return (
@@ -27,8 +27,8 @@ export default function QuickPicks({ products = [] }) {
         <div className="flex items-end justify-between mb-16 gap-6">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <Zap size={14} className="text-blue-600 fill-blue-600" />
-              <span className="text-[10px] font-bold text-blue-600 capitalize tracking-[0.4em]">Recommended</span>
+              <Zap size={14} className="text-[#013E24] fill-blue-600" />
+              <span className="text-[10px] font-bold text-[#013E24] capitalize tracking-[0.4em]">Recommended</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-950 capitalize  leading-none">
               Quick <span className="text-slate-400 italic">Picks.</span>
@@ -74,7 +74,7 @@ export default function QuickPicks({ products = [] }) {
                   <img src={getImagePath(p.images)} alt={p.name} className="max-w-full max-h-full object-contain" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[9px] font-bold text-blue-600 capitalize tracking-widest mb-1">{p.brand_name || 'Electronics'}</p>
+                  <p className="text-[9px] font-bold text-[#013E24] capitalize tracking-widest mb-1">{p.brand_name || 'Electronics'}</p>
                   <h4 className="text-sm font-bold text-slate-900 truncate capitalize ">{p.name}</h4>
                   <p className="text-base font-bold text-slate-950 mt-1">${p.price}</p>
                 </div>
@@ -84,7 +84,7 @@ export default function QuickPicks({ products = [] }) {
                     e.stopPropagation();
                     addToCart(p);
                   }}
-                  className={`h-10 w-10 rounded-2xl flex items-center justify-center transition-all shadow-lg ${cart.find(i => i.id === p.id) ? 'bg-emerald-500 text-white' : 'bg-slate-950 text-white hover:bg-blue-600 scale-0 group-hover:scale-100'}`}
+                  className={`h-10 w-10 rounded-2xl flex items-center justify-center transition-all shadow-lg ${cart.find(i => i.id === p.id) ? 'bg-emerald-500 text-white' : 'bg-slate-950 text-white hover:bg-[#013E24] scale-0 group-hover:scale-100'}`}
                 >
                   {cart.find(i => i.id === p.id) ? <Check size={18} /> : <Plus size={20} />}
                 </button>

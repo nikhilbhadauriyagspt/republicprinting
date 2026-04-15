@@ -1,109 +1,132 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Home,
   Briefcase,
   Tag,
   ShieldCheck,
   ArrowRight,
-} from 'lucide-react';
+} from "lucide-react";
 
 export default function AboutSection() {
   const sections = [
     {
       title: "Home & Personal",
-      description: "Discover wireless inkjet solutions designed for vivid color and everyday reliability in your home office.",
+      description:
+        "Explore reliable wireless inkjet printers created for everyday home use, vibrant output, and smooth performance.",
       icon: Home,
-      path: "/shop?category=inkjet-printers"
+      path: "/shop?category=inkjet-printers",
+      image: "/newproimges/1.png",
     },
     {
       title: "Business & Office",
-      description: "High-speed laser printers engineered for high-volume teams requiring precision and professional-grade output.",
+      description:
+        "Discover fast and professional laser printers built for workspaces that demand speed, clarity, and consistency.",
       icon: Briefcase,
-      path: "/shop?category=laser-printers"
+      path: "/shop?category=laser-printers",
+      image: "/newproimges/4.png",
     },
     {
       title: "Exclusive Value",
-      description: "We curate the market's best printer deals, ensuring you receive premium technology within your budget.",
+      description:
+        "Shop selected printer collections that combine modern features, dependable quality, and practical pricing.",
       icon: Tag,
-      path: "/shop?category=all-in-one-printers"
+      path: "/shop?category=all-in-one-printers",
+      image: "/newproimges/3.png",
     },
     {
       title: "Secure Checkout",
-      description: "Shop with peace of mind featuring encrypted payments, fast shipping, and our 30-day quality guarantee.",
+      description:
+        "Enjoy a safe buying experience with protected payments, trusted delivery, and dependable customer support.",
       icon: ShieldCheck,
-      path: "/shop"
-    }
+      path: "/shop",
+      image: "/newproimges/2.png",
+    },
   ];
 
-
   return (
-    <section className="py-24 bg-white font-sans relative">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="bg-white py-16 md:py-24 font-sans">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-0">
+        {/* Heading */}
+        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
+          <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.24em] text-[#013E24] border border-[#013E24]/15 px-4 py-2 rounded-full bg-[#013E24]/5">
+            The Standard in Printing
+          </span>
 
-        {/* Refined Header */}
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-blue-600 text-[12px] font-bold uppercase mb-4 block">
-              The Standard in Printing
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-              About <span className="text-blue-600">Printing Mania</span>
-            </h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto mt-8 rounded-full" />
-          </motion.div>
+          <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+            About <span className="text-[#013E24]">Republic Printing</span>
+          </h2>
+
+          <p className="mt-5 text-sm md:text-base leading-7 text-slate-600">
+            Reliable printing solutions for homes, professionals, and growing
+            businesses with the right mix of performance, value, and ease.
+          </p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {sections.map((section, index) => (
-            <Link key={index} to={section.path}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative h-full bg-white border border-slate-200 p-8 rounded-xl hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/5 cursor-pointer"
-              >
-                <div className="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-lg text-slate-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mb-8">
-                  <section.icon size={24} strokeWidth={1.5} />
-                </div>
+        {/* Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {sections.map((section, index) => {
+            const Icon = section.icon;
 
-                <div className="space-y-4">
-                  <h4 className="text-[14px] font-bold text-slate-900 uppercase">
-                    {section.title}
-                  </h4>
-                  <p className="text-slate-600 text-[14px] leading-relaxed font-normal min-h-[60px]">
-                    {section.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-[12px] font-bold text-blue-600 uppercase opacity-0 group-hover:opacity-100 transition-all duration-300 pt-2">
-                    View Collection <ArrowRight size={14} />
+            return (
+              <Link key={index} to={section.path} className="group block">
+                <div className="h-full bg-white border border-slate-200 rounded-[24px] overflow-hidden transition-all duration-300 hover:border-[#013E24]/25">
+                  <div className="grid grid-cols-1 sm:grid-cols-[230px_1fr] h-full">
+                    {/* Image Side */}
+                    <div className="bg-[#f7faf8] border-b sm:border-b-0 sm:border-r border-slate-100 p-1 flex items-center justify-center">
+                      <div className="w-full  flex items-center justify-center">
+                        <img
+                          src={section.image}
+                          alt={section.title}
+                          className="h-full w-auto object-cover rounded-tl-[20px] rounded-bl-[20px] transition-transform duration-300 "
+                          onError={(e) => {
+                            e.currentTarget.src = "/logo/fabicon.png";
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Content Side */}
+                    <div className="p-6 md:p-7 flex flex-col justify-center">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-11 h-11 rounded-xl bg-[#013E24]/10 text-[#013E24] flex items-center justify-center">
+                          <Icon size={20} strokeWidth={1.8} />
+                        </div>
+                        <div className="h-px flex-1 bg-slate-100" />
+                      </div>
+
+                      <h3 className="text-[22px] md:text-[24px] font-semibold text-slate-900 leading-tight">
+                        {section.title}
+                      </h3>
+
+                      <p className="mt-3 text-[14px] md:text-[15px] leading-7 text-slate-600">
+                        {section.description}
+                      </p>
+
+                      <div className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#013E24]">
+                        View Collection
+                        <ArrowRight
+                          size={15}
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
-
-        {/* Narrative Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center max-w-4xl mx-auto border-t border-slate-100 pt-16"
-        >
-          <p className="text-slate-600 text-lg font-normal leading-relaxed mb-12">
-            Printing Mania is a specialized Pennsylvania-based retailer delivering professional printing infrastructure nationwide. From advanced laser systems to wireless inkjet solutions, we bridge the gap between complex technology and seamless operational performance for businesses and homes.
+        {/* Bottom Content */}
+        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-slate-100 text-center">
+          <p className="text-slate-600 text-[15px] md:text-lg leading-8">
+            Republic Printing is focused on making modern printing more accessible
+            and dependable. From home-ready wireless models to office-grade
+            machines, we help customers choose technology that fits their
+            workflow with confidence.
           </p>
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );

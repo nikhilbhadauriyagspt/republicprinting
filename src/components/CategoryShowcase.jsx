@@ -29,23 +29,23 @@ export default function CategoryShowcase({ title, products = [], adImage, link, 
   return (
     <section className="w-full bg-[#f1f3f6] py-10 md:py-16 font-['Rubik'] overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-4 md:px-10">
-        
+
         <div className="bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row items-stretch shadow-sm border border-gray-100 relative">
-          
+
           {/* DISCOUNT BADGE OVERLAY - ONLY FOR SALES SECTIONS */}
           {discount > 0 && showBadge && (
             <div className="absolute top-4 left-4 z-20 bg-red-600 text-white px-4 py-1.5 rounded-full text-[12px] font-black uppercase tracking-widest flex items-center gap-2 shadow-lg">
-               <Tag size={14} /> Extra {discount}% OFF
+              <Tag size={14} /> Extra {discount}% OFF
             </div>
           )}
 
           {/* LEFT SIDE BANNER - NO OVERLAYS */}
           <div className="w-full lg:w-[320px] xl:w-[380px] shrink-0 relative overflow-hidden bg-gray-50 border-r border-gray-100">
             <Link to={link} className="block w-full h-full">
-              <img 
-                src={adImage} 
-                alt="" 
-                className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-105" 
+              <img
+                src={adImage}
+                alt=""
+                className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-105"
               />
             </Link>
           </div>
@@ -53,19 +53,19 @@ export default function CategoryShowcase({ title, products = [], adImage, link, 
           {/* RIGHT SIDE - PRODUCTS SLIDER */}
           <div className="flex-1 p-4 md:p-8 relative group/slider overflow-hidden">
             <div className="flex items-center justify-between mb-8">
-               <div className="flex flex-col">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">{title}</h3>
-                  {showBadge && <p className="text-[12px] text-red-600 font-bold uppercase tracking-wider mt-1">Limited Time Offer</p>}
-               </div>
-               
-               <div className="flex items-center gap-2">
-                  <button className={`${swiperId}-prev w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all shadow-sm`}>
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button className={`${swiperId}-next w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all shadow-sm`}>
-                    <ChevronRight size={20} />
-                  </button>
-               </div>
+              <div className="flex flex-col">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">{title}</h3>
+                {showBadge && <p className="text-[12px] text-red-600 font-bold uppercase tracking-wider mt-1">Limited Time Offer</p>}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button className={`${swiperId}-prev w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-[#013E24] hover:text-white transition-all shadow-sm`}>
+                  <ChevronLeft size={20} />
+                </button>
+                <button className={`${swiperId}-next w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-[#013E24] hover:text-white transition-all shadow-sm`}>
+                  <ChevronRight size={20} />
+                </button>
+              </div>
             </div>
 
             <Swiper
@@ -102,7 +102,7 @@ export default function CategoryShowcase({ title, products = [], adImage, link, 
                             onError={(e) => { e.currentTarget.src = "/logo/fabicon.png"; }}
                           />
                         </Link>
-                        <button 
+                        <button
                           onClick={() => toggleWishlist(p)}
                           className={`absolute top-2 right-2 w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center ${isInWishlist(p.id) ? "text-red-500" : "text-gray-400"}`}
                         >
@@ -119,13 +119,13 @@ export default function CategoryShowcase({ title, products = [], adImage, link, 
                         <div className="mt-auto">
                           {/* PRICE DISPLAY */}
                           <div className="flex items-baseline gap-2 mb-3">
-                             <span className="text-[20px] font-black text-gray-900">${originalPrice}</span>
-                             {oldPrice && <span className="text-[12px] text-gray-400 line-through font-bold">${oldPrice}</span>}
+                            <span className="text-[20px] font-black text-gray-900">${originalPrice}</span>
+                            {oldPrice && <span className="text-[12px] text-gray-400 line-through font-bold">${oldPrice}</span>}
                           </div>
-                          
+
                           <button
                             onClick={() => addToCart(p)}
-                            className="w-full py-2 bg-gray-900 text-white rounded-lg text-[11px] font-bold uppercase tracking-wider hover:bg-primary transition-all flex items-center justify-center gap-2"
+                            className="w-full py-2 bg-gray-900 text-white rounded-lg text-[11px] font-bold uppercase tracking-wider hover:bg-[#013E24] transition-all flex items-center justify-center gap-2"
                           >
                             <ShoppingCart size={14} /> Add to Cart
                           </button>

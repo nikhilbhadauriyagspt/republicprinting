@@ -62,13 +62,13 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white font-['Rubik'] text-slate-900">
-      <SEO title="Contact Us | Printingmania" />
+      <SEO title="Contact Us | Republic Printing" />
 
       {/* --- MINIMAL BREADCRUMBS --- */}
       <div className="bg-slate-50 border-b border-slate-200 py-4">
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <nav className="flex items-center gap-2 text-[13px] font-medium text-slate-500">
-            <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#013E24] transition-colors">Home</Link>
             <ChevronRight size={14} />
             <span className="text-slate-900 font-medium">Connect With Us</span>
           </nav>
@@ -76,17 +76,17 @@ export default function Contact() {
       </div>
 
       {/* --- REFINED PAGE HEADER --- */}
-      <div className="py-16 md:py-24 border-b border-slate-100" style={{ background: 'linear-gradient(135deg, rgb(30, 58, 138) 0%, rgb(29, 78, 216) 50%, rgb(37, 99, 235) 100%)' }}>
+      <div className="py-16 md:py-24 border-b border-slate-100" style={{ background: 'linear-gradient(135deg, rgb(2, 69, 41) 0%, rgb(0, 50, 29) 50%, rgb(5, 138, 44) 100%)' }}>
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <div className="max-w-3xl">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6"
             >
               Get in Touch with <span className="text-blue-200">Our Experts.</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -104,52 +104,52 @@ export default function Contact() {
           {/* --- INFO COLUMN --- */}
           <div className="lg:col-span-4 space-y-8">
             <div className="bg-white p-8 border border-slate-100 rounded-xl shadow-sm">
-               <h2 className="text-xl font-bold text-slate-900 mb-2">Contact Information</h2>
-               <p className="text-slate-500 text-[14px] font-normal">Reach out through any of our official channels.</p>
-               
-               <div className="mt-10 space-y-8">
-                  <div className="flex gap-4 items-start group">
-                    <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                      <Mail size={22} strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-[12px] text-slate-400 mb-1 uppercase tracking-widest">Email Support</h4>
-                      <p className="text-slate-900 text-[15px] font-bold hover:text-blue-600 transition-colors cursor-pointer">info@printingmania.shop</p>
-                    </div>
-                  </div>
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Contact Information</h2>
+              <p className="text-slate-500 text-[14px] font-normal">Reach out through any of our official channels.</p>
 
-                  <div className="flex gap-4 items-start group">
-                    <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                      <MapPin size={22} strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-[12px] text-slate-400 mb-1 uppercase tracking-widest">Our Location</h4>
-                      <p className="text-slate-900 text-[15px] font-medium leading-relaxed">
-                        44110 Ashburn Village Blvd, <br /> Ashburn, VA 20147, USA
-                      </p>
-                    </div>
+              <div className="mt-10 space-y-8">
+                <div className="flex gap-4 items-start group">
+                  <div className="w-12 h-12 bg-blue-50 text-[#013E24] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#013E24] group-hover:text-white transition-colors">
+                    <Mail size={22} strokeWidth={1.5} />
                   </div>
-               </div>
+                  <div>
+                    <h4 className="font-bold text-[12px] text-slate-400 mb-1 uppercase tracking-widest">Email Support</h4>
+                    <p className="text-slate-900 text-[15px] font-bold hover:text-[#013E24] transition-colors cursor-pointer">info@republicprinting.shop</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 items-start group">
+                  <div className="w-12 h-12 bg-blue-50 text-[#013E24] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#013E24] group-hover:text-white transition-colors">
+                    <MapPin size={22} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[12px] text-slate-400 mb-1 uppercase tracking-widest">Our Location</h4>
+                    <p className="text-slate-900 text-[15px] font-medium leading-relaxed">
+                      1710 2nd Ave N Birmingham, <br />AL 35203, USA
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="bg-slate-50 p-8 border border-slate-100 rounded-xl">
-               <div className="flex items-center gap-3 text-blue-600 mb-4">
-                  <Clock size={20} strokeWidth={1.5} />
-                  <h4 className="font-bold text-[13px] uppercase tracking-widest">Support Hours</h4>
-               </div>
-               <p className="text-slate-500 text-[14px] leading-relaxed mb-6 font-normal">Our average response time for technical inquiries is under 2 hours during business operations.</p>
-               <div className="text-slate-900 font-bold text-[14px] flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Monday - Friday: 9AM - 6PM (PST)
-               </div>
+              <div className="flex items-center gap-3 text-[#013E24] mb-4">
+                <Clock size={20} strokeWidth={1.5} />
+                <h4 className="font-bold text-[13px] uppercase tracking-widest">Support Hours</h4>
+              </div>
+              <p className="text-slate-500 text-[14px] leading-relaxed mb-6 font-normal">Our average response time for technical inquiries is under 2 hours during business operations.</p>
+              <div className="text-slate-900 font-bold text-[14px] flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Monday - Friday: 9AM - 6PM (PST)
+              </div>
             </div>
 
-            <div className="bg-blue-600 p-8 rounded-xl text-white shadow-lg shadow-blue-600/10">
-               <div className="flex items-center gap-3 mb-4">
-                  <Headphones size={20} />
-                  <h4 className="font-bold text-[14px] uppercase tracking-widest">Technical Help</h4>
-               </div>
-               <p className="text-blue-50 text-[14px] leading-relaxed font-normal opacity-90">For urgent technical issues regarding your printer setup, please include your order number for faster assistance.</p>
+            <div className="bg-[#013E24] p-8 rounded-xl text-white shadow-lg shadow-blue-600/10">
+              <div className="flex items-center gap-3 mb-4">
+                <Headphones size={20} />
+                <h4 className="font-bold text-[14px] uppercase tracking-widest">Technical Help</h4>
+              </div>
+              <p className="text-blue-50 text-[14px] leading-relaxed font-normal opacity-90">For urgent technical issues regarding your printer setup, please include your order number for faster assistance.</p>
             </div>
           </div>
 
@@ -164,13 +164,13 @@ export default function Contact() {
                     className="text-center py-12"
                   >
                     <div className="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm">
-                       <CheckCircle2 size={40} strokeWidth={1.5} />
+                      <CheckCircle2 size={40} strokeWidth={1.5} />
                     </div>
                     <h2 className="text-3xl font-bold text-slate-900 mb-3">Message Received!</h2>
                     <p className="text-slate-500 mb-10 font-normal text-lg">Thank you for reaching out. An expert from our team will <br /> get back to you shortly.</p>
                     <button
                       onClick={() => setStatus(null)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-[13px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-95"
+                      className="bg-[#013E24] hover:bg-blue-700 text-white px-10 py-4 text-[13px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-95"
                     >
                       Send Another Message
                     </button>
@@ -181,7 +181,7 @@ export default function Contact() {
                       <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Send us a Message</h2>
                       <p className="text-slate-500 text-[15px] font-normal">We'll get back to you within 24 business hours.</p>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
                         <label className="text-[12px] font-bold text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
@@ -251,7 +251,7 @@ export default function Contact() {
                     <div className="pt-4">
                       <button
                         disabled={loading}
-                        className="w-full md:w-auto min-w-[220px] h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-[13px] uppercase tracking-widest shadow-lg shadow-blue-600/20 disabled:opacity-50 transition-all active:scale-95 flex items-center justify-center gap-3"
+                        className="w-full md:w-auto min-w-[220px] h-14 bg-[#013E24] hover:bg-blue-700 text-white rounded-xl font-bold text-[13px] uppercase tracking-widest shadow-lg shadow-blue-600/20 disabled:opacity-50 transition-all active:scale-95 flex items-center justify-center gap-3"
                       >
                         {loading ? <Loader2 className="animate-spin" size={20} /> : (
                           <>

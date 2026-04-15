@@ -3,13 +3,13 @@
 export default function SEO({ title, description, keywords, schemaType = "Website" }) {
   useEffect(() => {
     // Update Title - Avoid doubling the brand name if it's already in the prop
-    const baseTitle = "Printingmania";
+    const baseTitle = "Republic Printing";
     const fullTitle = title && title.includes(baseTitle) ? title : (title ? `${title} | ${baseTitle}` : baseTitle);
     document.title = fullTitle;
 
     // Update Description
     const metaDescription = document.querySelector('meta[name="description"]');
-    const defaultDesc = "Printingmania is located in Ashburn, Virginia, offering high-performance printers, ink, toner, and nationwide shipping.";
+    const defaultDesc = "Republic Printing is located in Ashburn, Virginia, offering high-performance printers, ink, toner, and nationwide shipping.";
     const finalDesc = description || defaultDesc;
     if (metaDescription) {
       metaDescription.setAttribute('content', finalDesc);
@@ -45,22 +45,22 @@ export default function SEO({ title, description, keywords, schemaType = "Websit
     const schemaData = {
       "@context": "https://schema.org",
       "@type": schemaType === "Product" ? "Product" : "Organization",
-      "name": "Printingmania",
-      "url": "https://printingmania.shop",
-      "logo": "https://printingmania.shop/logo/logo.png",
+      "name": "Republic Printing",
+      "url": "https://republicprinting.shop",
+      "logo": "https://republicprinting.shop/logo/logo.png",
       "description": finalDesc,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "44110 Ashburn Village Blvd",
-        "addressLocality": "Ashburn",
-        "addressRegion": "VA",
-        "postalCode": "20147",
+        "streetAddress": "1710 2nd Ave N",
+        "addressLocality": "Birmingham",
+        "addressRegion": "AL",
+        "postalCode": "35203",
         "addressCountry": "US"
       },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "email": "info@printingmania.shop"
+        "email": "info@republicprinting.shop"
       }
     };
 

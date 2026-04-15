@@ -53,7 +53,7 @@ export default function ProductManager() {
           <h1 className="text-2xl font-bold text-slate-900 ">Products</h1>
           <p className="text-sm font-medium text-slate-500">Manage your store inventory ({products.length} items)</p>
         </div>
-        <Link to="/admin/products/add" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+        <Link to="/admin/products/add" className="bg-[#013E24] hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
           <Plus size={18} /> Add New Product
         </Link>
       </div>
@@ -95,7 +95,7 @@ export default function ProductManager() {
                 <tr key={p.id} className="hover:bg-gray-50/50 transition-colors group">
                   <td className="px-6 py-4">
                     <div className="flex flex-col">
-                      <span className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{p.name}</span>
+                      <span className="font-bold text-slate-900 group-hover:text-[#013E24] transition-colors">{p.name}</span>
                       <span className="text-[10px] font-bold text-slate-400 capitalize tracking-widest">{p.brand_name || 'Generic'}</span>
                     </div>
                   </td>
@@ -106,13 +106,13 @@ export default function ProductManager() {
                     </span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold capitalize tracking-widest ${p.status === 'published' ? 'bg-blue-50 text-blue-600' : 'bg-gray-100 text-gray-400'}`}>
+                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold capitalize tracking-widest ${p.status === 'published' ? 'bg-blue-50 text-[#013E24]' : 'bg-gray-100 text-gray-400'}`}>
                       {p.status}
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <Link to={`/admin/products/edit/${p.id}`} className="p-2 hover:bg-blue-50 text-blue-600 rounded-lg transition-colors">
+                      <Link to={`/admin/products/edit/${p.id}`} className="p-2 hover:bg-blue-50 text-[#013E24] rounded-lg transition-colors">
                         <Edit size={16} />
                       </Link>
                       <button

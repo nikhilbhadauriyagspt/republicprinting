@@ -93,11 +93,11 @@ export default function SearchOverlay() {
             <div className="p-8 border-b border-slate-100 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center border border-blue-100">
-                    <Search size={24} className="text-[#1d4ed8]" />
+                  <Search size={24} className="text-[#1d4ed8]" />
                 </div>
                 <div>
-                    <h2 className="text-2xl font-semibold text-slate-900 tracking-tight leading-none">Global Search</h2>
-                    <p className="text-[11px] font-medium uppercase tracking-widest text-[#1d4ed8] mt-1.5">Printingmania Catalog</p>
+                  <h2 className="text-2xl font-semibold text-slate-900 tracking-tight leading-none">Global Search</h2>
+                  <p className="text-[11px] font-medium uppercase tracking-widest text-[#1d4ed8] mt-1.5">Republic Printing Catalog</p>
                 </div>
               </div>
               <button
@@ -181,7 +181,7 @@ export default function SearchOverlay() {
                           <button
                             key={tag}
                             onClick={() => handleQuickSearch(tag)}
-                            className="px-6 py-3 bg-white hover:bg-[#1d4ed8] hover:text-white text-[12px] font-medium rounded-2xl text-slate-600 transition-all border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-600/20 active:scale-95"
+                            className="px-6 py-3 bg-white hover:bg-[#013E24]hover:text-white text-[12px] font-medium rounded-2xl text-slate-600 transition-all border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-600/20 active:scale-95"
                           >
                             {tag}
                           </button>
@@ -209,10 +209,10 @@ export default function SearchOverlay() {
                     </div>
 
                     {/* Modern Expert Support Box */}
-                    <div className="p-8 bg-[#1d4ed8] rounded-[40px] text-white relative overflow-hidden shadow-2xl shadow-blue-600/30 group">
+                    <div className="p-8 bg-[#013E24]rounded-[40px] text-white relative overflow-hidden shadow-2xl shadow-blue-600/30 group">
                       <div className="relative z-10">
                         <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center mb-4 border border-white/20">
-                            <Headphones size={22} className="text-white" />
+                          <Headphones size={22} className="text-white" />
                         </div>
                         <h4 className="font-semibold text-2xl mb-2 leading-tight">Need expert advice?</h4>
                         <p className="text-[14px] text-blue-50 mb-8 font-medium leading-relaxed opacity-90">Talk to our technicians for a free consultation.</p>

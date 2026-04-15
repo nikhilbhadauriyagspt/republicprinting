@@ -32,7 +32,7 @@ export default function PromoSection() {
               <div className="flex items-center gap-4">
                 <Link
                   to="/shop"
-                  className="px-8 py-3.5 bg-foreground text-white text-[13px] font-bold uppercase tracking-widest hover:bg-primary transition-all flex items-center gap-2"
+                  className="px-8 py-3.5 bg-foreground text-white text-[13px] font-bold uppercase tracking-widest hover:bg-[#013E24] transition-all flex items-center gap-2"
                 >
                   Shop Now
                   <ArrowRight size={16} />

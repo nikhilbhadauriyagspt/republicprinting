@@ -37,7 +37,7 @@ export default function TrendingProducts() {
   return (
     <section className="w-full py-16 md:py-24 bg-white font-['Rubik'] overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-6">
-        
+
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="flex flex-col gap-2">
@@ -50,8 +50,8 @@ export default function TrendingProducts() {
             </h2>
           </div>
 
-          <Link 
-            to="/shop" 
+          <Link
+            to="/shop"
             className="group flex items-center gap-2 text-[13px] font-bold text-[#94A3B8] hover:text-primary transition-all uppercase tracking-wider"
           >
             Explore All Products
@@ -77,14 +77,14 @@ export default function TrendingProducts() {
                   className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-md"
                   alt={p.name}
                 />
-                
+
                 {/* FLOATING TAG */}
                 <span className="absolute top-5 left-5 text-[9px] font-black uppercase tracking-widest bg-white text-foreground px-3.5 py-1.5 rounded-full shadow-sm border border-border/50 group-hover:border-primary/30 transition-colors">
                   {p.tag}
                 </span>
 
                 {/* QUICK ADD BUTTON */}
-                <button className="absolute bottom-5 right-5 w-11 h-11 rounded-full bg-white text-foreground flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-primary hover:text-white transition-all duration-300">
+                <button className="absolute bottom-5 right-5 w-11 h-11 rounded-full bg-white text-foreground flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-[#013E24] hover:text-white transition-all duration-300">
                   <ShoppingCart size={18} strokeWidth={2} />
                 </button>
               </div>
@@ -97,11 +97,11 @@ export default function TrendingProducts() {
                   </div>
                   <span className="text-[12px] font-bold text-[#94A3B8]">{p.rating}</span>
                 </div>
-                
+
                 <h4 className="text-[16px] font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1 mb-2">
                   {p.name}
                 </h4>
-                
+
                 <div className="flex items-center justify-between">
                   <span className="text-[18px] font-black text-foreground">{p.price}</span>
                   <span className="text-[11px] font-bold text-primary uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">

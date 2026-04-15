@@ -15,15 +15,15 @@ export default function ReturnPolicy() {
 
       <h2>Return Process</h2>
       <p>
-        To return an item, please email customer service at <a href="mailto:info@printingmania.shop">info@printingmania.shop</a> to obtain an Return Merchandise Authorization (RMA) number.
+        To return an item, please email customer service at <a href="mailto:info@republicprinting.shop">info@republicprinting.shop</a> to obtain an Return Merchandise Authorization (RMA) number.
       </p>
       <div className="bg-gray-50 p-8 rounded-sm border border-border mt-6 not-prose">
         <p className="font-medium text-gray-500 mb-4 italic">After receiving an RMA number, place the item securely in its original packaging and include your proof of purchase, then mail your return to the following address:</p>
         <address className="not-italic text-black font-bold leading-relaxed capitalize ">
-          Printingmania LLC<br />
+          Republic Printing LLC<br />
 
-          44110 Ashburn Village Blvd, <br />
-          Ashburn, VA 20147, USA<br />
+          1710 2nd Ave N<br />
+          Birmingham, AL 35203, USA<br />
         </address>
         <p className="mt-6 text-primary font-extrabold capitalize text-xs tracking-widest">
           Return shipping charges will be paid or reimbursed by us.
@@ -45,7 +45,7 @@ export default function ReturnPolicy() {
       <p>If you have any questions concerning our return policy, please contact us at:</p>
       <div className="bg-gray-50 p-8 rounded-sm border border-border my-8 not-prose">
         <address className="not-italic text-gray-700 font-bold leading-relaxed space-y-3">
-          <p className="flex items-center gap-3 text-primary font-extrabold ">info@printingmania.shop</p>
+          <p className="flex items-center gap-3 text-primary font-extrabold ">info@republicprinting.shop</p>
           <p className="text-[10px] text-gray-400 font-bold capitalize tracking-[0.2em]">Contact support for immediate assistance</p>
         </address>
       </div>

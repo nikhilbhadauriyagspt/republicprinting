@@ -31,7 +31,7 @@ export default function FlashSalesSlider() {
       if (scrollRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
         const maxScroll = scrollWidth - clientWidth;
-        
+
         // Calculate the exact width of one card + gap to slide perfectly
         const cardWidth = scrollRef.current.firstElementChild?.offsetWidth + 24 || 400;
 
@@ -70,21 +70,21 @@ export default function FlashSalesSlider() {
   return (
     <section className="py-6 bg-white font-['Rubik']">
       <div className="max-w-[1800px] mx-auto px-4 md:px-10 relative">
-        <div 
+        <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-6 scroll-smooth"
         >
           {products.map((product) => (
-            <div 
-              key={product.id} 
+            <div
+              key={product.id}
               className="min-w-[300px] md:min-w-[calc((100%-72px)/4)] bg-white rounded-[15px] p-4 flex gap-4 shadow-[0_2px_5px_rgba(0,0,0,0.08)] border border-background snap-start"
             >
               {/* LEFT: IMAGE (30%) */}
               <Link to={`/product/${product.slug}`} className="w-[30%] aspect-square bg-[#F5F5F5] rounded-[12px] flex items-center justify-center overflow-hidden shrink-0">
-                <img 
-                  src={getImagePath(product)} 
-                  alt={product.name} 
-                  className="w-full h-full object-contain p-3 hover:scale-110 transition-transform duration-500 mix-blend-multiply" 
+                <img
+                  src={getImagePath(product)}
+                  alt={product.name}
+                  className="w-full h-full object-contain p-3 hover:scale-110 transition-transform duration-500 mix-blend-multiply"
                 />
               </Link>
 
@@ -100,14 +100,14 @@ export default function FlashSalesSlider() {
                 <div className="flex items-center gap-3 mt-4">
                   {/* QUANTITY SELECTOR */}
                   <div className="flex items-center border border-border rounded-full p-1 bg-background">
-                    <button 
+                    <button
                       onClick={() => handleQuantity(product.id, "dec")}
                       className="w-7 h-7 flex items-center justify-center text-secondary hover:text-primary transition-colors"
                     >
                       <Minus size={14} />
                     </button>
                     <span className="w-8 text-center text-[12px] font-bold text-foreground">{product.quantity}</span>
-                    <button 
+                    <button
                       onClick={() => handleQuantity(product.id, "inc")}
                       className="w-7 h-7 flex items-center justify-center text-secondary hover:text-primary transition-colors"
                     >
@@ -116,9 +116,9 @@ export default function FlashSalesSlider() {
                   </div>
 
                   {/* ADD TO CART */}
-                  <button 
+                  <button
                     onClick={() => addToCart(product, product.quantity)}
-                    className="flex-1 h-9 bg-primary text-white rounded-full flex items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-wider hover:bg-primary-hover transition-all shadow-lg shadow-primary/10"
+                    className="flex-1 h-9 bg-[#013E24] text-white rounded-full flex items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-wider hover:bg-[#013E24]-hover transition-all shadow-lg shadow-primary/10"
                   >
                     <ShoppingCart size={13} />
                     Add

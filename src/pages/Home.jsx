@@ -11,6 +11,7 @@ import PrinterGuide from "@/components/PrinterGuide";
 import BrandMarquee from "@/components/BrandMarquee";
 import Showcase from "@/components/ShowcaseStrip";
 import Middlebaner from "@/components/middlebaner";
+import ProductGrid from "@/components/ProductGrid";
 import BottomWideBanner from "@/components/BottomWideBanner";
 import { useState, useEffect, useMemo } from "react";
 import API_BASE_URL from "../config";
@@ -105,17 +106,19 @@ export default function Home() {
   return (
     <div className="bg-white font-sans overflow-x-hidden text-slate-900">
       <SEO
-        title="Printingmania | High-Performance Printing Solutions"
+        title="Republic Printing | High-Performance Printing Solutions"
         description="Shop printers, ink, and toner globally. Professional business printing solutions with international shipping."
         keywords="Buy Printers Online, Ink and Toner, LaserJet, OfficeJet, Printer Accessories, Business Printing Solutions"
       />
 
       <Hero products={data.all} />
+      <Showcase />
 
       <AboutSection />
-      <Showcase />
-      <ShopByCategory categories={data.categories} loading={data.loading} />
 
+
+      <ProductGrid products={data.all} />
+      <ShopByCategory categories={data.categories} loading={data.loading} />
       <FeaturedTabs
         printers={data.printers}
         accessories={data.accessories}
@@ -123,7 +126,6 @@ export default function Home() {
       />
 
       <PrinterGuide />
-      <CategoryNavigation />
 
 
     </div>

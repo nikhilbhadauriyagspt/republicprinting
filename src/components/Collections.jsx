@@ -14,8 +14,8 @@ export default function Collections() {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <Sparkles size={14} className="text-blue-600" />
-            <span className="text-[10px] font-bold text-blue-600 capitalize tracking-[0.4em]">Core Pillars</span>
+            <Sparkles size={14} className="text-[#013E24]" />
+            <span className="text-[10px] font-bold text-[#013E24] capitalize tracking-[0.4em]">Core Pillars</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-950 capitalize  leading-none">
             Major <span className="text-slate-400 italic">Series.</span>
@@ -49,20 +49,20 @@ export default function Collections() {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-2xl bg-white/80 backdrop-blur-md flex items-center justify-center shadow-sm">
-                  <Laptop size={20} className="text-blue-600" />
+                  <Laptop size={20} className="text-[#013E24]" />
                 </div>
                 <span className="text-[10px] font-bold capitalize tracking-[0.3em] text-slate-900">Computing</span>
               </div>
 
               <h3 className="text-4xl md:text-6xl font-bold text-slate-950 capitalize  leading-none">
-                Elite <br /><span className="text-blue-600 italic">Laptops.</span>
+                Elite <br /><span className="text-[#013E24] italic">Laptops.</span>
               </h3>
 
               <p className="text-slate-500 text-sm md:text-lg font-bold max-w-xs leading-relaxed">
                 Precision tools for the modern high-performance workflow.
               </p>
 
-              <Link to="/shop?category=laptop-computers" className="inline-flex items-center gap-4 h-14 px-8 bg-slate-950 text-white rounded-2xl font-bold text-[10px] capitalize tracking-[0.2em] hover:bg-blue-600 hover:scale-105 transition-all shadow-xl shadow-black/10">
+              <Link to="/shop?category=laptop-computers" className="inline-flex items-center gap-4 h-14 px-8 bg-slate-950 text-white rounded-2xl font-bold text-[10px] capitalize tracking-[0.2em] hover:bg-[#013E24] hover:scale-105 transition-all shadow-xl shadow-black/10">
                 Explore Models <ArrowRight size={16} />
               </Link>
             </div>

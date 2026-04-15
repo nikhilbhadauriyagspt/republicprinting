@@ -36,25 +36,28 @@ export default function PrinterGuide() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 font-['Rubik'] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-10">
-        
+    <section className="py-20 bg-white font-sans">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* HEADER */}
-        <div className="flex flex-col items-center justify-center text-center mb-16">
+        <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-3"
+            transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 text-blue-600 text-[13px] font-bold uppercase tracking-[0.2em]">
-              <Search size={16} /> Assistance
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
-              Guide for <span className="text-blue-600">Buying a Printer</span>
+            <p
+              className="text-sm font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#013E24" }}
+            >
+              Assistance
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+              A Guide to Buying a Printer
             </h2>
-            <p className="text-slate-500 text-sm md:text-lg max-w-2xl mx-auto mt-4">
-              Find the Right Printer for Your Needs. Select the best inkjet, laser, or office printer for your workflow.
+            <p className="text-slate-600 text-lg max-w-3xl mx-auto mt-4">
+              Find the perfect printer for your needs, whether for home, office, or enterprise use.
             </p>
           </motion.div>
         </div>
@@ -67,72 +70,67 @@ export default function PrinterGuide() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={`relative bg-white p-8 md:p-10 rounded-2xl border transition-all duration-500 flex flex-col h-full ${
-                item.featured 
-                ? 'border-blue-600 shadow-[0_20px_50px_rgba(30,58,138,0.1)] scale-105 z-10' 
-                : 'border-slate-100 hover:border-blue-200 hover:shadow-xl'
-              }`}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="bg-slate-50 p-8 rounded-2xl flex flex-col h-full text-center items-center"
             >
-              {item.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">
-                  Most Popular
-                </div>
-              )}
-
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-8 ${item.featured ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600'}`}>
-                <item.icon size={28} />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                style={{ backgroundColor: "rgba(1, 62, 36, 0.1)" }}
+              >
+                <item.icon size={32} style={{ color: "#013E24" }} />
               </div>
 
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-1">{item.title}</h3>
-                <p className="text-blue-600 text-sm font-semibold uppercase tracking-wider">{item.subtitle}</p>
-              </div>
+              <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
+              <p
+                className="text-sm font-semibold uppercase tracking-wider mb-4"
+                style={{ color: "#013E24" }}
+              >
+                {item.subtitle}
+              </p>
 
-              <p className="text-slate-500 text-[15px] leading-relaxed mb-8">
+              <p className="text-slate-600 text-base leading-relaxed mb-6 flex-1">
                 {item.description}
               </p>
 
-              <ul className="space-y-4 mb-10 flex-1">
+              <ul className="space-y-3 text-left mb-8">
                 {item.points.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-700 text-sm">
-                    <CheckCircle2 size={18} className="text-blue-500 mt-0.5 shrink-0" />
+                  <li key={i} className="flex items-center gap-3 text-slate-700 text-sm">
+                    <CheckCircle2 size={16} style={{ color: "#013E24" }} />
                     <span>{point}</span>
                   </li>
                 ))}
               </ul>
 
-              <Link 
+              <Link
                 to={item.link}
-                className={`w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${
-                  item.featured 
-                  ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/20' 
-                  : 'bg-slate-900 text-white hover:bg-blue-600'
-                }`}
+                className="w-full py-3 rounded-lg text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+                style={{
+                  backgroundColor: "#013E24",
+                  color: "white",
+                }}
               >
-                {item.btnText} <ArrowRight size={16} />
+                {item.btnText}
               </Link>
             </motion.div>
           ))}
         </div>
 
         {/* FOOTER CALL TO ACTION */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 p-8 md:p-12 rounded-3xl bg-white border border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
-          style={{ background: 'linear-gradient(135deg, #fff 0%, #f8fafc 100%)' }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 text-center"
         >
-          <div>
-            <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Not sure which printer you need?</h4>
-            <p className="text-slate-500">Browse all printers and compare features easily to make the best choice.</p>
-          </div>
-          <Link 
-            to="/shop" 
-            className="px-10 py-5 bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-all rounded-2xl font-bold uppercase tracking-widest text-sm flex items-center gap-3"
+          <h4 className="text-2xl font-bold text-slate-900 mb-2">Still Not Sure?</h4>
+          <p className="text-slate-600 mb-6">Let us help you find the best solution for your needs.</p>
+          <Link
+            to="/shop"
+            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white"
+            style={{ backgroundColor: "#013E24" }}
           >
-            Browse All Products <ArrowRight size={20} />
+            Browse All Products
           </Link>
         </motion.div>
 

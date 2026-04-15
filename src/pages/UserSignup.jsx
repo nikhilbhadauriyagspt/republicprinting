@@ -56,7 +56,7 @@ export default function UserSignup() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] font-['Rubik'] px-4 py-12 md:py-20">
-      <SEO title="Create Your Account | Printingmania" />
+      <SEO title="Create Your Account | Republic Printing" />
 
       <div className="w-full max-w-[500px] bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.06)] overflow-hidden">
         {/* Top Decorative Gradient */}
@@ -69,7 +69,7 @@ export default function UserSignup() {
             </Link>
             <div className="flex items-center justify-center gap-2 text-[#f59e0b] mb-2">
               <Sparkles size={16} fill="currentColor" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Join Printingmania</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Join Republic Printing</span>
             </div>
             <h1 className="text-3xl font-bold text-[#1D4ED8] tracking-tight">Create Account</h1>
             <p className="text-gray-500 mt-2 text-sm">Experience premium printing benefits</p>
@@ -156,7 +156,7 @@ export default function UserSignup() {
 
             <button
               disabled={loading}
-              className="w-full h-14 bg-[#1D4ED8] text-white rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-[#4f46e5] transition-all disabled:opacity-70 shadow-xl shadow-[#1D4ED8]/10 cursor-pointer flex items-center justify-center gap-3 active:scale-[0.98] mt-2"
+              className="w-full h-14 bg-[#013E24] text-white rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-[#4f46e5] transition-all disabled:opacity-70 shadow-xl shadow-[#1D4ED8]/10 cursor-pointer flex items-center justify-center gap-3 active:scale-[0.98] mt-2"
             >
               {loading ? <Loader2 className="animate-spin" size={20} /> : (
                 <>

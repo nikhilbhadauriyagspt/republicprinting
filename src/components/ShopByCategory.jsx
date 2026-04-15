@@ -55,72 +55,73 @@ export default function ShopByCategory({ categories = [], loading = false }) {
   };
 
   return (
-    <section className="w-full py-16 bg-white font-['Rubik']">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-10">
+    <section className="w-full py-20 bg-white font-sans">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* SECTION HEADER */}
-        <div className="flex flex-col  items-center justify-center text-center mb-16">
+        <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-3"
+            transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 text-blue-600 text-[13px] font-bold uppercase tracking-[0.2em]">
-              <LayoutGrid size={16} /> Catalogue
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 ">
-              Browse <span className="text-blue-600 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Categories</span>
+            <p
+              className="text-sm font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#013E24" }}
+            >
+              Our Catalogue
+            </p>
+            <h2 className="text-4xl md:text-5xl font-[700] text-slate-900 tracking-tight">
+              Discover Your <span class="text-[#013E24]">Perfect Printer</span>
             </h2>
           </motion.div>
         </div>
 
-        {/* ALTERNATING ROWS - NO RADIUS, MINIMAL SHADOW */}
-        <div className="border-t flex flex-col gap-8 border-slate-100">
+        {/* CATEGORY CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {displayCategories.map((cat, index) => {
-            const isEven = index % 2 === 0;
-            const fullHeading = categoryHeadings[cat.slug] || `${cat.name} for Professional Use`;
-            const desc = categoryDescs[cat.slug] || "Experience premium technology with our curated collection.";
+            const fullHeading = categoryHeadings[cat.slug] || cat.name;
+            const desc = categoryDescs[cat.slug] || "Explore our curated collection of high-quality products.";
 
             return (
               <motion.div
                 key={cat.id}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-stretch border-b border-slate-100 group`}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="relative rounded-xl overflow-hidden shadow-md group"
               >
-                {/* IMAGE COLUMN (65%) */}
-                <div className="w-full md:w-[60%] h-[300px] md:h-[400px] relative overflow-hidden bg-slate-50">
-                  <Link to={`/shop?category=${cat.slug}`} className="block w-full h-full">
-                    <img
-                      src={getLocalImagePath(index)}
-                      alt={cat.name}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.src = "/logo/fabicon.png"; }}
-                    />
-                  </Link>
+                <div className="absolute inset-0 w-full h-full">
+                  <img
+                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    src={getLocalImagePath(index)}
+                    alt={cat.name}
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
                 </div>
 
-                {/* CONTENT COLUMN (35%) */}
-                <div
-                  className="w-full md:w-[40%] p-8 md:p-14 flex flex-col justify-center text-white relative"
-                  style={{ background: 'linear-gradient(135deg, rgb(30, 58, 138) 0%, rgb(29, 78, 216) 50%, rgb(37, 99, 235) 100%)' }}
-                >
-                  <div className="space-y-6">
-                    <h3 className="text-2xl md:text-3xl font-bold leading-tight  capitalize">
+                <div className="relative p-8 text-gray-900 flex flex-col items-start">
+                  <div
+                    className="backdrop-blur-sm bg-white/10 p-6 rounded-xl border border-white/80" // Lighter background and border for glassmorphism
+                  >
+                    <h3 className="text-2xl md:text-3xl font-[600] text-white">
                       {fullHeading}
                     </h3>
-                    <div className="w-10 h-0.5 bg-white/40" />
-                    <p className="text-blue-50/90 text-[16px] leading-relaxed font-normal">
+                    <p className="mt-2 text-base text-gray-200 max-w-lg">
                       {desc}
                     </p>
                     <Link
                       to={`/shop?category=${cat.slug}`}
-                      className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-white hover:text-blue-200 transition-all group/btn"
+                      className="mt-4 inline-block px-6 py-2.5 rounded-lg font-semibold text-base transition-colors"
+                      style={{
+                        backgroundColor: "white",
+                        color: "#013E24", // Text color is now the main brand color
+                        boxShadow: "0 2px 8px 0 rgba(1, 62, 36, 0.15)" // Adjusted shadow for lighter background
+                      }}
                     >
-                      Explore Collection <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                      Shop {cat.name}
                     </Link>
                   </div>
                 </div>

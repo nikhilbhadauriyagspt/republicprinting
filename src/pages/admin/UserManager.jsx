@@ -93,7 +93,7 @@ export default function UserManager() {
                 <tr key={u.id} className="hover:bg-gray-50/50 transition-colors group">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">
+                      <div className="h-10 w-10 bg-blue-100 text-[#013E24] rounded-full flex items-center justify-center font-bold">
                         {u.name.charAt(0).toUpperCase()}
                       </div>
                       <div className="flex flex-col">

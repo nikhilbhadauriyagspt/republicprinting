@@ -26,7 +26,7 @@ export default function Wishlist() {
         </div>
         <h2 className="text-3xl font-bold text-foreground mb-4 tracking-tight">Your Wishlist is Empty</h2>
         <p className="text-secondary font-medium text-base mb-12 max-w-md">Save your favorite printer and supplies to this collection for easy access later.</p>
-        <Link to="/shop" className="px-10 py-4 bg-primary text-white font-bold text-[13px] uppercase tracking-widest hover:bg-primary-hover transition-all rounded-full shadow-xl shadow-primary/20 active:scale-95">
+        <Link to="/shop" className="px-10 py-4 bg-[#013E24] text-white font-bold text-[13px] uppercase tracking-widest hover:bg-[#013E24]-hover transition-all rounded-full shadow-xl shadow-primary/20 active:scale-95">
           Explore All Products
         </Link>
       </div>
@@ -80,7 +80,7 @@ export default function Wishlist() {
 
                   <button
                     onClick={() => toggleWishlist(p)}
-                    className="absolute top-4 right-4 w-10 h-10 bg-white shadow-lg text-primary rounded-full flex items-center justify-center z-10 hover:bg-primary hover:text-white transition-all active:scale-90"
+                    className="absolute top-4 right-4 w-10 h-10 bg-white shadow-lg text-primary rounded-full flex items-center justify-center z-10 hover:bg-[#013E24] hover:text-white transition-all active:scale-90"
                     aria-label="Remove from wishlist"
                   >
                     <Trash2 size={18} />
@@ -90,20 +90,20 @@ export default function Wishlist() {
                 {/* Content */}
                 <div className="px-1 flex-1 flex flex-col">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] bg-primary/5 px-2.5 py-1 rounded-full">{p.brand_name || 'HP Series'}</span>
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] bg-[#013E24]/5 px-2.5 py-1 rounded-full">{p.brand_name || 'HP Series'}</span>
                     <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
                   </div>
-                  
+
                   <Link to={`/product/${p.slug}`}>
                     <h3 className="text-[16px] font-bold text-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2 mb-4 min-h-[40px]">{p.name}</h3>
                   </Link>
-                  
+
                   <div className="mt-auto pt-2 flex items-center justify-between gap-4">
                     <p className="text-[18px] font-bold text-foreground">${parseFloat(p.price).toLocaleString()}</p>
-                    
+
                     <button
                       onClick={() => addToCart(p)}
-                      className="flex-1 h-11 bg-foreground text-white rounded-full flex items-center justify-center gap-2 text-[12px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95"
+                      className="flex-1 h-11 bg-foreground text-white rounded-full flex items-center justify-center gap-2 text-[12px] font-bold uppercase tracking-widest hover:bg-[#013E24] transition-all shadow-lg active:scale-95"
                     >
                       <ShoppingCart size={16} /> Add to cart
                     </button>

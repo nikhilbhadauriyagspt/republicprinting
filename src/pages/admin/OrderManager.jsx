@@ -70,7 +70,7 @@ export default function OrderManager() {
 
   const statusColors = {
     pending: 'bg-amber-50 text-amber-600 border-amber-100',
-    processing: 'bg-blue-50 text-blue-600 border-blue-100',
+    processing: 'bg-blue-50 text-[#013E24] border-blue-100',
     shipped: 'bg-indigo-50 text-indigo-600 border-indigo-100',
     out_for_delivery: 'bg-purple-50 text-purple-600 border-purple-100',
     delivered: 'bg-emerald-50 text-emerald-600 border-emerald-100',
@@ -115,7 +115,7 @@ export default function OrderManager() {
               {loading ? (
                 <tr>
                   <td colSpan="5" className="py-20 text-center">
-                    <Loader2 className="animate-spin h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Loader2 className="animate-spin h-8 w-8 text-[#013E24] mx-auto mb-4" />
                     <p className="text-[10px] font-bold text-slate-400 capitalize tracking-widest">Loading Orders...</p>
                   </td>
                 </tr>
@@ -135,7 +135,7 @@ export default function OrderManager() {
                   </td>
                   <td className="px-8 py-6">
                     <div className="flex flex-col">
-                      <span className="text-sm font-bold text-blue-600">${order.total_amount}</span>
+                      <span className="text-sm font-bold text-[#013E24]">${order.total_amount}</span>
                       <span className="text-[10px] font-bold text-slate-400 capitalize mt-1">{order.payment_method}</span>
                     </div>
                   </td>
@@ -177,7 +177,7 @@ export default function OrderManager() {
               <div className="p-8 border-b border-gray-100 flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900  capitalize">Order Details.</h2>
-                  <p className="text-[10px] font-bold text-blue-600 capitalize tracking-widest mt-1">#PFX-{selectedOrder.id}</p>
+                  <p className="text-[10px] font-bold text-[#013E24] capitalize tracking-widest mt-1">#PFX-{selectedOrder.id}</p>
                 </div>
                 <button onClick={() => setSelectedOrder(null)} className="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center hover:bg-black hover:text-white transition-all">
                   <X size={20} />
@@ -194,7 +194,7 @@ export default function OrderManager() {
                         key={s}
                         onClick={() => updateStatus(selectedOrder.id, s)}
                         className={`px-4 py-3 rounded-xl text-[9px] font-bold capitalize tracking-widest border transition-all ${selectedOrder.status === s
-                          ? 'bg-blue-600 border-blue-600 text-white'
+                          ? 'bg-[#013E24] border-blue-600 text-white'
                           : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:text-white'
                           }`}
                       >
@@ -243,7 +243,7 @@ export default function OrderManager() {
                           </div>
                           <p className="text-xs font-bold text-slate-900 capitalize truncate max-w-[250px]">{item.product_name}</p>
                         </div>
-                        <p className="text-xs font-bold text-blue-600">${item.price}</p>
+                        <p className="text-xs font-bold text-[#013E24]">${item.price}</p>
                       </div>
                     ))}
                   </div>
@@ -275,7 +275,7 @@ export default function OrderManager() {
                                   <>
                                     <div className="flex justify-between">
                                       <span className="text-[9px] font-bold text-slate-400 capitalize">Transaction ID</span>
-                                      <span className="text-[9px] font-mono font-bold text-blue-600">{details.id || 'N/A'}</span>
+                                      <span className="text-[9px] font-mono font-bold text-[#013E24]">{details.id || 'N/A'}</span>
                                     </div>
                                     <div className="flex justify-between">
                                       <span className="text-[9px] font-bold text-slate-400 capitalize">Payer Email</span>

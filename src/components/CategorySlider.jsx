@@ -44,7 +44,7 @@ export default function CategorySlider({ title, subtitle, products = [], bgColor
     <section className={`px-6 md:px-10 lg:px-12 py-24 ${bgColor} font-urbanist overflow-hidden`}>
       <div className="flex items-end justify-between mb-12 border-b border-gray-100 pb-8">
         <div>
-          <span className="text-[10px] font-bold tracking-[0.4em] capitalize text-blue-600 mb-2 block ml-1">{subtitle}</span>
+          <span className="text-[10px] font-bold tracking-[0.4em] capitalize text-[#013E24] mb-2 block ml-1">{subtitle}</span>
           <h2 className="text-4xl font-bold text-slate-900  capitalize leading-none">
             {title.split(' ')[0]} <span className="text-slate-400">{title.split(' ').slice(1).join(' ')}.</span>
           </h2>
@@ -95,7 +95,7 @@ export default function CategorySlider({ title, subtitle, products = [], bgColor
                         handleAddToCart(p);
                       }}
                       disabled={addedItems[p.id]}
-                      className={`w-full h-8 rounded-lg flex items-center justify-center gap-2 text-[9px] font-bold capitalize tracking-widest transition-all shadow-lg ${addedItems[p.id] ? 'bg-emerald-500 text-white' : 'bg-black text-white hover:bg-blue-600'}`}
+                      className={`w-full h-8 rounded-lg flex items-center justify-center gap-2 text-[9px] font-bold capitalize tracking-widest transition-all shadow-lg ${addedItems[p.id] ? 'bg-emerald-500 text-white' : 'bg-black text-white hover:bg-[#013E24]'}`}
                     >
                       {addedItems[p.id] ? <><Check size={12} /> Added</> : <><ShoppingBag size={12} /> Quick Add</>}
                     </button>
@@ -103,7 +103,7 @@ export default function CategorySlider({ title, subtitle, products = [], bgColor
                 </Link>
                 <div className="px-1">
                   <Link to={`/product/${p.slug}`}>
-                    <h3 className="text-[11px] font-bold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 mb-0.5">{p.name}</h3>
+                    <h3 className="text-[11px] font-bold text-slate-800 group-hover:text-[#013E24] transition-colors line-clamp-1 mb-0.5">{p.name}</h3>
                   </Link>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-slate-900">${p.price}</span>
@@ -115,8 +115,8 @@ export default function CategorySlider({ title, subtitle, products = [], bgColor
         </CarouselContent>
 
         <div className="absolute -top-20 right-0 flex gap-2">
-          <CarouselPrevious className="static translate-y-0 h-10 w-10 border-gray-100 hover:bg-blue-600 hover:text-white transition-all" />
-          <CarouselNext className="static translate-y-0 h-10 w-10 border-gray-100 hover:bg-blue-600 hover:text-white transition-all" />
+          <CarouselPrevious className="static translate-y-0 h-10 w-10 border-gray-100 hover:bg-[#013E24] hover:text-white transition-all" />
+          <CarouselNext className="static translate-y-0 h-10 w-10 border-gray-100 hover:bg-[#013E24] hover:text-white transition-all" />
         </div>
       </Carousel>
     </section>

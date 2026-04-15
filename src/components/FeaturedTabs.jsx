@@ -17,7 +17,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
   const [swiperInstance, setSwiperInstance] = useState(null);
 
   const allProducts = useMemo(() => {
-    return [...printers, ...accessories].slice(0, 100); 
+    return [...printers, ...accessories].slice(0, 100);
   }, [printers, accessories]);
 
   const getImagePath = (images) => {
@@ -35,7 +35,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
   if (loading) {
     return (
       <section className="w-full py-16 bg-white flex flex-col items-center">
-        <div className="w-full max-w-[1400px] px-6 space-y-8">
+        <div className="w-full max-w-[1600px] px-6 space-y-8">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[...Array(12)].map((_, i) => (
               <div key={i} className="w-full aspect-[1/1.4] bg-slate-50 animate-pulse rounded-lg" />
@@ -48,9 +48,9 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
 
   return (
     <section className="w-full py-16 md:py-24 bg-white font-['Rubik'] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-10">
-        
-        {/* SECTION HEADER - MATCHING ShopByCategory EXACTLY */}
+      <div className="max-w-[1600px] mx-auto px-4 md:px-10">
+
+        {/* SECTION HEADER */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -58,11 +58,11 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
             viewport={{ once: true }}
             className="space-y-3"
           >
-            <div className="inline-flex items-center gap-2 text-blue-600 text-[13px] font-bold uppercase tracking-[0.2em]">
+            <div className="inline-flex items-center gap-2 text-[#013E24] text-[13px] font-bold uppercase tracking-[0.2em]">
               <ShoppingBag size={16} /> New Arrivals
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
-              New & <span className="text-blue-600 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Featured</span>
+              New & <span style={{ color: '#013E24' }}>Featured</span>
             </h2>
           </motion.div>
         </div>
@@ -82,7 +82,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
               640: { slidesPerView: 2, grid: { rows: 2 } },
               768: { slidesPerView: 3, grid: { rows: 2 } },
               1024: { slidesPerView: 4, grid: { rows: 2 } },
-              1280: { slidesPerView: 5, grid: { rows: 2 } },
+              1280: { slidesPerView: 6, grid: { rows: 2 } },
             }}
             autoplay={{
               delay: 3500,
@@ -94,51 +94,54 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
           >
             {allProducts.map((p, index) => (
               <SwiperSlide key={`${p.id}-${index}`} className="h-auto">
-                <div className="group/card bg-white border border-slate-100 rounded-lg p-4 transition-all duration-500 hover:border-transparent relative h-full flex flex-col product-card-hover">
-                  
+                <div className="group/card bg-white border border-slate-200 rounded-xl p-4 transition-all duration-300 hover:shadow-md relative h-full flex flex-col">
+
                   {/* "NEW" BADGE */}
                   {index % 4 === 0 && (
-                    <div className="absolute top-3 left-3 z-10 bg-blue-600 group-hover/card:bg-white group-hover/card:text-blue-700 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider transition-colors">
+                    <div
+                      className="absolute top-3 left-3 z-10 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider"
+                      style={{ backgroundColor: '#013E24' }}
+                    >
                       New
                     </div>
                   )}
 
                   {/* IMAGE */}
-                  <div className="relative aspect-square mb-4 flex items-center justify-center overflow-hidden bg-slate-50/30 group-hover/card:bg-white/10 rounded-md transition-colors">
+                  <div className="relative aspect-square mb-4 flex items-center justify-center overflow-hidden bg-slate-50 rounded-lg">
                     <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center p-4">
                       <img
                         src={getImagePath(p.images)}
                         alt={p.name}
-                        className="w-full h-full object-contain transition-transform duration-500 mix-blend-multiply group-hover/card:mix-blend-normal"
+                        className="w-full h-full object-contain transition-transform duration-300 group-hover/card:scale-105"
                         onError={(e) => { e.currentTarget.src = "/logo/fabicon.png"; }}
                       />
                     </Link>
-                    
-                    <button 
+
+                    <button
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         toggleWishlist(p);
                       }}
-                      className={`absolute top-2 right-2 w-8 h-8 flex items-center justify-center transition-all duration-300 opacity-0 group-hover/card:opacity-100 bg-white shadow-sm rounded-full z-20 ${isInWishlist(p.id) ? "text-red-500 opacity-100" : "text-slate-300 hover:text-red-500"}`}
+                      className={`absolute top-2 right-2 w-8 h-8 flex items-center justify-center transition-all duration-300 opacity-0 group-hover/card:opacity-100 bg-white shadow-sm rounded-full z-20 ${isInWishlist(p.id) ? "text-red-500 opacity-100" : "text-slate-400 hover:text-red-500"}`}
                     >
-                      <Heart size={18} fill={isInWishlist(p.id) ? "currentColor" : "none"} strokeWidth={1.5} />
+                      <Heart size={16} fill={isInWishlist(p.id) ? "currentColor" : "none"} />
                     </button>
                   </div>
 
                   {/* CONTENT */}
                   <div className="flex flex-col flex-1">
                     <Link to={`/product/${p.slug}`}>
-                      <h3 className="text-[14px] font-bold text-slate-800 group-hover/card:text-white leading-snug line-clamp-2 transition-colors mb-2 h-[40px]">
+                      <h3 className="text-[13px] font-semibold text-slate-800 leading-snug line-clamp-2 mb-2 h-[38px]">
                         {p.name}
                       </h3>
                     </Link>
 
                     <div className="mt-auto">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[18px] font-bold text-slate-900 group-hover/card:text-white transition-colors">${p.price}</span>
+                        <span className="text-lg font-bold text-slate-900">${p.price}</span>
                         {(p.compare_price || p.old_price) && (
-                          <span className="text-[12px] text-slate-400 line-through group-hover/card:text-blue-200/70 transition-colors">${p.compare_price || p.old_price}</span>
+                          <span className="text-xs text-slate-400 line-through">${p.compare_price || p.old_price}</span>
                         )}
                       </div>
 
@@ -148,9 +151,10 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
                           e.stopPropagation();
                           addToCart(p);
                         }}
-                        className="w-full py-2.5 bg-blue-600 group-hover/card:bg-white group-hover/card:text-blue-700 text-white rounded-md text-[11px] font-bold uppercase tracking-wider transition-all active:scale-[0.97] flex items-center justify-center gap-2 relative z-10"
+                        className="w-full py-2.5 rounded-md text-white text-[11px] font-bold uppercase tracking-wider transition-colors active:scale-[0.97] flex items-center justify-center gap-2 relative z-10"
+                        style={{ backgroundColor: '#013E24' }}
                       >
-                        <ShoppingCart size={14} strokeWidth={2.5} /> Add to Cart
+                        <ShoppingCart size={14} /> Add to Cart
                       </button>
                     </div>
                   </div>
@@ -160,25 +164,25 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
           </Swiper>
 
           {/* MANUAL NAVIGATION CONTROLS */}
-          <button 
+          <button
             onClick={() => swiperInstance?.slidePrev()}
-            className="absolute top-[40%] -left-4 md:-left-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl text-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-100 cursor-pointer active:scale-90"
+            className="absolute top-1/2 -left-4 md:-left-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg text-slate-800 flex items-center justify-center hover:bg-[#013E24] hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-200 cursor-pointer active:scale-90"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} />
           </button>
-          <button 
+          <button
             onClick={() => swiperInstance?.slideNext()}
-            className="absolute top-[40%] -right-4 md:-right-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl text-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-100 cursor-pointer active:scale-90"
+            className="absolute top-1/2 -right-4 md:-right-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg text-slate-800 flex items-center justify-center hover:bg-[#013E24] hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-200 cursor-pointer active:scale-90"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={22} />
           </button>
         </div>
 
         {/* VIEW ALL ACTION */}
         <div className="mt-12 flex justify-center">
-           <Link to="/shop" className="group flex items-center gap-2 text-slate-400 font-bold uppercase text-[12px] tracking-widest hover:text-blue-600 transition-all">
-              Discover All Items <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-           </Link>
+          <Link to="/shop" className="group flex items-center gap-2 text-slate-500 font-bold uppercase text-[12px] tracking-widest hover:text-[#013E24] transition-all">
+            Discover All Items <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
 
@@ -196,10 +200,6 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
         }
         .featured-swiper:active {
           cursor: grabbing;
-        }
-        .product-card-hover:hover {
-          background: linear-gradient(135deg, rgb(30, 58, 138) 0%, rgb(29, 78, 216) 50%, rgb(37, 99, 235) 100%);
-          box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
         }
       `}</style>
     </section>
