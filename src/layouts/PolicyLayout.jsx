@@ -52,7 +52,7 @@ export default function PolicyLayout({ title, subtitle, lastUpdated, children })
                   ].map((p) => (
                     <Link
                       key={p.path} to={p.path}
-                      className={`block px-4 py-3 text-[13px] font-bold transition-all border ${title === p.label ? 'bg-[#1447E6] text-white border-[#1447E6]' : 'text-slate-600 border-transparent hover:bg-slate-50 hover:text-slate-900'}`}
+                      className={`block px-4 py-3 text-[13px] font-bold transition-all border ${title === p.label ? 'bg-[#013E24] text-white border-[#1447E6]' : 'text-slate-600 border-transparent hover:bg-slate-50 hover:text-slate-900'}`}
                     >
                       {p.label}
                     </Link>
@@ -66,7 +66,7 @@ export default function PolicyLayout({ title, subtitle, lastUpdated, children })
                 <Link to="/contact" className="inline-flex items-center gap-2 text-[10px] font-black text-blue-400 hover:text-white relative z-10 uppercase tracking-widest transition-colors">
                   Contact center
                 </Link>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#1447E6]/10 blur-3xl rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#013E24]/10 blur-3xl rounded-full pointer-events-none" />
               </div>
             </div>
           </div>

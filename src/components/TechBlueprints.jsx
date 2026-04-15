@@ -19,7 +19,7 @@ export default function SpecialsPromotions() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-10 h-[2px] bg-[#1447E6]"></span>
+              <span className="w-10 h-[2px] bg-[#013E24]"></span>
               <span className="text-[#1447E6] text-[10px] font-black uppercase tracking-[0.3em]">Limited time offers</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
@@ -52,7 +52,7 @@ export default function SpecialsPromotions() {
 
               <Link
                 to="/shop"
-                className="inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all hover:bg-[#1447E6] group/btn"
+                className="inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all hover:bg-[#013E24] group/btn"
               >
                 Shop the sale
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -65,7 +65,7 @@ export default function SpecialsPromotions() {
             className="min-h-[450px] md:min-h-[550px]"
             image={IMG.right}
           >
-            <div className="bg-[#1447E6]/95 backdrop-blur-md p-8 md:p-12 border-l-4 border-white max-w-lg">
+            <div className="bg-[#013E24]/95 backdrop-blur-md p-8 md:p-12 border-l-4 border-white max-w-lg">
               <span className="inline-block text-blue-200 text-[10px] font-black uppercase tracking-widest mb-4">
                 Exclusive access
               </span>

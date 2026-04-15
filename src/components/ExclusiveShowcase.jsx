@@ -9,7 +9,7 @@ const exclusiveProducts = [
     desc: "Next-generation laser technology with integrated security and ultra-fast output for high-demand business environments.",
     price: "$1,299",
     image: "/products/image_110.png",
-    accent: "bg-[#1447E6]",
+    accent: "bg-[#013E24]",
     stats: [
       { label: "Speed", value: "45 PPM" },
       { label: "Security", value: "Level 4" }
@@ -33,16 +33,16 @@ export default function ExclusiveShowcase() {
   return (
     <section className="w-full py-24 bg-white font-['Rubik'] overflow-hidden">
       <div className="w-full px-4 lg:px-12">
-        
+
         {/* ARCHITECTURAL HEADER */}
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 border-b border-slate-100 pb-12">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-2 rounded-full bg-[#1447E6]"></div>
+              <div className="w-2 h-2 rounded-full bg-[#013E24]"></div>
               <span className="text-[#1447E6] text-[10px] font-black uppercase tracking-[0.3em]">The Elite Collection</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase italic">
-              Performance <br /> 
+              Performance <br />
               <span className="text-slate-300 not-italic">Refined.</span>
             </h2>
           </div>
@@ -65,22 +65,22 @@ export default function ExclusiveShowcase() {
             >
               {/* Image Showcase Container */}
               <div className="relative aspect-[4/3] bg-slate-50 overflow-hidden flex items-center justify-center p-12">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="relative z-10 w-full h-full flex items-center justify-center"
                 >
-                  <img 
-                    src={p.image} 
-                    className="max-w-full max-h-full object-contain drop-shadow-2xl" 
+                  <img
+                    src={p.image}
+                    className="max-w-full max-h-full object-contain drop-shadow-2xl"
                     alt={p.name}
                     onError={(e) => { e.target.src = '/logo/fabicon.png'; }}
                   />
                 </motion.div>
-                
+
                 {/* Product Watermark */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[180px] font-black text-slate-200/40 select-none pointer-events-none uppercase whitespace-nowrap">
-                   {p.label.split(' ')[0]}
+                  {p.label.split(' ')[0]}
                 </div>
               </div>
 
