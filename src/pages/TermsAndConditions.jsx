@@ -11,8 +11,7 @@ export default function TermsAndConditions() {
       <section>
         <h2>Agreement To Our Legal Terms</h2>
         <p>
-          We are Republic Printing LLC ("Company," "we," "us," "our"), a company registered in California, United States at 1710 2nd Ave N Birmingham, AL 35203, USA.
-
+          We are Republic Printing LLC ("Company," "we," "us," "our"), a company registered in China at No. 24-5 Yue’an Street, Jianye District, Nanjing City, Jiangsu Province, 320500, China.
         </p>
         <p>
           We operate the website <a href="http://republicprinting.shop/">http://republicprinting.shop/</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").
@@ -21,7 +20,7 @@ export default function TermsAndConditions() {
           Republic Printing Solutions provides a wide range of high-performance printers and printing accessories from leading technology brands.
         </p>
         <p>
-          You can contact us by email at <a href="mailto:info@republicprinting.shop">info@republicprinting.shop</a>, or by mail to 1710 2nd Ave N Birmingham, AL 35203, USA.
+          You can contact us by email at <a href="mailto:info@republicprinting.shop">info@republicprinting.shop</a>, or by mail to No. 24-5 Yue’an Street, Jianye District, Nanjing City, Jiangsu Province, 320500, China.
         </p>
         <p>
           These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Republic Printing LLC, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. <strong>IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</strong>
@@ -369,10 +368,10 @@ export default function TermsAndConditions() {
         </p>
         <div className="bg-gray-50 p-8 rounded-sm border border-border my-8 not-prose">
           <address className="not-italic text-gray-700 font-bold leading-relaxed space-y-2 capitalize ">
-            <p className="text-black font-extrabold">Republic Printing LLC</p>
+            <p className="text-black font-extrabold">Nanjing Xinchengxing Communication Equipment Co., Ltd.</p>
             <p>Direct Distribution</p>
-            <p>1710 2nd Ave N Birmingham, AL 35203, USA</p>
-            <p>United States</p>
+            <p>No. 24-5 Yue’an Street, Jianye District, Nanjing City, Jiangsu Province, 320500, China</p>
+            <p>China</p>
             <p className="pt-4 text-primary font-extrabold lowercase">Email: info@republicprinting.shop</p>
           </address>
         </div>

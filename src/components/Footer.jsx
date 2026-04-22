@@ -40,7 +40,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-gray-900 text-white font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* NEWSLETTER SECTION */}
         <div className="py-12 border-b border-gray-800">
@@ -126,17 +126,40 @@ export default function Footer() {
                 <MapPin size={20} className="mt-1" />
                 <div>
                   <p className="font-semibold">Headquarters</p>
-                  <p className="text-gray-400 text-sm">Birmingham, AL 35203, USA</p>
+                  <p className="text-gray-400 text-sm">1710 2nd Ave N Birmingham,
+                    AL 35203, USA</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM STRIP */}
-        <div className="py-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Republic Printing Inc. All Rights Reserved.</p>
 
+
+        {/* 3. Footer Bottom */}
+        <div className="py-10 border-t border-slate-200">
+          <div className="max-w-[1700px] mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-10">
+            <div className="text-center lg:text-left space-y-1">
+              <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Republic Printing Inc. All Rights Reserved.</p>
+              <p className="text-slate-400 text-[13px]  tracking-widest">
+                <b className='text-white'>Disclaimer</b>  - For Informational only. No software installation or distribution.
+              </p>
+            </div>
+
+            {/* PayPal Section */}
+            <div className="flex flex-col items-center lg:items-end gap-3">
+              <div className="flex items-center gap-2 text-slate-400 text-[10px] font-bold  tracking-[0.2em]">
+                <CreditCard size={12} className="text-blue-600" /> Secure Payment Gateway
+              </div>
+              <div className="bg-white px-4 py-2 border border-slate-200">
+                <img
+                  src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+                  alt="PayPal"
+                  className="h-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

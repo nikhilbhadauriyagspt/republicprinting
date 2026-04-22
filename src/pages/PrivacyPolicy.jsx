@@ -285,8 +285,8 @@ export default function PrivacyPolicy() {
       <p>If you have questions or comments about this notice, you may email us at <a href="mailto:info@republicprinting.shop">info@republicprinting.shop</a> or contact us by post at:</p>
       <div className="bg-gray-50 p-8 rounded-sm border border-border my-8 not-prose">
         <address className="not-italic text-gray-700 font-bold leading-relaxed">
-          Republic Printing LLC<br />
-          1710 2nd Ave N Birmingham, <br />AL 35203, USA
+          Nanjing Xinchengxing Communication Equipment Co., Ltd.<br />
+          No. 24-5 Yue’an Street, Jianye District, Nanjing City, Jiangsu Province, 320500, China
         </address>
       </div>
 
