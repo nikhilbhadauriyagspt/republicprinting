@@ -42,7 +42,7 @@ export default function ProductGrid({ products = [] }) {
           <div>
             <p
               className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-3"
-              style={{ color: "#013E24" }}
+              style={{ color: "#0096d6" }}
             >
               New Collection
             </p>
@@ -54,7 +54,7 @@ export default function ProductGrid({ products = [] }) {
           <Link
             to="/shop"
             className="hidden md:inline-flex text-sm font-medium border-b pb-1 transition hover:opacity-80"
-            style={{ color: "#013E24", borderColor: "#013E24" }}
+            style={{ color: "#0096d6", borderColor: "#0096d6" }}
           >
             View All Products
           </Link>
@@ -73,7 +73,7 @@ export default function ProductGrid({ products = [] }) {
               }}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#013E24]/70 via-[#013E24]/15 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0096d6]/70 via-[#0096d6]/15 to-transparent" />
 
             <div className="absolute left-0 bottom-0 p-6 md:p-8 text-white z-10">
               <p className="text-xs uppercase tracking-[0.25em] text-white/80 mb-3">
@@ -85,7 +85,7 @@ export default function ProductGrid({ products = [] }) {
               <Link
                 to="/shop"
                 className="inline-flex mt-5 px-5 py-2.5 rounded-full bg-white text-sm font-semibold transition hover:scale-[1.02]"
-                style={{ color: "#013E24" }}
+                style={{ color: "#0096d6" }}
               >
                 Explore Now
               </Link>
@@ -109,7 +109,7 @@ export default function ProductGrid({ products = [] }) {
                     <span
                       className="text-[10px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full"
                       style={{
-                        color: "#013E24",
+                        color: "#0096d6",
                         backgroundColor: "rgba(1,62,36,0.06)",
                       }}
                     >
@@ -149,7 +149,7 @@ export default function ProductGrid({ products = [] }) {
                   {/* info */}
                   <div className="pt-4">
                     <Link to={`/product/${p.slug}`}>
-                      <h3 className="text-[13px] md:text-[14px] font-semibold text-slate-900 line-clamp-2 leading-5 min-h-[40px] group-hover:text-[#013E24] transition-colors">
+                      <h3 className="text-[13px] md:text-[14px] font-semibold text-slate-900 line-clamp-2 leading-5 min-h-[40px] group-hover:text-[#0096d6] transition-colors">
                         {p.name}
                       </h3>
                     </Link>
@@ -157,7 +157,7 @@ export default function ProductGrid({ products = [] }) {
                     <div className="mt-3 flex items-center justify-between gap-3">
                       <span
                         className="text-base md:text-lg font-bold"
-                        style={{ color: "#013E24" }}
+                        style={{ color: "#0096d6" }}
                       >
                         ${p.price}
                       </span>
@@ -170,13 +170,13 @@ export default function ProductGrid({ products = [] }) {
                         }}
                         disabled={addedItems[p.id]}
                         className={`h-10 w-10 rounded-full flex items-center justify-center transition-all duration-300 ${addedItems[p.id]
-                          ? "bg-emerald-500 text-white"
+                          ? "bg-[#0096d6]/200 text-white"
                           : "text-white hover:scale-105"
                           }`}
                         style={{
                           backgroundColor: addedItems[p.id]
                             ? undefined
-                            : "#013E24",
+                            : "#0096d6",
                         }}
                       >
                         {addedItems[p.id] ? (

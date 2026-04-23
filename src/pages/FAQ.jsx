@@ -55,7 +55,7 @@ export default function FAQ() {
       <div className="bg-slate-50 border-b border-slate-200 py-4">
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <nav className="flex items-center gap-2 text-[13px] font-medium text-slate-500">
-            <Link to="/" className="hover:text-[#013E24] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#0096d6] transition-colors">Home</Link>
             <ChevronRight size={14} />
             <span className="text-slate-900 font-medium">Help Center</span>
           </nav>
@@ -63,7 +63,7 @@ export default function FAQ() {
       </div>
 
       {/* --- REFINED PAGE HEADER --- */}
-      <div className="py-16 md:py-24 border-b border-slate-100" style={{ background: 'linear-gradient(135deg, rgb(2, 69, 41) 0%, rgb(0, 50, 29) 50%, rgb(5, 138, 44) 100%)' }}>
+      <div className="py-16 md:py-24 border-b border-slate-100" style={{ background: '#0096d6' }}>
         <div className="max-w-[1400px] mx-auto px-4 md:px-10 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
@@ -79,7 +79,7 @@ export default function FAQ() {
             transition={{ delay: 0.1 }}
             className="max-w-2xl mx-auto relative group"
           >
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#013E24] transition-colors" size={20} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#0096d6] transition-colors" size={20} />
             <input
               type="text"
               placeholder="Search for answers about orders, shipping, or products..."
@@ -101,8 +101,8 @@ export default function FAQ() {
               <ul className="space-y-4">
                 {faqData.map((cat, idx) => (
                   <li key={idx}>
-                    <a href={`#cat-${idx}`} className="text-[14px] text-slate-500 hover:text-[#013E24] transition-all flex items-center gap-2 group">
-                      <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-[#013E24] transition-colors" />
+                    <a href={`#cat-${idx}`} className="text-[14px] text-slate-500 hover:text-[#0096d6] transition-all flex items-center gap-2 group">
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-[#0096d6] transition-colors" />
                       {cat.category}
                     </a>
                   </li>
@@ -124,7 +124,7 @@ export default function FAQ() {
               return (
                 <div key={catIdx} id={`cat-${catIdx}`} className="bg-white border border-slate-100 rounded-xl shadow-sm overflow-hidden scroll-mt-8">
                   <div className="bg-slate-50 px-8 py-4 border-b border-slate-100">
-                    <h2 className="text-[13px] font-bold text-[#013E24] uppercase tracking-[0.2em]">{cat.category}</h2>
+                    <h2 className="text-[13px] font-bold text-[#0096d6] uppercase tracking-[0.2em]">{cat.category}</h2>
                   </div>
 
                   <div className="divide-y divide-slate-50">
@@ -138,8 +138,8 @@ export default function FAQ() {
                             onClick={() => toggleAccordion(catIdx, qIdx)}
                             className="w-full px-8 py-5 flex items-center justify-between text-left hover:bg-slate-50/50 transition-all"
                           >
-                            <span className={`text-[15px] font-bold ${isOpen ? 'text-[#013E24]' : 'text-slate-900 group-hover:text-[#013E24]'} transition-colors`}>{faq.q}</span>
-                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-[#013E24] text-white rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-blue-50 group-hover:text-[#013E24]'}`}>
+                            <span className={`text-[15px] font-bold ${isOpen ? 'text-[#0096d6]' : 'text-slate-900 group-hover:text-[#0096d6]'} transition-colors`}>{faq.q}</span>
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-[#0096d6] text-white rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-blue-50 group-hover:text-[#0096d6]'}`}>
                               <ChevronDown size={18} strokeWidth={2.5} />
                             </div>
                           </button>
@@ -168,14 +168,14 @@ export default function FAQ() {
 
             {/* BOTTOM CALL TO ACTION */}
             <div className="bg-slate-50 p-10 md:p-12 border border-slate-100 rounded-xl text-center space-y-6">
-              <div className="w-16 h-16 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mx-auto text-[#013E24]">
+              <div className="w-16 h-16 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mx-auto text-[#0096d6]">
                 <HelpCircle size={32} strokeWidth={1.5} />
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl font-bold text-slate-900">Still need assistance?</h3>
                 <p className="text-slate-500 text-[15px] font-normal max-w-md mx-auto">Our dedicated support team is ready to help you with any specialized printer questions.</p>
               </div>
-              <Link to="/contact" className="inline-flex items-center gap-3 bg-[#013E24] hover:bg-blue-700 text-white px-10 py-4 text-[13px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-95">
+              <Link to="/contact" className="inline-flex items-center gap-3 bg-[#0096d6] hover:bg-blue-700 text-white px-10 py-4 text-[13px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-95">
                 Contact Support Team <ArrowRight size={18} />
               </Link>
             </div>

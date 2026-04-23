@@ -39,12 +39,12 @@ export default function CategorySection({ title, subtitle, categoryKeyword, bgCo
     <section className={`px-6 md:px-10 lg:px-12 py-24 ${bgColor} font-urbanist`}>
       <div className="flex items-end justify-between mb-12 border-b border-gray-100 pb-8">
         <div>
-          <span className="text-[10px] font-bold tracking-[0.4em] capitalize text-[#013E24] mb-2 block ml-1">{subtitle}</span>
+          <span className="text-[10px] font-bold tracking-[0.4em] capitalize text-[#0096d6] mb-2 block ml-1">{subtitle}</span>
           <h2 className="text-4xl font-bold text-slate-900  capitalize leading-none">
             {title.split(' ')[0]} <span className="text-slate-400 italic">{title.split(' ').slice(1).join(' ')}.</span>
           </h2>
         </div>
-        <button className="text-xs font-bold capitalize tracking-widest text-slate-900 flex items-center gap-2 hover:text-[#013E24] transition-colors pb-1">
+        <button className="text-xs font-bold capitalize tracking-widest text-slate-900 flex items-center gap-2 hover:text-[#0096d6] transition-colors pb-1">
           View All <ArrowRight size={14} />
         </button>
       </div>
@@ -69,7 +69,7 @@ export default function CategorySection({ title, subtitle, categoryKeyword, bgCo
                   className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute bottom-2 left-2 right-2 translate-y-[120%] group-hover:translate-y-0 transition-transform duration-300">
-                  <button className="w-full h-8 bg-black text-white rounded-lg flex items-center justify-center gap-2 text-[9px] font-bold capitalize tracking-widest hover:bg-[#013E24] transition-colors">
+                  <button className="w-full h-8 bg-black text-white rounded-lg flex items-center justify-center gap-2 text-[9px] font-bold capitalize tracking-widest hover:bg-[#0096d6] transition-colors">
                     <ShoppingBag size={12} /> Add
                   </button>
                 </div>

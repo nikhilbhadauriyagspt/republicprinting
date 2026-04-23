@@ -124,16 +124,16 @@ export default function Profile() {
   if (!user) return null;
 
   return (
-    <div className="bg-[#F8FAFC] min-h-screen font-['Rubik'] text-[#1D4ED8] pb-20">
+    <div className="bg-[#F8FAFC] min-h-screen font-['Rubik'] text-[#0096d6] pb-20">
       <SEO title="Your Account | Republic Printing" />
 
       {/* --- PAGE HEADER --- */}
       <div className="bg-white border-b border-gray-200 py-8 md:py-12 mb-12 shadow-sm">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           <nav className="flex items-center gap-2 text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-4">
-            <Link to="/" className="hover:text-[#4f46e5] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#0096d6] transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <span className="text-[#1D4ED8]">Account Management</span>
+            <span className="text-[#0096d6]">Account Management</span>
           </nav>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Your Dashboard</h1>
         </div>
@@ -144,9 +144,9 @@ export default function Profile() {
 
           {/* --- SIDEBAR --- */}
           <aside className="lg:col-span-4 space-y-6">
-            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-[#1D4ED8]/5">
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-[#0096d6]/5">
               <div className="flex flex-col items-center text-center mb-8">
-                <div className="h-20 w-20 bg-gradient-to-br from-[#1D4ED8] to-[#4f46e5] text-white flex items-center justify-center text-2xl font-bold rounded-2xl mb-4 shadow-lg shadow-[#1D4ED8]/20">
+                <div className="h-20 w-20 bg-gradient-to-br from-[#0096d6] to-[#0096d6] text-white flex items-center justify-center text-2xl font-bold rounded-2xl mb-4 shadow-lg shadow-[#0096d6]/20">
                   {user.name.charAt(0).toUpperCase()}
                 </div>
                 <h2 className="text-xl font-bold tracking-tight">{user.name}</h2>
@@ -166,8 +166,8 @@ export default function Profile() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center gap-3 px-5 py-3.5 text-[14px] font-bold transition-all rounded-xl border cursor-pointer ${activeTab === tab.id
-                      ? 'bg-[#013E24] text-white border-[#1D4ED8] shadow-lg shadow-[#1D4ED8]/10'
-                      : 'text-gray-600 border-transparent hover:bg-gray-50 hover:text-[#1D4ED8]'
+                      ? 'bg-[#0096d6] text-white border-[#0096d6] shadow-lg shadow-[#0096d6]/10'
+                      : 'text-gray-600 border-transparent hover:bg-gray-50 hover:text-[#0096d6]'
                       }`}
                   >
                     <tab.icon size={18} />
@@ -187,12 +187,12 @@ export default function Profile() {
               </div>
             </div>
 
-            <div className="bg-[#013E24] text-white p-8 rounded-3xl relative overflow-hidden group">
+            <div className="bg-[#0096d6] text-white p-8 rounded-3xl relative overflow-hidden group">
               <div className="relative z-10">
-                <div className="bg-[#f59e0b] text-[#1D4ED8] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-widest mb-4 inline-block">Support</div>
+                <div className="bg-[#0096d6] text-[#0096d6] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-widest mb-4 inline-block">Support</div>
                 <h4 className="text-lg font-bold mb-2 leading-snug">Need help with your printer?</h4>
                 <p className="text-white/60 text-[13px] leading-relaxed mb-6">Our tech experts are available 24/7 to assist with setup and troubleshooting.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-[13px] font-bold text-[#f59e0b] hover:text-white transition-colors">
+                <Link to="/contact" className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0096d6] hover:text-white transition-colors">
                   Get Support <ArrowRight size={16} />
                 </Link>
               </div>
@@ -206,10 +206,10 @@ export default function Profile() {
               {activeTab === 'profile' && (
                 <motion.div
                   key="profile" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}
-                  className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100 shadow-xl shadow-[#1D4ED8]/5"
+                  className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100 shadow-xl shadow-[#0096d6]/5"
                 >
                   <div className="flex items-center gap-4 mb-10 pb-6 border-b border-gray-50">
-                    <div className="h-12 w-12 bg-[#1D4ED8]/5 text-[#1D4ED8] flex items-center justify-center rounded-xl">
+                    <div className="h-12 w-12 bg-[#0096d6]/5 text-[#0096d6] flex items-center justify-center rounded-xl">
                       <User size={24} />
                     </div>
                     <div>
@@ -225,7 +225,7 @@ export default function Profile() {
                         <input
                           required value={profileForm.name}
                           onChange={(e) => setProfileForm({ ...profileForm, name: e.target.value })}
-                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all"
+                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -234,7 +234,7 @@ export default function Profile() {
                           value={profileForm.phone}
                           onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
                           placeholder="+1 (000) 000-0000"
-                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all"
+                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all"
                         />
                       </div>
                     </div>
@@ -245,7 +245,7 @@ export default function Profile() {
                         rows="3" value={profileForm.address}
                         onChange={(e) => setProfileForm({ ...profileForm, address: e.target.value })}
                         placeholder="Street address, building, suite..."
-                        className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all resize-none"
+                        className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all resize-none"
                       ></textarea>
                     </div>
 
@@ -255,7 +255,7 @@ export default function Profile() {
                         <input
                           value={profileForm.city}
                           onChange={(e) => setProfileForm({ ...profileForm, city: e.target.value })}
-                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all"
+                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -263,14 +263,14 @@ export default function Profile() {
                         <input
                           value={profileForm.zipCode}
                           onChange={(e) => setProfileForm({ ...profileForm, zipCode: e.target.value })}
-                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all"
+                          className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all"
                         />
                       </div>
                     </div>
 
                     <button
                       disabled={isUpdating}
-                      className="h-12 px-10 bg-[#013E24] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-[#4f46e5] transition-all disabled:opacity-50 shadow-lg shadow-[#1D4ED8]/10 flex items-center gap-3 cursor-pointer active:scale-95"
+                      className="h-12 px-10 bg-[#0096d6] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-[#0096d6] transition-all disabled:opacity-50 shadow-lg shadow-[#0096d6]/10 flex items-center gap-3 cursor-pointer active:scale-95"
                     >
                       {isUpdating ? <Loader2 className="animate-spin" size={18} /> : "Save Changes"}
                     </button>
@@ -285,7 +285,7 @@ export default function Profile() {
                 >
                   <div className="bg-white p-6 md:p-8 rounded-[2rem] border border-gray-100 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="h-12 w-12 bg-[#1D4ED8]/5 text-[#1D4ED8] flex items-center justify-center rounded-xl">
+                      <div className="h-12 w-12 bg-[#0096d6]/5 text-[#0096d6] flex items-center justify-center rounded-xl">
                         <Package size={24} />
                       </div>
                       <div>
@@ -293,7 +293,7 @@ export default function Profile() {
                         <p className="text-[12px] font-medium text-gray-400 mt-0.5 uppercase tracking-widest">{orders.length} orders found</p>
                       </div>
                     </div>
-                    <Link to="/shop" className="text-[13px] font-bold text-[#4f46e5] hover:underline flex items-center gap-1.5 group">
+                    <Link to="/shop" className="text-[13px] font-bold text-[#0096d6] hover:underline flex items-center gap-1.5 group">
                       Browse Catalog <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -308,13 +308,13 @@ export default function Profile() {
                       {orders.slice(0, 5).map((order) => (
                         <div key={order.id} className="bg-white border border-gray-100 rounded-[1.5rem] p-6 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-lg transition-all group">
                           <div className="flex items-center gap-5 w-full md:w-auto">
-                            <div className="h-14 w-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-[#1D4ED8] group-hover:bg-[#013E24]group-hover:text-white transition-all duration-500">
+                            <div className="h-14 w-14 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-[#0096d6] group-hover:bg-[#0096d6]group-hover:text-white transition-all duration-500">
                               <Clock size={24} />
                             </div>
                             <div>
                               <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1">#DSP-{order.id}</p>
                               <div className="flex items-center gap-2">
-                                <span className={`w-2 h-2 rounded-full ${order.status === 'delivered' ? 'bg-emerald-500' : 'bg-[#f59e0b]'}`} />
+                                <span className={`w-2 h-2 rounded-full ${order.status === 'delivered' ? 'bg-[#0096d6]/200' : 'bg-[#0096d6]'}`} />
                                 <span className="text-sm font-bold capitalize">{order.status.replace(/_/g, ' ')}</span>
                               </div>
                             </div>
@@ -325,14 +325,14 @@ export default function Profile() {
                               <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1">{new Date(order.created_at).toLocaleDateString()}</p>
                               <p className="text-lg font-black tracking-tight">${Number(order.total_amount).toLocaleString()}</p>
                             </div>
-                            <Link to="/orders" className="h-10 w-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-[#013E24]hover:text-white hover:border-[#1D4ED8] transition-all">
+                            <Link to="/orders" className="h-10 w-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-[#0096d6]hover:text-white hover:border-[#0096d6] transition-all">
                               <ExternalLink size={18} />
                             </Link>
                           </div>
                         </div>
                       ))}
 
-                      <Link to="/orders" className="block text-center py-4 text-[13px] font-bold text-[#4f46e5] hover:underline uppercase tracking-widest">
+                      <Link to="/orders" className="block text-center py-4 text-[13px] font-bold text-[#0096d6] hover:underline uppercase tracking-widest">
                         View All Orders History
                       </Link>
                     </div>
@@ -343,7 +343,7 @@ export default function Profile() {
               {activeTab === 'security' && (
                 <motion.div
                   key="security" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}
-                  className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100 shadow-xl shadow-[#1D4ED8]/5"
+                  className="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100 shadow-xl shadow-[#0096d6]/5"
                 >
                   <div className="flex items-center gap-4 mb-10 pb-6 border-b border-gray-50">
                     <div className="h-12 w-12 bg-red-50 text-red-500 flex items-center justify-center rounded-xl">
@@ -363,9 +363,9 @@ export default function Profile() {
                           type={showPass ? "text" : "password"} required
                           placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                           value={securityForm.password} onChange={(e) => setSecurityForm({ ...securityForm, password: e.target.value })}
-                          className="w-full h-12 pl-4 pr-12 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all"
+                          className="w-full h-12 pl-4 pr-12 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all"
                         />
-                        <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#1D4ED8] cursor-pointer transition-colors">
+                        <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#0096d6] cursor-pointer transition-colors">
                           {showPass ? <EyeOff size={20} /> : <Eye size={20} />}
                         </button>
                       </div>
@@ -376,12 +376,12 @@ export default function Profile() {
                         type={showPass ? "text" : "password"} required
                         placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                         value={securityForm.confirmPassword} onChange={(e) => setSecurityForm({ ...securityForm, confirmPassword: e.target.value })}
-                        className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#4f46e5] outline-none text-sm font-medium transition-all"
+                        className="w-full h-12 px-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#0096d6] outline-none text-sm font-medium transition-all"
                       />
                     </div>
                     <button
                       disabled={isUpdating}
-                      className="h-12 px-10 bg-[#013E24] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-red-600 transition-all disabled:opacity-50 shadow-lg shadow-[#1D4ED8]/10 flex items-center gap-3 cursor-pointer active:scale-95"
+                      className="h-12 px-10 bg-[#0096d6] text-white font-bold text-[13px] uppercase tracking-widest rounded-xl hover:bg-red-600 transition-all disabled:opacity-50 shadow-lg shadow-[#0096d6]/10 flex items-center gap-3 cursor-pointer active:scale-95"
                     >
                       {isUpdating ? <Loader2 className="animate-spin" size={18} /> : "Update Security"}
                     </button>

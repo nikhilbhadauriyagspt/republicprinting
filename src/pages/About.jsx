@@ -59,14 +59,14 @@ export default function About() {
       <div className="bg-slate-50 border-b border-slate-200 py-4">
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <nav className="flex items-center gap-2 text-[13px] font-medium text-slate-500">
-            <Link to="/" className="hover:text-[#013E24] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#0096d6] transition-colors">Home</Link>
             <span className="text-slate-900">About Our Journey</span>
           </nav>
         </div>
       </div>
 
       {/* --- REFINED HERO SECTION --- */}
-      <section className="py-16 md:py-24 border-b border-slate-100" style={{ background: 'linear-gradient(135deg, rgb(2, 69, 41) 0%, rgb(0, 50, 29) 50%, rgb(5, 138, 44) 100%)' }}>
+      <section className="py-16 md:py-24 border-b border-slate-100" style={{ background: '#0096d6' }}>
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <div className="max-w-3xl">
             <motion.h1
@@ -93,7 +93,7 @@ export default function About() {
         {/* --- OUR FOUNDATION --- */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 text-[#013E24] text-[12px] font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 text-[#0096d6] text-[12px] font-bold uppercase tracking-widest">
               Our Foundation
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
@@ -105,7 +105,7 @@ export default function About() {
             <div className="pt-2">
               <Link
                 to="/shop"
-                className="inline-flex items-center gap-2 bg-[#013E24] text-white px-6 py-3 text-[13px] font-bold uppercase tracking-widest rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 bg-[#0096d6] text-white px-6 py-3 text-[13px] font-bold uppercase tracking-widest rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
               >
                 Explore Collection <ArrowRight size={16} />
               </Link>
@@ -118,7 +118,7 @@ export default function About() {
               Our goal is to provide a destination where professionals can find top-tier printers without complexity.
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-1 bg-[#013E24] rounded-full" />
+              <div className="w-10 h-1 bg-[#0096d6] rounded-full" />
               <span className="text-[12px] font-bold text-slate-500 uppercase tracking-widest">Republic Printing Team</span>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function About() {
                 key={i}
                 className="flex flex-col gap-4 p-8 border border-slate-100 rounded-xl hover:border-blue-200 transition-all bg-white group"
               >
-                <div className="w-12 h-12 flex items-center justify-center bg-blue-50 text-[#013E24] rounded-lg group-hover:bg-[#013E24] group-hover:text-white transition-colors">
+                <div className="w-12 h-12 flex items-center justify-center bg-blue-50 text-[#0096d6] rounded-lg group-hover:bg-[#0096d6] group-hover:text-white transition-colors">
                   <item.icon size={24} strokeWidth={1.5} />
                 </div>
                 <div>
@@ -153,7 +153,7 @@ export default function About() {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-white p-8 md:p-10 border border-slate-100 rounded-xl hover:shadow-md transition-shadow relative overflow-hidden group">
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6 text-[#013E24]">
+              <div className="flex items-center gap-3 mb-6 text-[#0096d6]">
                 <Target size={24} strokeWidth={1.5} />
                 <span className="text-[13px] font-bold uppercase tracking-widest">Our Mission</span>
               </div>
@@ -167,7 +167,7 @@ export default function About() {
 
           <div className="bg-white p-8 md:p-10 border border-slate-100 rounded-xl hover:shadow-md transition-shadow relative overflow-hidden group">
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6 text-[#013E24]">
+              <div className="flex items-center gap-3 mb-6 text-[#0096d6]">
                 <Users size={24} strokeWidth={1.5} />
                 <span className="text-[13px] font-bold uppercase tracking-widest">Our Reach</span>
               </div>
@@ -190,7 +190,7 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {advantages.map((item, i) => (
               <div key={i} className="flex items-center gap-4">
-                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white border border-slate-100 text-[#013E24] rounded-lg shadow-sm">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white border border-slate-100 text-[#0096d6] rounded-lg shadow-sm">
                   <item.icon size={20} strokeWidth={1.5} />
                 </div>
                 <h4 className="text-[14px] font-bold text-slate-800">{item.title}</h4>

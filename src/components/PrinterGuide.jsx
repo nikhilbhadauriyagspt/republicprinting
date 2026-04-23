@@ -49,7 +49,7 @@ export default function PrinterGuide() {
           >
             <p
               className="text-sm font-semibold uppercase tracking-widest mb-3"
-              style={{ color: "#013E24" }}
+              style={{ color: "#0096d6" }}
             >
               Assistance
             </p>
@@ -77,13 +77,13 @@ export default function PrinterGuide() {
                 className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
                 style={{ backgroundColor: "rgba(1, 62, 36, 0.1)" }}
               >
-                <item.icon size={32} style={{ color: "#013E24" }} />
+                <item.icon size={32} style={{ color: "#0096d6" }} />
               </div>
 
               <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
               <p
                 className="text-sm font-semibold uppercase tracking-wider mb-4"
-                style={{ color: "#013E24" }}
+                style={{ color: "#0096d6" }}
               >
                 {item.subtitle}
               </p>
@@ -95,7 +95,7 @@ export default function PrinterGuide() {
               <ul className="space-y-3 text-left mb-8">
                 {item.points.map((point, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-700 text-sm">
-                    <CheckCircle2 size={16} style={{ color: "#013E24" }} />
+                    <CheckCircle2 size={16} style={{ color: "#0096d6" }} />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -105,7 +105,7 @@ export default function PrinterGuide() {
                 to={item.link}
                 className="w-full py-3 rounded-lg text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
                 style={{
-                  backgroundColor: "#013E24",
+                  backgroundColor: "#0096d6",
                   color: "white",
                 }}
               >
@@ -128,7 +128,7 @@ export default function PrinterGuide() {
           <Link
             to="/shop"
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white"
-            style={{ backgroundColor: "#013E24" }}
+            style={{ backgroundColor: "#0096d6" }}
           >
             Browse All Products
           </Link>

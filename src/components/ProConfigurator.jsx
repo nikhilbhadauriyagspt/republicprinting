@@ -8,15 +8,15 @@ const features = [
     desc: "Up to 80% faster than previous generations.",
     icon: Cpu,
     color: "bg-blue-50/50",
-    iconColor: "text-[#013E24]",
+    iconColor: "text-[#0096d6]",
     size: "lg"
   },
   {
     title: "Next-Gen Cooling",
     desc: "Silent and efficient thermal management.",
     icon: Zap,
-    color: "bg-emerald-50/50",
-    iconColor: "text-emerald-600",
+    color: "bg-[#0096d6]/20/50",
+    iconColor: "text-[#0096d6]",
     size: "sm"
   },
   {
@@ -49,7 +49,7 @@ export default function ProConfigurator() {
           </div>
 
           <div className="relative z-10 flex items-center gap-4">
-            <Button size="xl" className="bg-[#013E24] hover:bg-blue-700 text-white rounded-xl px-8 h-12 font-bold text-xs tracking-widest transition-all">
+            <Button size="xl" className="bg-[#0096d6] hover:bg-blue-700 text-white rounded-xl px-8 h-12 font-bold text-xs tracking-widest transition-all">
               START CONFIGURING
             </Button>
             <span className="text-[10px] font-bold text-slate-500 flex items-center gap-2">

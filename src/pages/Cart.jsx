@@ -16,7 +16,7 @@ export default function Cart() {
         <ShoppingCart size={64} className="text-slate-200 mb-6" />
         <h2 className="text-2xl font-bold text-foreground mb-2">Your cart is empty</h2>
         <p className="text-secondary mb-8">Add some items to your cart to see them here.</p>
-        <Link to="/shop" className="px-8 py-3 bg-foreground text-white font-bold rounded-lg hover:bg-[#013E24] transition-all">
+        <Link to="/shop" className="px-8 py-3 bg-foreground text-white font-bold rounded-lg hover:bg-[#0096d6] transition-all">
           Browse Products
         </Link>
       </div>
@@ -76,14 +76,14 @@ export default function Cart() {
                 </div>
                 <div className="flex justify-between text-secondary">
                   <span>Shipping</span>
-                  <span className="text-emerald-600 font-bold">Free</span>
+                  <span className="text-[#0096d6] font-bold">Free</span>
                 </div>
                 <div className="pt-4 border-t border-border flex justify-between">
                   <span className="font-bold">Total</span>
                   <span className="font-bold text-2xl text-foreground">${total.toLocaleString()}</span>
                 </div>
               </div>
-              <Link to="/checkout" className="w-full h-14 bg-foreground text-white flex items-center justify-center rounded-xl font-bold uppercase tracking-widest hover:bg-[#013E24] transition-all">
+              <Link to="/checkout" className="w-full h-14 bg-foreground text-white flex items-center justify-center rounded-xl font-bold uppercase tracking-widest hover:bg-[#0096d6] transition-all">
                 Checkout
               </Link>
             </div>

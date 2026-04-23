@@ -41,7 +41,7 @@ export default function AdminLogin() {
     <div className="min-h-screen flex items-center justify-center bg-slate-900 font-urbanist px-4">
       <div className="max-w-md w-full bg-white p-8 rounded-3xl shadow-2xl">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-slate-900 ">Republic Printing<span className="text-[#013E24]">.</span></h2>
+          <h2 className="text-3xl font-bold text-slate-900 ">Republic Printing<span className="text-[#0096d6]">.</span></h2>
           <p className="text-sm font-bold text-slate-400 capitalize tracking-widest mt-2">Admin Portal</p>
         </div>
 
@@ -76,7 +76,7 @@ export default function AdminLogin() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-3 bg-[#013E24] hover:bg-blue-700 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/30 transition-all ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+            className={`w-full py-3 bg-[#0096d6] hover:bg-blue-700 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/30 transition-all ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             {loading ? 'Authenticating...' : 'Access Dashboard'}
           </button>

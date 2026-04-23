@@ -24,7 +24,7 @@ export default function ProductAccordion({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="h-px w-8 bg-[#013E24] rounded-full" />
+              <div className="h-px w-8 bg-[#0096d6] rounded-full" />
               <span className="text-[10px] font-bold text-[#1447E6] uppercase tracking-[0.3em]">Printer Collection</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none">
@@ -65,7 +65,7 @@ export default function ProductAccordion({
                 {/* Floating Quick Action */}
                 <button
                   onClick={() => addToCart(p)}
-                  className="absolute bottom-0 right-0 h-12 w-12 rounded-full bg-[#013E24] text-white flex items-center justify-center translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-slate-900"
+                  className="absolute bottom-0 right-0 h-12 w-12 rounded-full bg-[#0096d6] text-white flex items-center justify-center translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-slate-900"
                 >
                   <Plus size={24} />
                 </button>
@@ -84,7 +84,7 @@ export default function ProductAccordion({
 
                 <div className="flex items-center justify-between pt-2">
                   <p className="text-xl font-black text-slate-900">${parseFloat(p.price).toLocaleString()}</p>
-                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200 group-hover:bg-[#013E24] transition-colors" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200 group-hover:bg-[#0096d6] transition-colors" />
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ export default function ProductAccordion({
         </div>
 
         {/* --- BOTTOM QUOTE BANNER --- */}
-        <div className="mt-12 bg-[#013E24] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:bg-[#006699] transition-all duration-500">
+        <div className="mt-12 bg-[#0096d6] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:bg-[#006699] transition-all duration-500">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: `radial-gradient(white 1px, transparent 1px)`, backgroundSize: '20px 20px' }} />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">

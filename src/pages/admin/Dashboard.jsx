@@ -15,7 +15,7 @@ export default function Dashboard() {
 
   const cards = [
     { title: "Total Products", value: stats.products, icon: Package, color: "bg-blue-500" },
-    { title: "Active Users", value: stats.users, icon: Users, color: "bg-emerald-500" },
+    { title: "Active Users", value: stats.users, icon: Users, color: "bg-[#0096d6]/200" },
     { title: "Total Brands", value: stats.brands, icon: ShoppingCart, color: "bg-purple-500" },
     { title: "Low Stock", value: stats.low_stock, icon: AlertTriangle, color: "bg-orange-500" },
   ];

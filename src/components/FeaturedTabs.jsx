@@ -58,11 +58,11 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
             viewport={{ once: true }}
             className="space-y-3"
           >
-            <div className="inline-flex items-center gap-2 text-[#013E24] text-[13px] font-bold uppercase tracking-[0.2em]">
+            <div className="inline-flex items-center gap-2 text-[#0096d6] text-[13px] font-bold uppercase tracking-[0.2em]">
               <ShoppingBag size={16} /> New Arrivals
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
-              New & <span style={{ color: '#013E24' }}>Featured</span>
+              New & <span style={{ color: '#0096d6' }}>Featured</span>
             </h2>
           </motion.div>
         </div>
@@ -100,7 +100,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
                   {index % 4 === 0 && (
                     <div
                       className="absolute top-3 left-3 z-10 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider"
-                      style={{ backgroundColor: '#013E24' }}
+                      style={{ backgroundColor: '#0096d6' }}
                     >
                       New
                     </div>
@@ -152,7 +152,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
                           addToCart(p);
                         }}
                         className="w-full py-2.5 rounded-md text-white text-[11px] font-bold uppercase tracking-wider transition-colors active:scale-[0.97] flex items-center justify-center gap-2 relative z-10"
-                        style={{ backgroundColor: '#013E24' }}
+                        style={{ backgroundColor: '#0096d6' }}
                       >
                         <ShoppingCart size={14} /> Add to Cart
                       </button>
@@ -166,13 +166,13 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
           {/* MANUAL NAVIGATION CONTROLS */}
           <button
             onClick={() => swiperInstance?.slidePrev()}
-            className="absolute top-1/2 -left-4 md:-left-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg text-slate-800 flex items-center justify-center hover:bg-[#013E24] hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-200 cursor-pointer active:scale-90"
+            className="absolute top-1/2 -left-4 md:-left-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg text-slate-800 flex items-center justify-center hover:bg-[#0096d6] hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-200 cursor-pointer active:scale-90"
           >
             <ChevronLeft size={22} />
           </button>
           <button
             onClick={() => swiperInstance?.slideNext()}
-            className="absolute top-1/2 -right-4 md:-right-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg text-slate-800 flex items-center justify-center hover:bg-[#013E24] hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-200 cursor-pointer active:scale-90"
+            className="absolute top-1/2 -right-4 md:-right-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg text-slate-800 flex items-center justify-center hover:bg-[#0096d6] hover:text-white transition-all z-30 pointer-events-auto opacity-0 group-hover:opacity-100 border border-slate-200 cursor-pointer active:scale-90"
           >
             <ChevronRight size={22} />
           </button>
@@ -180,7 +180,7 @@ export default function FeaturedTabs({ printers = [], accessories = [], loading 
 
         {/* VIEW ALL ACTION */}
         <div className="mt-12 flex justify-center">
-          <Link to="/shop" className="group flex items-center gap-2 text-slate-500 font-bold uppercase text-[12px] tracking-widest hover:text-[#013E24] transition-all">
+          <Link to="/shop" className="group flex items-center gap-2 text-slate-500 font-bold uppercase text-[12px] tracking-widest hover:text-[#0096d6] transition-all">
             Discover All Items <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

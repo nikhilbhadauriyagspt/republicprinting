@@ -150,7 +150,7 @@ export default function ProductForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 bg-[#013E24] hover:bg-blue-700 text-white rounded-2xl font-bold text-xs tracking-widest shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2"
+            className="w-full py-4 bg-[#0096d6] hover:bg-blue-700 text-white rounded-2xl font-bold text-xs tracking-widest shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2"
           >
             {loading ? <Loader2 className="animate-spin h-4 w-4" /> : <Save size={18} />}
             {isEdit ? 'UPDATE PRODUCT' : 'SAVE PRODUCT'}

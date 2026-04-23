@@ -70,7 +70,7 @@ export default function CategoryManager() {
                 ))}
               </select>
             </div>
-            <button className="w-full py-3 bg-[#013E24] text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all">
+            <button className="w-full py-3 bg-[#0096d6] text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all">
               Create Category
             </button>
           </form>
@@ -88,9 +88,9 @@ export default function CategoryManager() {
                   <div key={root.id} className="border border-gray-100 rounded-xl overflow-hidden">
                     <div className="flex items-center justify-between p-4 bg-gray-50/50">
                       <div className="flex items-center gap-3">
-                        <FolderTree size={18} className="text-[#013E24]" />
+                        <FolderTree size={18} className="text-[#0096d6]" />
                         <span className="font-bold text-slate-900">{root.name}</span>
-                        <span className="px-2 py-0.5 bg-blue-100 text-[#013E24] text-[10px] font-bold rounded capitalize">Main</span>
+                        <span className="px-2 py-0.5 bg-blue-100 text-[#0096d6] text-[10px] font-bold rounded capitalize">Main</span>
                       </div>
                       <button onClick={() => handleDelete(root.id)} className="p-2 hover:bg-red-50 text-slate-400 hover:text-red-500 rounded-lg"><Trash2 size={16} /></button>
                     </div>

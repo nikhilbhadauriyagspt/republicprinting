@@ -118,20 +118,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Super light announcement bar - no heavy colors */}
-      <div className="w-full  text-gray-500 py-1.5 text-[12px] font-medium border-b border-emerald-100/50 relative z-[1001]" style={{ background: 'linear-gradient(135deg, rgb(2 69 41) 0%, rgb(0 50 29) 50%, rgb(5 138 44) 100%)' }}>
-        <div className="w-full px-6 md:px-12 flex justify-between items-center max-w-[1800px] mx-auto">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center text-white gap-1.5"><Globe size={14} className="text-white" /> Free worldwide shipping</span>
-            <span className="hidden sm:flex items-center text-white gap-1.5"><Truck size={14} className="text-white" /> Express delivery in 2-5 days</span>
-          </div>
-          <div className="flex items-center gap-6 text-[11px]">
-            <Link to="/orders" className="hover:text-emerald-700 transition-colors text-white">Track your order</Link>
-            <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-            <Link to="/contact" className="hover:text-emerald-700 transition-colors text-white">Customer support</Link>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Unique Floating-Style Header */}
       <header className={`w-full z-[1000] bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300 ${isSticky ? 'fixed top-0 shadow-sm py-3' : 'relative py-5'}`}>
@@ -139,15 +126,15 @@ export default function Header() {
 
           {/* 1. Left: Logo & Integrated Navigation */}
           <div className="flex items-center gap-10 xl:gap-14">
-            <Link to="/" className="shrink-0 transition-opacity hover:opacity-80">
-              <img src="/logo/logo.png" alt="Logo" className={`${isSticky ? 'h-[50px]' : 'h-9 md:h-[60px]'} object-contain transition-all`} />
+            <Link to="/" className="">
+              <img src="/logo/fabicon.png" alt="Logo" className={`${isSticky ? 'h-[50px]' : 'h-9 md:h-[60px]'} object-contain transition-all`} />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-1 text-[13px] font-medium">
 
               {/* Sleek Category Dropdown integrated into nav */}
               <div className="relative mr-4" onMouseEnter={() => setIsCategoryOpen(true)} onMouseLeave={() => setIsCategoryOpen(false)}>
-                <button className="flex items-center gap-2 py-2 px-3 text-emerald-800 bg-emerald-50/80 rounded-full hover:bg-emerald-100 transition-colors">
+                <button className="flex items-center gap-2 py-2 px-3 text-[#0096d6] bg-[#0096d6]/20/80 rounded-full hover:bg-emerald-100 transition-colors">
                   <LayoutGrid size={15} />
                   Browse categories
                   <ChevronDown size={14} className={`transition-transform duration-300 ${isCategoryOpen ? 'rotate-180' : ''}`} />
@@ -161,15 +148,15 @@ export default function Header() {
                           <p className="text-[11px] text-gray-400 font-semibold tracking-wide">Our departments</p>
                         </div>
                         {categories.map(cat => (
-                          <Link key={cat.id} to={`/shop?category=${cat.slug}`} className="flex items-center justify-between py-2 px-3 rounded-lg text-[13px] text-gray-600 hover:text-emerald-800 hover:bg-emerald-50 transition-all group">
+                          <Link key={cat.id} to={`/shop?category=${cat.slug}`} className="flex items-center justify-between py-2 px-3 rounded-lg text-[13px] text-gray-600 hover:text-[#0096d6] hover:bg-[#0096d6]/20 transition-all group">
                             {cat.name}
-                            <ChevronRight size={13} className="opacity-0 group-hover:opacity-100 transition-opacity text-emerald-600" />
+                            <ChevronRight size={13} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#0096d6]" />
                           </Link>
                         ))}
                       </div>
                       <div className="bg-gray-50 p-4 border-t border-gray-100 flex items-center justify-between">
                         <span className="text-[12px] text-gray-500">Need expert printing advice?</span>
-                        <Link to="/contact" className="text-[12px] font-semibold text-emerald-700 hover:underline">Contact us</Link>
+                        <Link to="/contact" className="text-[12px] font-semibold text-[#0096d6] hover:underline">Contact us</Link>
                       </div>
                     </motion.div>
                   )}
@@ -180,7 +167,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-4 py-2 rounded-full transition-all ${location.pathname === link.path ? 'text-emerald-800 font-semibold bg-emerald-50/50' : 'text-gray-600 hover:text-emerald-700 hover:bg-gray-50'}`}
+                  className={`px-4 py-2 rounded-full transition-all ${location.pathname === link.path ? 'text-[#0096d6] font-semibold bg-[#0096d6]/20/50' : 'text-gray-600 hover:text-[#0096d6] hover:bg-gray-50'}`}
                 >
                   {link.name}
                 </Link>
@@ -195,9 +182,9 @@ export default function Header() {
 
             {/* Integrated Search Bar with Button */}
             <div onClick={openSearch} className="relative hidden lg:block">
-              <div className={`flex items-center h-[46px] w-[320px] xl:w-[450px] bg-white rounded-xl border-2 ${isSearchFocused ? 'border-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.1)]' : 'border-gray-100 bg-gray-50/50'} transition-all duration-200 overflow-hidden`}>
+              <div className={`flex items-center h-[46px] w-[320px] xl:w-[450px] bg-white rounded-xl border-2 ${isSearchFocused ? 'border-[#0096d6]/200 shadow-[0_0_0_4px_rgba(16,185,129,0.1)]' : 'border-gray-100 bg-gray-50/50'} transition-all duration-200 overflow-hidden`}>
                 <div className="pl-4 pr-2">
-                  <Search size={18} className={`${isSearchFocused ? 'text-emerald-600' : 'text-gray-400'} transition-colors`} />
+                  <Search size={18} className={`${isSearchFocused ? 'text-[#0096d6]' : 'text-gray-400'} transition-colors`} />
                 </div>
                 <input
                   type="text"
@@ -210,7 +197,7 @@ export default function Header() {
                 />
                 <button
                   onClick={() => handleSearchTrigger()}
-                  className="h-[34px] mr-1.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-[13px] font-bold rounded-lg transition-all active:scale-95 flex items-center gap-2 shadow-sm shadow-emerald-200"
+                  className="h-[34px] mr-1.5 px-4 bg-[#0096d6] hover:bg-[#0096d6] text-white text-[13px] font-bold rounded-lg transition-all active:scale-95 flex items-center gap-2 shadow-sm shadow-emerald-200"
                 >
                   <span>Search</span>
                 </button>
@@ -223,7 +210,7 @@ export default function Header() {
 
             {/* Minimalist Icons */}
             <div className="relative" ref={accountRef}>
-              <button onMouseEnter={() => setIsAccountOpen(true)} className="p-2.5 text-emerald-700 bg-emerald-50 rounded-full transition-all flex items-center gap-2">
+              <button onMouseEnter={() => setIsAccountOpen(true)} className="p-2.5 text-white bg-[#0096d6] rounded-full transition-all flex items-center gap-2">
                 <User size={20} strokeWidth={1.5} />
                 <span className="hidden xl:block text-[13px] font-medium">{user ? user.name.split(' ')[0] : 'Sign in'}</span>
               </button>
@@ -232,7 +219,7 @@ export default function Header() {
                   <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} onMouseLeave={() => setIsAccountOpen(false)} className="absolute top-[110%] right-0 w-[200px] bg-white border border-gray-100 shadow-xl z-[2200] rounded-2xl p-2 mt-2">
                     {!user ? (
                       <div className="p-1 space-y-1">
-                        <Link to="/login" className="block w-full py-2 bg-emerald-700 text-white rounded-xl text-[13px] text-center font-medium hover:bg-emerald-800 transition-colors">Sign in</Link>
+                        <Link to="/login" className="block w-full py-2 bg-[#0096d6] text-white rounded-xl text-[13px] text-center font-medium hover:bg-[#0096d6] transition-colors">Sign in</Link>
                         <Link to="/signup" className="block w-full py-2 bg-gray-50 text-gray-600 rounded-xl text-[13px] text-center font-medium hover:bg-gray-100 transition-colors">Create account</Link>
                       </div>
                     ) : (
@@ -249,10 +236,10 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            <button onClick={openCartDrawer} className="p-2.5 text-emerald-700 bg-emerald-50 rounded-full transition-all relative flex items-center gap-2">
+            <button onClick={openCartDrawer} className="p-2.5 text-white bg-[#0096d6] rounded-full transition-all relative flex items-center gap-2">
               <ShoppingCart size={20} strokeWidth={1.5} />
               <span className="hidden xl:block text-[13px] font-medium">Cart</span>
-              {cartCount > 0 && <span className="absolute top-1.5 right-1.5 xl:right-10 bg-emerald-600 text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-[1.5px] border-white">{cartCount}</span>}
+              {cartCount > 0 && <span className="absolute top-1.5 right-1.5 xl:right-10 bg-[#0096d6] text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-[1.5px] border-white">{cartCount}</span>}
             </button>
 
             <button className="lg:hidden p-2 bg-gray-50 rounded-full" onClick={() => setIsMobileMenuOpen(true)}>
@@ -271,28 +258,28 @@ export default function Header() {
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-gray-900/20 z-[2000] backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
             <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] bg-white z-[2100] flex flex-col shadow-2xl">
-              <div className="bg-emerald-50 p-6 border-b border-emerald-100">
+              <div className="bg-[#0096d6]/20 p-6 border-b border-emerald-100">
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-[11px] font-semibold text-emerald-800 uppercase tracking-widest">Menu</span>
+                  <span className="text-[11px] font-semibold text-[#0096d6] uppercase tracking-widest">Menu</span>
                   <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-500 hover:text-gray-800"><X size={22} /></button>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-emerald-100 text-emerald-700"><User size={20} /></div>
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-emerald-100 text-[#0096d6]"><User size={20} /></div>
                   <div className="flex flex-col">
                     <p className="text-[15px] font-semibold text-gray-800">{user ? user.name.split(' ')[0] : 'Hello there'}</p>
-                    <Link to="/login" className="text-[12px] text-emerald-600 font-medium">Sign in to account</Link>
+                    <Link to="/login" className="text-[12px] text-[#0096d6] font-medium">Sign in to account</Link>
                   </div>
                 </div>
               </div>
               <div className="flex-1 overflow-y-auto p-4">
                 <div className="space-y-6">
                   <div className="space-y-1">
-                    {navLinks.map(link => (<Link key={link.name} to={link.path} onClick={() => setIsMobileMenuOpen(false)} className="block py-3 px-4 text-[14px] font-medium text-gray-600 hover:bg-emerald-50 hover:text-emerald-800 rounded-xl">{link.name}</Link>))}
+                    {navLinks.map(link => (<Link key={link.name} to={link.path} onClick={() => setIsMobileMenuOpen(false)} className="block py-3 px-4 text-[14px] font-medium text-gray-600 hover:bg-[#0096d6]/20 hover:text-[#0096d6] rounded-xl">{link.name}</Link>))}
                   </div>
                   <div className="pt-6 border-t border-gray-100">
                     <h4 className="text-[11px] font-semibold text-gray-400 mb-3 px-4 tracking-wide">Shop by categories</h4>
                     <div className="space-y-1">
-                      {categories.map(cat => (<Link key={cat.id} to={`/shop?category=${cat.slug}`} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-[14px] font-medium text-gray-600 hover:bg-emerald-50 hover:text-emerald-800 rounded-xl">{cat.name}</Link>))}
+                      {categories.map(cat => (<Link key={cat.id} to={`/shop?category=${cat.slug}`} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-[14px] font-medium text-gray-600 hover:bg-[#0096d6]/20 hover:text-[#0096d6] rounded-xl">{cat.name}</Link>))}
                     </div>
                   </div>
                 </div>

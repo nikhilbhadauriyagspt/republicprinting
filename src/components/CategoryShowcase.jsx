@@ -59,10 +59,10 @@ export default function CategoryShowcase({ title, products = [], adImage, link, 
               </div>
 
               <div className="flex items-center gap-2">
-                <button className={`${swiperId}-prev w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-[#013E24] hover:text-white transition-all shadow-sm`}>
+                <button className={`${swiperId}-prev w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-[#0096d6] hover:text-white transition-all shadow-sm`}>
                   <ChevronLeft size={20} />
                 </button>
-                <button className={`${swiperId}-next w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-[#013E24] hover:text-white transition-all shadow-sm`}>
+                <button className={`${swiperId}-next w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600 hover:bg-[#0096d6] hover:text-white transition-all shadow-sm`}>
                   <ChevronRight size={20} />
                 </button>
               </div>
@@ -125,7 +125,7 @@ export default function CategoryShowcase({ title, products = [], adImage, link, 
 
                           <button
                             onClick={() => addToCart(p)}
-                            className="w-full py-2 bg-gray-900 text-white rounded-lg text-[11px] font-bold uppercase tracking-wider hover:bg-[#013E24] transition-all flex items-center justify-center gap-2"
+                            className="w-full py-2 bg-gray-900 text-white rounded-lg text-[11px] font-bold uppercase tracking-wider hover:bg-[#0096d6] transition-all flex items-center justify-center gap-2"
                           >
                             <ShoppingCart size={14} /> Add to Cart
                           </button>

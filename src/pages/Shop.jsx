@@ -116,13 +116,13 @@ export default function Shop() {
       {/* Categories */}
       <div>
         <h3 className="text-[14px] font-bold text-foreground mb-4 flex items-center gap-2">
-          <LayoutGrid size={16} className="text-[#013E24]" />
+          <LayoutGrid size={16} className="text-[#0096d6]" />
           Categories
         </h3>
         <div className="space-y-1">
           <button
             onClick={() => updateFilter('category', '')}
-            className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${!category ? 'bg-blue-50 text-[#013E24]' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${!category ? 'bg-blue-50 text-[#0096d6]' : 'text-gray-600 hover:bg-gray-100'}`}
           >
             All Categories
           </button>
@@ -130,7 +130,7 @@ export default function Shop() {
             <button
               key={c.id}
               onClick={() => updateFilter('category', c.slug)}
-              className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all capitalize ${category === c.slug ? 'bg-blue-50 text-[#013E24]' : 'text-gray-600 hover:bg-gray-100'}`}
+              className={`w-full text-left px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all capitalize ${category === c.slug ? 'bg-blue-50 text-[#0096d6]' : 'text-gray-600 hover:bg-gray-100'}`}
             >
               {c.name}
             </button>
@@ -141,7 +141,7 @@ export default function Shop() {
       {/* Brands */}
       <div>
         <h3 className="text-[14px] font-bold text-foreground mb-4 flex items-center gap-2">
-          <Star size={16} className="text-[#013E24]" />
+          <Star size={16} className="text-[#0096d6]" />
           Brands
         </h3>
         <div className="grid grid-cols-2 gap-2">
@@ -149,7 +149,7 @@ export default function Shop() {
             <button
               key={brand}
               onClick={() => updateFilter('brand', activeBrand === brand ? '' : brand)}
-              className={`px-2 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${activeBrand === brand ? 'bg-[#013E24] border-blue-600 text-white' : 'border-gray-200 text-gray-600 hover:border-blue-600'}`}
+              className={`px-2 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${activeBrand === brand ? 'bg-[#0096d6] border-blue-600 text-white' : 'border-gray-200 text-gray-600 hover:border-blue-600'}`}
             >
               {brand}
             </button>
@@ -160,7 +160,7 @@ export default function Shop() {
       {/* Price Range */}
       <div>
         <h3 className="text-[14px] font-bold text-foreground mb-4 flex items-center gap-2">
-          <SlidersHorizontal size={16} className="text-[#013E24]" />
+          <SlidersHorizontal size={16} className="text-[#0096d6]" />
           Price Range
         </h3>
         <div className="space-y-4 px-2">
@@ -175,14 +175,14 @@ export default function Shop() {
           />
           <div className="flex items-center justify-between text-[12px] font-bold text-gray-600">
             <span>$0</span>
-            <span className="text-[#013E24] bg-blue-50 px-2 py-0.5 rounded-full">${maxPrice}</span>
+            <span className="text-[#0096d6] bg-blue-50 px-2 py-0.5 rounded-full">${maxPrice}</span>
           </div>
         </div>
       </div>
 
       <button
         onClick={clearFilters}
-        className="w-full py-2.5 border border-dashed border-gray-300 rounded-xl text-[11px] font-bold text-gray-500 hover:border-blue-600 hover:text-[#013E24] transition-all uppercase tracking-widest"
+        className="w-full py-2.5 border border-dashed border-gray-300 rounded-xl text-[11px] font-bold text-gray-500 hover:border-blue-600 hover:text-[#0096d6] transition-all uppercase tracking-widest"
       >
         Clear All Filters
       </button>
@@ -197,13 +197,13 @@ export default function Shop() {
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-[1800px] mx-auto px-4 md:px-10 py-3">
           <nav className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
-            <Link to="/" className="hover:text-[#013E24] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#0096d6] transition-colors">Home</Link>
             <ChevronRight size={12} />
             <span className="text-slate-900">Shop</span>
             {category && (
               <>
                 <ChevronRight size={12} />
-                <span className="capitalize" style={{ color: '#013E24' }}>{category.replace('-', ' ')}</span>
+                <span className="capitalize" style={{ color: '#0096d6' }}>{category.replace('-', ' ')}</span>
               </>
             )}
           </nav>
@@ -232,7 +232,7 @@ export default function Shop() {
                   placeholder="Search products..."
                   value={search}
                   onChange={(e) => updateFilter('search', e.target.value)}
-                  className="w-full h-11 pl-12 pr-4 bg-slate-100 border-transparent rounded-xl text-sm focus:bg-white focus:border-[#013E24] focus:ring-1 focus:ring-[#013E24] outline-none transition-all"
+                  className="w-full h-11 pl-12 pr-4 bg-slate-100 border-transparent rounded-xl text-sm focus:bg-white focus:border-[#0096d6] focus:ring-1 focus:ring-[#0096d6] outline-none transition-all"
                 />
               </div>
 
@@ -248,7 +248,7 @@ export default function Shop() {
                   <select
                     value={sort}
                     onChange={(e) => updateFilter('sort', e.target.value)}
-                    className="w-full h-11 appearance-none bg-white border border-slate-300 rounded-xl px-4 text-sm font-bold text-slate-700 outline-none cursor-pointer focus:border-[#013E24] focus:ring-1 focus:ring-[#013E24]"
+                    className="w-full h-11 appearance-none bg-white border border-slate-300 rounded-xl px-4 text-sm font-bold text-slate-700 outline-none cursor-pointer focus:border-[#0096d6] focus:ring-1 focus:ring-[#0096d6]"
                   >
                     <option value="newest">Newest</option>
                     <option value="price_low">Price: Low to High</option>
@@ -270,21 +270,21 @@ export default function Shop() {
             {/* Grid */}
             {loading ? (
               <div className="py-24 text-center">
-                <Loader2 className="animate-spin text-[#013E24] mx-auto mb-4" size={36} />
+                <Loader2 className="animate-spin text-[#0096d6] mx-auto mb-4" size={36} />
                 <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">Loading Products...</p>
               </div>
             ) : products.length === 0 ? (
               <div className="py-24 text-center bg-white rounded-3xl border-2 border-dashed border-slate-200">
                 <h3 className="text-xl font-bold text-slate-800 mb-2">No Products Found</h3>
                 <p className="text-slate-500 mb-4">Try adjusting your filters or clearing them.</p>
-                <button onClick={clearFilters} className="font-bold text-sm" style={{ color: '#013E24' }}>
+                <button onClick={clearFilters} className="font-bold text-sm" style={{ color: '#0096d6' }}>
                   Reset All Filters
                 </button>
               </div>
             ) : (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {currentProducts.map((p) => (
-                  <div key={p.id} className="group bg-white rounded-2xl p-4 border border-slate-200 hover:shadow-xl hover:border-[#013E24] transition-all duration-300 flex flex-col">
+                  <div key={p.id} className="group bg-white rounded-2xl p-4 border border-slate-200 hover:shadow-xl hover:border-[#0096d6] transition-all duration-300 flex flex-col">
                     {/* Image */}
                     <div className="relative aspect-square bg-slate-100 rounded-xl overflow-hidden mb-4">
                       <Link to={`/product/${p.slug}`} className="w-full h-full flex items-center justify-center p-2">
@@ -305,7 +305,7 @@ export default function Shop() {
                     {/* Content */}
                     <div className="flex-1 flex flex-col">
                       <Link to={`/product/${p.slug}`} className="flex-1">
-                        <h3 className="text-sm font-bold text-slate-800 leading-snug line-clamp-2 min-h-[40px] group-hover:text-[#013E24] transition-colors">
+                        <h3 className="text-sm font-bold text-slate-800 leading-snug line-clamp-2 min-h-[40px] group-hover:text-[#0096d6] transition-colors">
                           {p.name}
                         </h3>
                       </Link>
@@ -315,7 +315,7 @@ export default function Shop() {
                         <button
                           onClick={() => addToCart(p)}
                           className="w-full mt-2 h-10 rounded-lg flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider transition-all active:scale-95"
-                          style={{ backgroundColor: '#013E24', color: 'white' }}
+                          style={{ backgroundColor: '#0096d6', color: 'white' }}
                         >
                           <ShoppingCart size={14} />
                           Add to Cart
@@ -333,7 +333,7 @@ export default function Shop() {
                 <button
                   onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="w-10 h-10 rounded-xl border border-slate-300 bg-white flex items-center justify-center hover:border-[#013E24] hover:text-[#013E24] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-10 h-10 rounded-xl border border-slate-300 bg-white flex items-center justify-center hover:border-[#0096d6] hover:text-[#0096d6] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   <ChevronLeft size={18} />
                 </button>
@@ -348,8 +348,8 @@ export default function Shop() {
                         <button
                           key={page}
                           onClick={() => setCurrentPage(page)}
-                          className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${currentPage === page ? 'text-white shadow-lg' : 'bg-white border border-slate-300 text-slate-600 hover:border-[#013E24] hover:text-[#013E24]'}`}
-                          style={currentPage === page ? { backgroundColor: '#013E24', boxShadow: '0 4px 14px 0 rgba(1, 62, 36, 0.3)' } : {}}
+                          className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${currentPage === page ? 'text-white shadow-lg' : 'bg-white border border-slate-300 text-slate-600 hover:border-[#0096d6] hover:text-[#0096d6]'}`}
+                          style={currentPage === page ? { backgroundColor: '#0096d6', boxShadow: '0 4px 14px 0 rgba(1, 62, 36, 0.3)' } : {}}
                         >
                           {page}
                         </button>
@@ -362,7 +362,7 @@ export default function Shop() {
                 <button
                   onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="w-10 h-10 rounded-xl border border-slate-300 bg-white flex items-center justify-center hover:border-[#013E24] hover:text-[#013E24] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-10 h-10 rounded-xl border border-slate-300 bg-white flex items-center justify-center hover:border-[#0096d6] hover:text-[#0096d6] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   <ChevronRight size={18} />
                 </button>
@@ -400,7 +400,7 @@ export default function Shop() {
               <button
                 onClick={() => setShowMobileFilters(false)}
                 className="w-full mt-6 py-3 text-white rounded-xl font-bold"
-                style={{backgroundColor: '#013E24'}}
+                style={{ backgroundColor: '#0096d6' }}
               >
                 Apply Filters
               </button>

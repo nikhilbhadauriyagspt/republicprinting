@@ -68,7 +68,7 @@ export default function Contact() {
       <div className="bg-slate-50 border-b border-slate-200 py-4">
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <nav className="flex items-center gap-2 text-[13px] font-medium text-slate-500">
-            <Link to="/" className="hover:text-[#013E24] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#0096d6] transition-colors">Home</Link>
             <ChevronRight size={14} />
             <span className="text-slate-900 font-medium">Connect With Us</span>
           </nav>
@@ -76,7 +76,7 @@ export default function Contact() {
       </div>
 
       {/* --- REFINED PAGE HEADER --- */}
-      <div className="py-16 md:py-24 border-b border-slate-100" style={{ background: 'linear-gradient(135deg, rgb(2, 69, 41) 0%, rgb(0, 50, 29) 50%, rgb(5, 138, 44) 100%)' }}>
+      <div className="py-16 md:py-24 border-b border-slate-100" style={{ background: '#0096d6' }}>
         <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <div className="max-w-3xl">
             <motion.h1
@@ -109,17 +109,17 @@ export default function Contact() {
 
               <div className="mt-10 space-y-8">
                 <div className="flex gap-4 items-start group">
-                  <div className="w-12 h-12 bg-blue-50 text-[#013E24] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#013E24] group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-blue-50 text-[#0096d6] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#0096d6] group-hover:text-white transition-colors">
                     <Mail size={22} strokeWidth={1.5} />
                   </div>
                   <div>
                     <h4 className="font-bold text-[12px] text-slate-400 mb-1 uppercase tracking-widest">Email Support</h4>
-                    <p className="text-slate-900 text-[15px] font-bold hover:text-[#013E24] transition-colors cursor-pointer">info@republicprinting.shop</p>
+                    <p className="text-slate-900 text-[15px] font-bold hover:text-[#0096d6] transition-colors cursor-pointer">info@republicprinting.shop</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4 items-start group">
-                  <div className="w-12 h-12 bg-blue-50 text-[#013E24] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#013E24] group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-blue-50 text-[#0096d6] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#0096d6] group-hover:text-white transition-colors">
                     <MapPin size={22} strokeWidth={1.5} />
                   </div>
                   <div>
@@ -133,18 +133,18 @@ export default function Contact() {
             </div>
 
             <div className="bg-slate-50 p-8 border border-slate-100 rounded-xl">
-              <div className="flex items-center gap-3 text-[#013E24] mb-4">
+              <div className="flex items-center gap-3 text-[#0096d6] mb-4">
                 <Clock size={20} strokeWidth={1.5} />
                 <h4 className="font-bold text-[13px] uppercase tracking-widest">Support Hours</h4>
               </div>
               <p className="text-slate-500 text-[14px] leading-relaxed mb-6 font-normal">Our average response time for technical inquiries is under 2 hours during business operations.</p>
               <div className="text-slate-900 font-bold text-[14px] flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-[#0096d6]/200 animate-pulse" />
                 Monday - Friday: 9AM - 6PM (PST)
               </div>
             </div>
 
-            <div className="bg-[#013E24] p-8 rounded-xl text-white shadow-lg shadow-blue-600/10">
+            <div className="bg-[#0096d6] p-8 rounded-xl text-white shadow-lg shadow-blue-600/10">
               <div className="flex items-center gap-3 mb-4">
                 <Headphones size={20} />
                 <h4 className="font-bold text-[14px] uppercase tracking-widest">Technical Help</h4>
@@ -163,14 +163,14 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <div className="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm">
+                    <div className="w-20 h-20 bg-[#0096d6]/20 text-[#0096d6] rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm">
                       <CheckCircle2 size={40} strokeWidth={1.5} />
                     </div>
                     <h2 className="text-3xl font-bold text-slate-900 mb-3">Message Received!</h2>
                     <p className="text-slate-500 mb-10 font-normal text-lg">Thank you for reaching out. An expert from our team will <br /> get back to you shortly.</p>
                     <button
                       onClick={() => setStatus(null)}
-                      className="bg-[#013E24] hover:bg-blue-700 text-white px-10 py-4 text-[13px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-95"
+                      className="bg-[#0096d6] hover:bg-blue-700 text-white px-10 py-4 text-[13px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-95"
                     >
                       Send Another Message
                     </button>
@@ -251,7 +251,7 @@ export default function Contact() {
                     <div className="pt-4">
                       <button
                         disabled={loading}
-                        className="w-full md:w-auto min-w-[220px] h-14 bg-[#013E24] hover:bg-blue-700 text-white rounded-xl font-bold text-[13px] uppercase tracking-widest shadow-lg shadow-blue-600/20 disabled:opacity-50 transition-all active:scale-95 flex items-center justify-center gap-3"
+                        className="w-full md:w-auto min-w-[220px] h-14 bg-[#0096d6] hover:bg-blue-700 text-white rounded-xl font-bold text-[13px] uppercase tracking-widest shadow-lg shadow-blue-600/20 disabled:opacity-50 transition-all active:scale-95 flex items-center justify-center gap-3"
                       >
                         {loading ? <Loader2 className="animate-spin" size={20} /> : (
                           <>

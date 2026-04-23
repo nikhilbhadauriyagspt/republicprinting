@@ -46,15 +46,15 @@ export default function BottomNav() {
               to={item.path}
               className="flex flex-col items-center justify-center gap-1 w-full relative"
             >
-              <div className={`relative ${isActive ? 'text-[#1d4ed8]' : 'text-slate-400'}`}>
+              <div className={`relative ${isActive ? 'text-[#0096d6]' : 'text-slate-400'}`}>
                 <Icon size={22} strokeWidth={isActive ? 2.5 : 2} />
                 {item.name === 'Store' && cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-2 h-4 w-4 bg-[#013E24] text-white text-[9px] font-bold rounded-full flex items-center justify-center ring-2 ring-white">
+                  <span className="absolute -top-1.5 -right-2 h-4 w-4 bg-[#0096d6] text-white text-[9px] font-bold rounded-full flex items-center justify-center ring-2 ring-white">
                     {cartCount}
                   </span>
                 )}
               </div>
-              <span className={`text-[10px] font-semibold capitalize tracking-tighter ${isActive ? 'text-[#1d4ed8]' : 'text-slate-400'}`}>
+              <span className={`text-[10px] font-semibold capitalize tracking-tighter ${isActive ? 'text-[#0096d6]' : 'text-slate-400'}`}>
                 {item.name}
               </span>
             </Link>

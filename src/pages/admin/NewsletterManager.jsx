@@ -49,7 +49,7 @@ export default function NewsletterManager() {
               className="pl-12 pr-6 h-14 w-full md:w-80 bg-white border border-gray-200 rounded-2xl focus:border-blue-600 outline-none text-xs font-bold capitalize transition-all"
             />
           </div>
-          <button className="h-14 px-6 bg-slate-900 text-white rounded-2xl flex items-center gap-3 text-[10px] font-bold capitalize tracking-widest hover:bg-[#013E24] transition-all shadow-xl">
+          <button className="h-14 px-6 bg-slate-900 text-white rounded-2xl flex items-center gap-3 text-[10px] font-bold capitalize tracking-widest hover:bg-[#0096d6] transition-all shadow-xl">
             <Download size={16} /> Export CSV
           </button>
         </div>
@@ -58,14 +58,14 @@ export default function NewsletterManager() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm">
-          <div className="h-12 w-12 rounded-2xl bg-blue-50 text-[#013E24] flex items-center justify-center mb-6">
+          <div className="h-12 w-12 rounded-2xl bg-blue-50 text-[#0096d6] flex items-center justify-center mb-6">
             <Mail size={24} />
           </div>
           <p className="text-[10px] font-bold text-slate-400 capitalize tracking-widest mb-1">Total Subscribers</p>
           <h3 className="text-3xl font-bold text-slate-900">{emails.length}</h3>
         </div>
         <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm">
-          <div className="h-12 w-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+          <div className="h-12 w-12 rounded-2xl bg-[#0096d6]/20 text-[#0096d6] flex items-center justify-center mb-6">
             <UserCheck size={24} />
           </div>
           <p className="text-[10px] font-bold text-slate-400 capitalize tracking-widest mb-1">Active Status</p>
@@ -88,7 +88,7 @@ export default function NewsletterManager() {
               {loading ? (
                 <tr>
                   <td colSpan="3" className="py-20 text-center">
-                    <Loader2 className="animate-spin h-8 w-8 text-[#013E24] mx-auto mb-4" />
+                    <Loader2 className="animate-spin h-8 w-8 text-[#0096d6] mx-auto mb-4" />
                     <p className="text-[10px] font-bold text-slate-400 capitalize tracking-widest">Loading List...</p>
                   </td>
                 </tr>
@@ -102,7 +102,7 @@ export default function NewsletterManager() {
                 <tr key={item.id} className="hover:bg-gray-50/50 transition-colors group">
                   <td className="px-8 py-6">
                     <div className="flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-xl bg-gray-50 flex items-center justify-center text-slate-400 group-hover:text-[#013E24] transition-colors">
+                      <div className="h-10 w-10 rounded-xl bg-gray-50 flex items-center justify-center text-slate-400 group-hover:text-[#0096d6] transition-colors">
                         <Mail size={18} />
                       </div>
                       <span className="text-sm font-bold text-slate-900 lowercase">{item.email}</span>

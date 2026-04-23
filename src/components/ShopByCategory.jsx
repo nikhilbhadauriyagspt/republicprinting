@@ -68,12 +68,12 @@ export default function ShopByCategory({ categories = [], loading = false }) {
           >
             <p
               className="text-sm font-semibold uppercase tracking-widest mb-3"
-              style={{ color: "#013E24" }}
+              style={{ color: "#0096d6" }}
             >
               Our Catalogue
             </p>
             <h2 className="text-4xl md:text-5xl font-[700] text-slate-900 tracking-tight">
-              Discover Your <span class="text-[#013E24]">Perfect Printer</span>
+              Discover Your <span class="text-[#0096d6]">Perfect Printer</span>
             </h2>
           </motion.div>
         </div>
@@ -117,7 +117,7 @@ export default function ShopByCategory({ categories = [], loading = false }) {
                       className="mt-4 inline-block px-6 py-2.5 rounded-lg font-semibold text-base transition-colors"
                       style={{
                         backgroundColor: "white",
-                        color: "#013E24", // Text color is now the main brand color
+                        color: "#0096d6", // Text color is now the main brand color
                         boxShadow: "0 2px 8px 0 rgba(1, 62, 36, 0.15)" // Adjusted shadow for lighter background
                       }}
                     >

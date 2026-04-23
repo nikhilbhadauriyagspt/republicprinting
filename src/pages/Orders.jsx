@@ -184,7 +184,7 @@ export default function Orders() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="flex-1 space-y-6">
                       <div className="flex items-center gap-3">
-                        <div className={`w-2.5 h-2.5 rounded-full ${order.status === 'delivered' ? 'bg-emerald-600' : 'bg-[#e77600]'}`} />
+                        <div className={`w-2.5 h-2.5 rounded-full ${order.status === 'delivered' ? 'bg-[#0096d6]' : 'bg-[#e77600]'}`} />
                         <h3 className="text-lg font-bold capitalize">Status: {order.status.replace(/_/g, ' ')}</h3>
                       </div>
 
@@ -266,7 +266,7 @@ export default function Orders() {
 
                       return (
                         <div key={step.key} className="relative flex gap-8 pb-8 last:pb-0">
-                          <div className={`h-12 w-12 rounded-full flex items-center justify-center z-10 transition-all border-2 ${isCompleted ? 'bg-emerald-600 border-emerald-600 text-white' : 'bg-white border-gray-300 text-gray-300'}`}>
+                          <div className={`h-12 w-12 rounded-full flex items-center justify-center z-10 transition-all border-2 ${isCompleted ? 'bg-[#0096d6] border-[#0096d6] text-white' : 'bg-white border-gray-300 text-gray-300'}`}>
                             <Icon size={20} />
                           </div>
 
@@ -276,7 +276,7 @@ export default function Orders() {
                             </h4>
                             <p className="text-[12px] text-[#565959] mt-0.5">{step.desc}</p>
                             {isActive && (
-                              <div className="mt-2 inline-flex items-center gap-2 px-2 py-0.5 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded-sm border border-emerald-100">
+                              <div className="mt-2 inline-flex items-center gap-2 px-2 py-0.5 bg-[#0096d6]/20 text-[#0096d6] text-[10px] font-bold rounded-sm border border-emerald-100">
                                 Current Location
                               </div>
                             )}

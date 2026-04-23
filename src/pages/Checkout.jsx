@@ -146,7 +146,7 @@ export default function Checkout() {
           animate={{ opacity: 1, scale: 1 }}
           className="bg-white p-10 rounded-md border border-gray-300 shadow-sm text-center max-w-lg"
         >
-          <div className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100">
+          <div className="w-20 h-20 bg-[#0096d6]/20 text-[#0096d6]/200 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100">
             <CheckCircle2 size={40} />
           </div>
           <h1 className="text-3xl font-bold mb-2 text-[#0f1111]">Order Confirmed!</h1>
@@ -198,7 +198,7 @@ export default function Checkout() {
               <div className={`bg-white border ${step === 1 ? 'border-[#e77600] ring-1 ring-[#e77600]' : 'border-gray-300'} rounded-md p-6 shadow-sm`}>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <span className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold ${step > 1 ? 'bg-emerald-500 text-white' : 'bg-[#e77600] text-white'}`}>
+                    <span className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold ${step > 1 ? 'bg-[#0096d6]/200 text-white' : 'bg-[#e77600] text-white'}`}>
                       {step > 1 ? <CheckCircle2 size={14} /> : '1'}
                     </span>
                     <h3 className="text-lg font-bold">Shipping Information</h3>
@@ -380,7 +380,7 @@ export default function Checkout() {
             <div className="bg-[#f7f8f8] border border-gray-300 rounded-md p-4 space-y-4">
               <h4 className="text-[13px] font-bold">Safe & Secure</h4>
               <div className="flex items-center gap-3 text-[#565959]">
-                <ShieldCheck size={18} className="text-emerald-600" />
+                <ShieldCheck size={18} className="text-[#0096d6]" />
                 <span className="text-[12px]">Your transaction is secured with 256-bit SSL encryption.</span>
               </div>
               <div className="flex items-center gap-3 text-[#565959]">

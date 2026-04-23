@@ -182,7 +182,7 @@ export default function CategorySpotlight({
                           {p.brand_name || 'Printer'}
                         </span>
                         <div className="flex items-center gap-1.5">
-                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#0096d6]/200" />
                           <span className="text-[9px] font-bold text-slate-400 uppercase">Available</span>
                         </div>
                       </div>

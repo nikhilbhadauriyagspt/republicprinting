@@ -84,7 +84,7 @@ export default function TrendingProducts() {
                 </span>
 
                 {/* QUICK ADD BUTTON */}
-                <button className="absolute bottom-5 right-5 w-11 h-11 rounded-full bg-white text-foreground flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-[#013E24] hover:text-white transition-all duration-300">
+                <button className="absolute bottom-5 right-5 w-11 h-11 rounded-full bg-white text-foreground flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-[#0096d6] hover:text-white transition-all duration-300">
                   <ShoppingCart size={18} strokeWidth={2} />
                 </button>
               </div>

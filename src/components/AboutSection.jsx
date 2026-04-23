@@ -49,12 +49,12 @@ export default function AboutSection() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-0">
         {/* Heading */}
         <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-          <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.24em] text-[#013E24] border border-[#013E24]/15 px-4 py-2 rounded-full bg-[#013E24]/5">
+          <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0096d6] border border-[#0096d6]/15 px-4 py-2 rounded-full bg-[#0096d6]/5">
             The Standard in Printing
           </span>
 
           <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
-            About <span className="text-[#013E24]">Republic Printing</span>
+            About <span className="text-[#0096d6]">Us</span>
           </h2>
 
           <p className="mt-5 text-sm md:text-base leading-7 text-slate-600">
@@ -70,7 +70,7 @@ export default function AboutSection() {
 
             return (
               <Link key={index} to={section.path} className="group block">
-                <div className="h-full bg-white border border-slate-200 rounded-[24px] overflow-hidden transition-all duration-300 hover:border-[#013E24]/25">
+                <div className="h-full bg-white border border-slate-200 rounded-[24px] overflow-hidden transition-all duration-300 hover:border-[#0096d6]/25">
                   <div className="grid grid-cols-1 sm:grid-cols-[230px_1fr] h-full">
                     {/* Image Side */}
                     <div className="bg-[#f7faf8] border-b sm:border-b-0 sm:border-r border-slate-100 p-1 flex items-center justify-center">
@@ -89,7 +89,7 @@ export default function AboutSection() {
                     {/* Content Side */}
                     <div className="p-6 md:p-7 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-11 h-11 rounded-xl bg-[#013E24]/10 text-[#013E24] flex items-center justify-center">
+                        <div className="w-11 h-11 rounded-xl bg-[#0096d6]/10 text-[#0096d6] flex items-center justify-center">
                           <Icon size={20} strokeWidth={1.8} />
                         </div>
                         <div className="h-px flex-1 bg-slate-100" />
@@ -103,7 +103,7 @@ export default function AboutSection() {
                         {section.description}
                       </p>
 
-                      <div className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#013E24]">
+                      <div className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#0096d6]">
                         View Collection
                         <ArrowRight
                           size={15}

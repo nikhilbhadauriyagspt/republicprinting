@@ -43,7 +43,7 @@ export default function CartDrawer() {
             className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-white z-[1501] shadow-2xl flex flex-col font-['Rubik']"
           >
             {/* Header - Fresh Blue */}
-            <div className="bg-[#013E24] text-white px-6 py-6 flex items-center justify-between shadow-lg shadow-blue-600/10">
+            <div className="bg-[#0096d6] text-white px-6 py-6 flex items-center justify-between shadow-lg shadow-blue-600/10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center border border-white/20">
                   <ShoppingBag size={20} className="text-white" />
@@ -64,7 +64,7 @@ export default function CartDrawer() {
             {/* Sub-header Message */}
             {cart.length > 0 && (
               <div className="bg-blue-50 px-6 py-3 border-b border-blue-100 flex items-center gap-3">
-                <div className="w-5 h-5 bg-[#013E24]rounded-full flex items-center justify-center text-white">
+                <div className="w-5 h-5 bg-[#0096d6]rounded-full flex items-center justify-center text-white">
                   <ShieldCheck size={12} strokeWidth={3} />
                 </div>
                 <p className="text-[12px] font-medium text-blue-800">Your order qualifies for FREE Express Shipping</p>
@@ -89,7 +89,7 @@ export default function CartDrawer() {
                         <Link
                           to={`/product/${item.slug}`}
                           onClick={closeCartDrawer}
-                          className="text-[14px] font-semibold text-slate-800 hover:text-[#1d4ed8] transition-colors line-clamp-2 leading-tight mb-2"
+                          className="text-[14px] font-semibold text-slate-800 hover:text-[#0096d6] transition-colors line-clamp-2 leading-tight mb-2"
                         >
                           {item.name}
                         </Link>
@@ -113,7 +113,7 @@ export default function CartDrawer() {
                           </div>
 
                           <div className="flex flex-col items-end">
-                            <span className="text-[16px] font-semibold text-[#1d4ed8]">${(Number(item.price || 0) * item.quantity).toLocaleString()}</span>
+                            <span className="text-[16px] font-semibold text-[#0096d6]">${(Number(item.price || 0) * item.quantity).toLocaleString()}</span>
                             <button
                               onClick={() => removeFromCart(item.id)}
                               className="text-[11px] font-medium text-red-400 hover:text-red-500 transition-colors uppercase tracking-wider mt-1"
@@ -135,7 +135,7 @@ export default function CartDrawer() {
                   <p className="text-[14px] text-slate-400 mb-8 font-medium">Add some world-class printers to your cart to see them here.</p>
                   <button
                     onClick={closeCartDrawer}
-                    className="bg-[#013E24]hover:bg-blue-700 text-white px-10 py-4 text-[14px] font-semibold rounded-2xl shadow-xl shadow-blue-100 transition-all transform hover:-translate-y-1 active:scale-95 cursor-pointer"
+                    className="bg-[#0096d6]hover:bg-blue-700 text-white px-10 py-4 text-[14px] font-semibold rounded-2xl shadow-xl shadow-blue-100 transition-all transform hover:-translate-y-1 active:scale-95 cursor-pointer"
                   >
                     CONTINUE SHOPPING
                   </button>
@@ -151,7 +151,7 @@ export default function CartDrawer() {
                     <span>Subtotal</span>
                     <span>${total.toLocaleString()}</span>
                   </div>
-                  <div className="flex items-center justify-between text-[#1d4ed8] text-[24px] font-semibold">
+                  <div className="flex items-center justify-between text-[#0096d6] text-[24px] font-semibold">
                     <span>Total</span>
                     <span>${total.toLocaleString()}</span>
                   </div>
@@ -161,7 +161,7 @@ export default function CartDrawer() {
                   <Link
                     to="/checkout"
                     onClick={closeCartDrawer}
-                    className="w-full h-14 bg-[#013E24]hover:bg-blue-700 text-white flex items-center justify-center gap-3 font-semibold text-[15px] rounded-2xl shadow-xl shadow-blue-100 transition-all hover:-translate-y-1 active:scale-95"
+                    className="w-full h-14 bg-[#0096d6]hover:bg-blue-700 text-white flex items-center justify-center gap-3 font-semibold text-[15px] rounded-2xl shadow-xl shadow-blue-100 transition-all hover:-translate-y-1 active:scale-95"
                   >
                     CHECKOUT NOW <ArrowRight size={18} />
                   </Link>

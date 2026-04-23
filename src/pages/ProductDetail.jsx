@@ -67,7 +67,7 @@ export default function ProductDetail() {
       navigator.share({
         title: product.name,
         url: window.location.href,
-      }).catch(() => {});
+      }).catch(() => { });
     } else {
       navigator.clipboard.writeText(window.location.href);
       alert('Link copied to clipboard!');
@@ -159,7 +159,7 @@ export default function ProductDetail() {
 
       <div className="max-w-[1500px] mx-auto px-4 md:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
+
           {/* --- LEFT: IMAGE GALLERY (Sticky on desktop) --- */}
           <div className="lg:col-span-5 xl:col-span-6 space-y-6 lg:sticky lg:top-24 z-40">
             <div className="flex flex-col-reverse md:flex-row gap-4">
@@ -180,22 +180,22 @@ export default function ProductDetail() {
               )}
 
               {/* Main Image with Zoom */}
-              <div 
+              <div
                 className="flex-1 aspect-square bg-white border border-gray-300 rounded-lg relative flex items-center justify-center p-8 group cursor-crosshair"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
               >
-                <motion.img 
+                <motion.img
                   key={activeImage}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  src={mainImage} 
-                  alt={product.name} 
-                  className="max-w-full max-h-full object-contain mix-blend-multiply" 
+                  src={mainImage}
+                  alt={product.name}
+                  className="max-w-full max-h-full object-contain mix-blend-multiply"
                 />
 
                 {/* Zoom Window (Amazon Style) */}
-                <div 
+                <div
                   className="hidden lg:block absolute left-full top-0 ml-4 w-[500px] h-[500px] bg-white border border-gray-300 shadow-2xl z-[100] pointer-events-none rounded-lg overflow-hidden"
                   style={{
                     ...zoomStyle,
@@ -205,7 +205,7 @@ export default function ProductDetail() {
                     backgroundRepeat: 'no-repeat'
                   }}
                 />
-                
+
                 {/* Overlay Badges */}
                 <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
                   {discount > 0 && (
@@ -215,7 +215,7 @@ export default function ProductDetail() {
                   )}
                 </div>
 
-                <button 
+                <button
                   onClick={() => toggleWishlist(product)}
                   className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-400 hover:text-[#cc0c39] hover:bg-gray-50 transition-all z-10"
                 >
@@ -225,24 +225,24 @@ export default function ProductDetail() {
             </div>
 
             <div className="hidden md:grid grid-cols-2 gap-4">
-               <div className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-lg">
-                  <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500">
-                    <Truck size={20} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[12px] font-bold text-gray-900">Free Delivery</span>
-                    <span className="text-[10px] text-gray-500 font-medium">Over nationwide shipping</span>
-                  </div>
-               </div>
-               <div className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-lg">
-                  <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500">
-                    <RotateCcw size={20} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[12px] font-bold text-gray-900">7 Days Return</span>
-                    <span className="text-[10px] text-gray-500 font-medium">Easy replacement policy</span>
-                  </div>
-               </div>
+              <div className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-lg">
+                <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500">
+                  <Truck size={20} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-bold text-gray-900">Free Delivery</span>
+                  <span className="text-[10px] text-gray-500 font-medium">Over nationwide shipping</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-lg">
+                <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500">
+                  <RotateCcw size={20} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-bold text-gray-900">7 Days Return</span>
+                  <span className="text-[10px] text-gray-500 font-medium">Easy replacement policy</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -254,7 +254,7 @@ export default function ProductDetail() {
                   <span className="text-[11px] font-bold text-[#007185] uppercase tracking-wider">
                     Exclusive Collection
                   </span>
-                  <button 
+                  <button
                     onClick={handleShare}
                     className="flex items-center gap-1 text-gray-400 hover:text-gray-900 transition-colors cursor-pointer"
                   >
@@ -290,14 +290,14 @@ export default function ProductDetail() {
 
                 {/* Trust Badges */}
                 <div className="py-4 border-y border-gray-200 flex items-center gap-6">
-                   <div className="flex items-center gap-2">
-                      <ShieldCheck size={18} className="text-[#2e7d32]" />
-                      <span className="text-[12px] font-bold text-gray-700">Safe Transaction</span>
-                   </div>
-                   <div className="flex items-center gap-2">
-                      <Truck size={18} className="text-[#007185]" />
-                      <span className="text-[12px] font-bold text-gray-700">Secure Delivery</span>
-                   </div>
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck size={18} className="text-[#2e7d32]" />
+                    <span className="text-[12px] font-bold text-gray-700">Safe Transaction</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Truck size={18} className="text-[#007185]" />
+                    <span className="text-[12px] font-bold text-gray-700">Secure Delivery</span>
+                  </div>
                 </div>
 
                 {/* Selection and Actions */}
@@ -305,20 +305,20 @@ export default function ProductDetail() {
                   <div className="flex items-center gap-4">
                     <span className="text-[14px] font-bold text-gray-900 min-w-[80px]">Quantity:</span>
                     <div className="flex items-center bg-gray-100 rounded-md border border-gray-300 h-9">
-                      <button 
-                        onClick={() => setQuantity(Math.max(1, quantity - 1))} 
+                      <button
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
                         className="w-9 h-full flex items-center justify-center hover:bg-gray-200 rounded-l-md transition-colors"
                       >
                         <Minus size={14} />
                       </button>
-                      <input 
-                        type="number" 
-                        value={quantity} 
+                      <input
+                        type="number"
+                        value={quantity}
                         readOnly
-                        className="w-10 bg-transparent text-center text-sm font-bold outline-none" 
+                        className="w-10 bg-transparent text-center text-sm font-bold outline-none"
                       />
-                      <button 
-                        onClick={() => setQuantity(quantity + 1)} 
+                      <button
+                        onClick={() => setQuantity(quantity + 1)}
                         className="w-9 h-full flex items-center justify-center hover:bg-gray-200 rounded-r-md transition-colors"
                       >
                         <Plus size={14} />
@@ -329,7 +329,7 @@ export default function ProductDetail() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <button
                       onClick={handleAddToCart}
-                      className={`h-12 rounded-full font-bold text-[14px] shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer ${isAdded ? 'bg-emerald-600 text-white' : 'bg-[#ffd814] border border-[#fcd200] hover:bg-[#f7ca00] text-[#0f1111]'}`}
+                      className={`h-12 rounded-full font-bold text-[14px] shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer ${isAdded ? 'bg-[#0096d6] text-white' : 'bg-[#ffd814] border border-[#fcd200] hover:bg-[#f7ca00] text-[#0f1111]'}`}
                     >
                       <ShoppingCart size={18} />
                       {isAdded ? 'Added to Cart' : 'Add to Cart'}
@@ -345,54 +345,54 @@ export default function ProductDetail() {
                 </div>
 
                 <div className="pt-6">
-                   <h4 className="text-[15px] font-bold mb-4">About this item</h4>
-                   <ul className="space-y-2 list-disc pl-5 text-[14px] text-gray-700 leading-relaxed font-normal">
-                      {product.description ? (
-                        product.description.split('.').map((sentence, idx) => (
-                          sentence.trim() && <li key={idx}>{sentence.trim()}</li>
-                        ))
-                      ) : (
-                        <>
-                          <li>Premium performance for demanding professional workflows.</li>
-                          <li>Seamless connectivity with modern wireless standards.</li>
-                          <li>Designed for high-volume efficiency and long-term reliability.</li>
-                          <li>Genuine brand product with full manufacturer warranty coverage.</li>
-                        </>
-                      )}
-                   </ul>
+                  <h4 className="text-[15px] font-bold mb-4">About this item</h4>
+                  <ul className="space-y-2 list-disc pl-5 text-[14px] text-gray-700 leading-relaxed font-normal">
+                    {product.description ? (
+                      product.description.split('.').map((sentence, idx) => (
+                        sentence.trim() && <li key={idx}>{sentence.trim()}</li>
+                      ))
+                    ) : (
+                      <>
+                        <li>Premium performance for demanding professional workflows.</li>
+                        <li>Seamless connectivity with modern wireless standards.</li>
+                        <li>Designed for high-volume efficiency and long-term reliability.</li>
+                        <li>Genuine brand product with full manufacturer warranty coverage.</li>
+                      </>
+                    )}
+                  </ul>
                 </div>
               </div>
             </div>
 
             {/* Specifications Table */}
             <div className="bg-white p-6 md:p-8 border border-gray-300 rounded-lg shadow-sm">
-               <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-200">Product Specifications</h3>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
-                  <div className="flex py-2 border-b border-gray-100 last:border-0">
-                     <span className="text-[13px] font-bold text-[#565959] w-1/2">Product Dimensions</span>
-                     <span className="text-[13px] text-[#0f1111] w-1/2">Standard Workspace Size</span>
-                  </div>
-                  <div className="flex py-2 border-b border-gray-100 last:border-0">
-                     <span className="text-[13px] font-bold text-[#565959] w-1/2">Item Weight</span>
-                     <span className="text-[13px] text-[#0f1111] w-1/2">Professional Grade</span>
-                  </div>
-                  <div className="flex py-2 border-b border-gray-100 last:border-0">
-                     <span className="text-[13px] font-bold text-[#565959] w-1/2">Compatible Devices</span>
-                     <span className="text-[13px] text-[#0f1111] w-1/2">Universal OS Support</span>
-                  </div>
-                  <div className="flex py-2 border-b border-gray-100 last:border-0">
-                     <span className="text-[13px] font-bold text-[#565959] w-1/2">Connectivity Tech</span>
-                     <span className="text-[13px] text-[#0f1111] w-1/2">Wireless/Ethernet</span>
-                  </div>
-                  <div className="flex py-2 border-b border-gray-100 last:border-0">
-                     <span className="text-[13px] font-bold text-[#565959] w-1/2">Power Source</span>
-                     <span className="text-[13px] text-[#0f1111] w-1/2">AC 100-240V</span>
-                  </div>
-                  <div className="flex py-2 border-b border-gray-100 last:border-0">
-                     <span className="text-[13px] font-bold text-[#565959] w-1/2">Manufacturer</span>
-                     <span className="text-[13px] text-[#0f1111] w-1/2">Genuine Parts</span>
-                  </div>
-               </div>
+              <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-200">Product Specifications</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+                <div className="flex py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-[13px] font-bold text-[#565959] w-1/2">Product Dimensions</span>
+                  <span className="text-[13px] text-[#0f1111] w-1/2">Standard Workspace Size</span>
+                </div>
+                <div className="flex py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-[13px] font-bold text-[#565959] w-1/2">Item Weight</span>
+                  <span className="text-[13px] text-[#0f1111] w-1/2">Professional Grade</span>
+                </div>
+                <div className="flex py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-[13px] font-bold text-[#565959] w-1/2">Compatible Devices</span>
+                  <span className="text-[13px] text-[#0f1111] w-1/2">Universal OS Support</span>
+                </div>
+                <div className="flex py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-[13px] font-bold text-[#565959] w-1/2">Connectivity Tech</span>
+                  <span className="text-[13px] text-[#0f1111] w-1/2">Wireless/Ethernet</span>
+                </div>
+                <div className="flex py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-[13px] font-bold text-[#565959] w-1/2">Power Source</span>
+                  <span className="text-[13px] text-[#0f1111] w-1/2">AC 100-240V</span>
+                </div>
+                <div className="flex py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-[13px] font-bold text-[#565959] w-1/2">Manufacturer</span>
+                  <span className="text-[13px] text-[#0f1111] w-1/2">Genuine Parts</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -401,8 +401,8 @@ export default function ProductDetail() {
         {relatedProducts.length > 0 && (
           <div className="mt-16 md:mt-24">
             <div className="flex items-center justify-between mb-8 pb-2 border-b border-gray-300">
-               <h3 className="text-xl font-bold">Related to items you've viewed</h3>
-               <Link to="/shop" className="text-sm font-bold text-[#007185] hover:text-[#c45500] hover:underline">See more</Link>
+              <h3 className="text-xl font-bold">Related to items you've viewed</h3>
+              <Link to="/shop" className="text-sm font-bold text-[#007185] hover:text-[#c45500] hover:underline">See more</Link>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
               {relatedProducts.map((p) => (
@@ -423,7 +423,7 @@ export default function ProductDetail() {
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 p-3 lg:hidden z-50 flex gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         <button
           onClick={handleAddToCart}
-          className={`flex-1 h-11 rounded-md font-bold text-[13px] transition-all flex items-center justify-center gap-2 ${isAdded ? 'bg-emerald-600 text-white' : 'bg-[#ffd814] border border-[#fcd200] text-[#0f1111]'}`}
+          className={`flex-1 h-11 rounded-md font-bold text-[13px] transition-all flex items-center justify-center gap-2 ${isAdded ? 'bg-[#0096d6] text-white' : 'bg-[#ffd814] border border-[#fcd200] text-[#0f1111]'}`}
         >
           <ShoppingCart size={16} />
           {isAdded ? 'Added' : 'Cart'}

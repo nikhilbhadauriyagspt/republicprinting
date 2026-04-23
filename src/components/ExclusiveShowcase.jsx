@@ -9,7 +9,7 @@ const exclusiveProducts = [
     desc: "Next-generation laser technology with integrated security and ultra-fast output for high-demand business environments.",
     price: "$1,299",
     image: "/products/image_110.png",
-    accent: "bg-[#013E24]",
+    accent: "bg-[#0096d6]",
     stats: [
       { label: "Speed", value: "45 PPM" },
       { label: "Security", value: "Level 4" }
@@ -38,7 +38,7 @@ export default function ExclusiveShowcase() {
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 border-b border-slate-100 pb-12">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-2 rounded-full bg-[#013E24]"></div>
+              <div className="w-2 h-2 rounded-full bg-[#0096d6]"></div>
               <span className="text-[#1447E6] text-[10px] font-black uppercase tracking-[0.3em]">The Elite Collection</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase italic">

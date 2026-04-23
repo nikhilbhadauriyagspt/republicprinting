@@ -28,7 +28,7 @@ export default function SaleBanners() {
 
           {/* Banner 2: All-In-One */}
           <Link to="/shop?category=all-in-one-printers" className="relative overflow-hidden bg-foreground p-8 md:p-10 min-h-[260px] flex flex-col justify-center group rounded-[2rem] transition-all duration-500">
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#013E24]/10 rounded-full -mb-32 -mr-32 blur-3xl transition-all duration-700"></div>
+            <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#0096d6]/10 rounded-full -mb-32 -mr-32 blur-3xl transition-all duration-700"></div>
             <div className="relative z-10">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 text-[#FF2D37] text-[10px] font-black uppercase tracking-[2px] rounded-md mb-4 border border-white/10">
                 Multi-functional

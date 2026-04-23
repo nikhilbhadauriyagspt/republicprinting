@@ -54,7 +54,7 @@ export default function Footer() {
                 type="email"
                 placeholder="Enter your email"
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
-                style={{ borderColor: '#013E24', color: 'white' }}
+                style={{ borderColor: '#0096d6', color: 'white' }}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -62,7 +62,7 @@ export default function Footer() {
               <button
                 type="submit"
                 className="px-6 py-3 rounded-r-md font-semibold text-white transition-colors"
-                style={{ backgroundColor: '#013E24' }}
+                style={{ backgroundColor: '#0096d6' }}
               >
                 Subscribe
               </button>

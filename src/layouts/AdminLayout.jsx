@@ -63,7 +63,7 @@ export default function AdminLayout() {
               key={item.path}
               to={item.path}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${location.pathname === item.path
-                ? 'bg-[#013E24] text-white shadow-lg shadow-blue-600/20'
+                ? 'bg-[#0096d6] text-white shadow-lg shadow-blue-600/20'
                 : 'text-slate-400 hover:bg-slate-800 hover:text-white'
                 }`}
             >
@@ -99,7 +99,7 @@ export default function AdminLayout() {
                 <p className="text-sm font-bold text-slate-900">{admin?.name}</p>
                 <p className="text-xs font-medium text-slate-500">Administrator</p>
               </div>
-              <div className="h-9 w-9 bg-blue-100 text-[#013E24] rounded-full flex items-center justify-center font-bold">
+              <div className="h-9 w-9 bg-blue-100 text-[#0096d6] rounded-full flex items-center justify-center font-bold">
                 {admin?.name?.charAt(0)}
               </div>
             </div>
